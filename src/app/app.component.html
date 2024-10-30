@@ -1,1 +1,16 @@
-<app-user></app-user>
+<mat-toolbar class="custom-toolbar">
+    <mat-icon>menu</mat-icon>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuSV64" style="color: white">
+        Usuarios
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-menu #menuSV64="matMenu">
+  <button mat-menu-item routerLink="/usuarios" class="custom-menu-item">ListarU</button>
+  <button mat-menu-item routerLink="/usuarios/nuevo" class="custom-menu-item">RegistrarU</button>
+  <button mat-menu-item routerLink="/alergias" class="custom-menu-item">ListarA</button>
+  <button mat-menu-item routerLink="/alergias/nuevo" class="custom-menu-item">RegistrarA</button>
+</mat-menu>
+<router-outlet></router-outlet>
