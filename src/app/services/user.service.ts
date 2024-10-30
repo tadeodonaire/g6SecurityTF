@@ -9,8 +9,8 @@ const base_url=environment.base
   providedIn: 'root'
 })
 export class UserService {
-private url=`${base_url}/usuarios`
-private listaCambio=new Subject<Users[]>();
+  private url=`${base_url}/usuarios`
+  private listaCambio=new Subject<Users[]>();
 
   constructor(private http:HttpClient) { }
 
@@ -27,9 +27,17 @@ private listaCambio=new Subject<Users[]>();
   getList(){
     return this.listaCambio.asObservable();
   }
-
   setList(listaNueva: Users[]){
     this.listaCambio.next(listaNueva);
+  }
+  delete(id:number){
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  listId(id:number){
+    return this.http.get<Users>(`${this.url}/${id}`);
+  }
+  update(u:Users){
+    return this.http.put(this.url, u)
   }
 }
 
