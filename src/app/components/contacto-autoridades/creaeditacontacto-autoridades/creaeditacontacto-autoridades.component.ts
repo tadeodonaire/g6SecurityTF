@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { provideNativeDateAdapter } from '@angular/material/core';
 import {
   FormBuilder,
   FormControl,
@@ -9,17 +11,19 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ContactoAutoridad } from '../../../models/Contacto_Autoridades';
-import { ContactoAutoridadService } from '../../../services/Contacto_Autoridades.service';
+import { Contacto_Autoridades } from '../../../models/Contacto_Autoridades';
+import { ContactoAutoridadesService } from '../../../services/Contacto_Autoridades.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-creaeditacontactoautoridad',
+  selector: 'app-creaeditacontacto-autoridades',
   standalone: true,
+  providers: [provideNativeDateAdapter()],
   imports: [
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
     CommonModule,
@@ -27,16 +31,22 @@ import { CommonModule } from '@angular/common';
   templateUrl: './creaeditacontacto-autoridades.component.html',
   styleUrls: ['./creaeditacontacto-autoridades.component.css'],
 })
-export class CreaEditaContactoAutoridadComponent implements OnInit {
+export class CreaEditaContactoAutoridadesComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-  contacto: ContactoAutoridad = new ContactoAutoridad();
+  contacto: Contacto_Autoridades = new Contacto_Autoridades();
 
   id: number = 0;
   edicion: boolean = false;
 
+  listaContactos: { value: string; viewValue: string }[] = [
+    { value: 'juan', viewValue: 'juan' },
+    { value: 'carlos', viewValue: 'carlos' },
+    { value: 'dr.perez', viewValue: 'dr.perez' },
+  ];
+
   constructor(
     private formBuilder: FormBuilder,
-    private cAS: ContactoAutoridadService,
+    private cAS: ContactoAutoridadesService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -49,9 +59,9 @@ export class CreaEditaContactoAutoridadComponent implements OnInit {
     });
 
     this.form = this.formBuilder.group({
-      hIdContacAuto: [{ value: '', disabled: this.edicion }],
+      hIdContacAuto: [''],
       hnombre_contac_Auto: ['', Validators.required],
-      hnumeTelefono_contac_Auto: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      hnumeTelefono_contac_Auto: ['', Validators.required],
     });
   }
 
@@ -74,17 +84,17 @@ export class CreaEditaContactoAutoridadComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['contacto-autoridad']);
+      this.router.navigate(['contacto-autoridades']);
     }
   }
 
   init() {
     if (this.edicion) {
       this.cAS.listId(this.id).subscribe((data) => {
-        this.form.setValue({
-          hIdContacAuto: data.IdContacAuto,
-          hnombre_contac_Auto: data.nombre_contac_Auto,
-          hnumeTelefono_contac_Auto: data.numeTelefono_contac_Auto,
+        this.form= new FormGroup({
+          hIdContacAuto: new FormControl(data.IdContacAuto),
+          hnombre_contac_Auto: new FormControl(data.nombre_contac_Auto),
+          hnumeTelefono_contac_Auto: new FormControl(data.numeTelefono_contac_Auto),
         });
       });
     }
