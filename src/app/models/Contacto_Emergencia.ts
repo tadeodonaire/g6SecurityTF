@@ -1,5 +1,6 @@
-export class ContactoEmergencia {
-    IdContacAuto:number=0
-    nombre_contac_Auto: string=""
-    numeTelefono_contac_Auto:number=0
+export class Contacto_Emergencia {
+    idContacto:number=0
+    nombre_contacto: string=""
+    relacion_contacto: string=""
+    num_telefono_contacto:number=0
 }

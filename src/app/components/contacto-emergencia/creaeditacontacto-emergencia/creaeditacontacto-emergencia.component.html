@@ -1,0 +1,36 @@
+<div class="container" style="text-align: center; margin: 5%">
+    <div><h1>Registro de Contactos de Emergencia</h1></div>
+    <div>
+      <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+        
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="hidContacto" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre del Contacto</mat-label>
+          <input matInput formControlName="hnombre_contacto" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Relación</mat-label>
+          <input matInput formControlName="hrelacion_contacto" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Teléfono</mat-label>
+          <input matInput type="number" placeholder="Número de Teléfono" formControlName="hnum_telefono_contacto" />
+        </mat-form-field>
+        <br />
+  
+        <div>
+          <button mat-flat-button color="primary" type="submit">Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
