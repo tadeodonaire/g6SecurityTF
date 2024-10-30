@@ -1,5 +1,6 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
+<<<<<<< Updated upstream
   CdkConnectedOverlay,
   CdkOverlayOrigin,
   Overlay,
@@ -18,14 +19,30 @@ import {
 } from "./chunk-TEB2G7K2.js";
 import {
   MAT_FORM_FIELD,
+=======
+  MAT_SELECT_CONFIG,
+  MAT_SELECT_SCROLL_STRATEGY,
+  MAT_SELECT_SCROLL_STRATEGY_PROVIDER,
+  MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY,
+  MAT_SELECT_TRIGGER,
+  MatSelect,
+  MatSelectChange,
+  MatSelectModule,
+  MatSelectTrigger,
+  matSelectAnimations
+} from "./chunk-WVQ63CV5.js";
+import "./chunk-KDCANG64.js";
+import "./chunk-G42VHJOF.js";
+import "./chunk-B2QYESW3.js";
+import {
+>>>>>>> Stashed changes
   MatError,
   MatFormField,
-  MatFormFieldControl,
-  MatFormFieldModule,
   MatHint,
   MatLabel,
   MatPrefix,
   MatSuffix
+<<<<<<< Updated upstream
 } from "./chunk-2PY7LPFT.js";
 import {
   animate,
@@ -1502,6 +1519,18 @@ var MatSelectModule = class _MatSelectModule {
     }]
   }], null, null);
 })();
+=======
+} from "./chunk-P46DUPDB.js";
+import "./chunk-GYQEXEL3.js";
+import {
+  MatOptgroup,
+  MatOption
+} from "./chunk-C4PPKEET.js";
+import "./chunk-3T7AGMCX.js";
+import "./chunk-WMHXQMGE.js";
+import "./chunk-2H3L6IVL.js";
+import "./chunk-NQ4HTGF6.js";
+>>>>>>> Stashed changes
 export {
   MAT_SELECT_CONFIG,
   MAT_SELECT_SCROLL_STRATEGY,

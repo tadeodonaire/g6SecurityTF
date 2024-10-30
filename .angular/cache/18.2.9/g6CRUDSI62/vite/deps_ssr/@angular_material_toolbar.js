@@ -2,7 +2,11 @@ import { createRequire } from 'module';const require = createRequire(import.meta
 import {
   MatCommonModule,
   Platform
+<<<<<<< Updated upstream
 } from "./chunk-DSFRNMSV.js";
+=======
+} from "./chunk-C4PPKEET.js";
+>>>>>>> Stashed changes
 import {
   DOCUMENT
 } from "./chunk-VZTX2A42.js";

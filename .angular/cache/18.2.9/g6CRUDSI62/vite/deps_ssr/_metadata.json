@@ -1,127 +1,220 @@
 {
+<<<<<<< Updated upstream
   "hash": "2fedcde8",
   "configHash": "b9d8b176",
   "lockfileHash": "d0b1216a",
   "browserHash": "1de40503",
+=======
+  "hash": "1f33dc1d",
+  "configHash": "d4c54d5e",
+  "lockfileHash": "b1542850",
+  "browserHash": "7dfbe6ff",
+>>>>>>> Stashed changes
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
+<<<<<<< Updated upstream
       "fileHash": "9493f56a",
+=======
+      "fileHash": "8fc31c3f",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
+<<<<<<< Updated upstream
       "fileHash": "d693592e",
+=======
+      "fileHash": "37d1aed8",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
+<<<<<<< Updated upstream
       "fileHash": "ed2c4cf2",
+=======
+      "fileHash": "5109ca20",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
+<<<<<<< Updated upstream
       "fileHash": "ab351da7",
+=======
+      "fileHash": "0eb9bec7",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/button": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/button.mjs",
       "file": "@angular_material_button.js",
+<<<<<<< Updated upstream
       "fileHash": "340bb4d7",
+=======
+      "fileHash": "63820fef",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/core": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/core.mjs",
       "file": "@angular_material_core.js",
+<<<<<<< Updated upstream
       "fileHash": "158b045d",
+=======
+      "fileHash": "2978c66b",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/datepicker": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/datepicker.mjs",
       "file": "@angular_material_datepicker.js",
+<<<<<<< Updated upstream
       "fileHash": "f549378b",
+=======
+      "fileHash": "c0538a97",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/form-field": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/form-field.mjs",
       "file": "@angular_material_form-field.js",
+<<<<<<< Updated upstream
       "fileHash": "fa9f280d",
+=======
+      "fileHash": "5fb8a4a9",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/icon": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/icon.mjs",
       "file": "@angular_material_icon.js",
+<<<<<<< Updated upstream
       "fileHash": "8ed3829c",
+=======
+      "fileHash": "a8f3ae9f",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/input": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/input.mjs",
       "file": "@angular_material_input.js",
+<<<<<<< Updated upstream
       "fileHash": "91ad4a21",
+=======
+      "fileHash": "666f88fa",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/menu": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/menu.mjs",
       "file": "@angular_material_menu.js",
+<<<<<<< Updated upstream
       "fileHash": "7829b744",
+=======
+      "fileHash": "4617da1e",
+      "needsInterop": false
+    },
+    "@angular/material/paginator": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/paginator.mjs",
+      "file": "@angular_material_paginator.js",
+      "fileHash": "8024eafc",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/select": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/select.mjs",
       "file": "@angular_material_select.js",
+<<<<<<< Updated upstream
       "fileHash": "3ab29bc9",
+=======
+      "fileHash": "59c79e25",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/slide-toggle": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/slide-toggle.mjs",
       "file": "@angular_material_slide-toggle.js",
+<<<<<<< Updated upstream
       "fileHash": "7bdc1a9c",
+=======
+      "fileHash": "a8f17580",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/table": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/table.mjs",
       "file": "@angular_material_table.js",
+<<<<<<< Updated upstream
       "fileHash": "896027b2",
+=======
+      "fileHash": "9a30c4d3",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/material/toolbar": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/toolbar.mjs",
       "file": "@angular_material_toolbar.js",
+<<<<<<< Updated upstream
       "fileHash": "e120f307",
+=======
+      "fileHash": "40cb691b",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
+<<<<<<< Updated upstream
       "fileHash": "a61a0713",
+=======
+      "fileHash": "7bcca507",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/platform-browser/animations/async": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
       "file": "@angular_platform-browser_animations_async.js",
+<<<<<<< Updated upstream
       "fileHash": "20b03969",
+=======
+      "fileHash": "c4dd22f8",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/platform-server": {
       "src": "../../../../../../node_modules/@angular/platform-server/fesm2022/platform-server.mjs",
       "file": "@angular_platform-server.js",
+<<<<<<< Updated upstream
       "fileHash": "0a4a3a56",
+=======
+      "fileHash": "f611e3b9",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
+<<<<<<< Updated upstream
       "fileHash": "2dce1ed9",
+=======
+      "fileHash": "4776cdc2",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../../node_modules/rxjs/dist/cjs/index.js",
       "file": "rxjs.js",
+<<<<<<< Updated upstream
       "fileHash": "7b2728cb",
+=======
+      "fileHash": "d3941621",
+>>>>>>> Stashed changes
       "needsInterop": true
     }
   },
@@ -135,6 +228,7 @@
     "xhr2-ISERFGGE": {
       "file": "xhr2-ISERFGGE.js"
     },
+<<<<<<< Updated upstream
     "chunk-MGBRTDY4": {
       "file": "chunk-MGBRTDY4.js"
     },
@@ -155,6 +249,10 @@
     },
     "chunk-IB6FHE64": {
       "file": "chunk-IB6FHE64.js"
+=======
+    "chunk-WVQ63CV5": {
+      "file": "chunk-WVQ63CV5.js"
+>>>>>>> Stashed changes
     },
     "chunk-WAOLF6IJ": {
       "file": "chunk-WAOLF6IJ.js"
@@ -162,8 +260,34 @@
     "chunk-P5GWU64E": {
       "file": "chunk-P5GWU64E.js"
     },
+<<<<<<< Updated upstream
     "chunk-DSFRNMSV": {
       "file": "chunk-DSFRNMSV.js"
+=======
+    "chunk-XQZKLENI": {
+      "file": "chunk-XQZKLENI.js"
+    },
+    "chunk-3P7WLE7J": {
+      "file": "chunk-3P7WLE7J.js"
+    },
+    "chunk-KDCANG64": {
+      "file": "chunk-KDCANG64.js"
+    },
+    "chunk-G42VHJOF": {
+      "file": "chunk-G42VHJOF.js"
+    },
+    "chunk-B2QYESW3": {
+      "file": "chunk-B2QYESW3.js"
+    },
+    "chunk-P46DUPDB": {
+      "file": "chunk-P46DUPDB.js"
+    },
+    "chunk-GYQEXEL3": {
+      "file": "chunk-GYQEXEL3.js"
+    },
+    "chunk-C4PPKEET": {
+      "file": "chunk-C4PPKEET.js"
+>>>>>>> Stashed changes
     },
     "chunk-VZTX2A42": {
       "file": "chunk-VZTX2A42.js"
