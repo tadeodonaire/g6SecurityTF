@@ -1,28 +1,35 @@
+
 import { Routes } from '@angular/router';
 import { UserComponent } from './components/user/user.component';
 import { CreaeditauserComponent } from './components/user/creaeditauser/creaeditauser.component';
-import { ContactoAutoridadesComponent } from './components/contacto-autoridades/contacto-autoridades.component';
-import { CreaEditaContactoAutoridadesComponent } from './components/contacto-autoridades/creaeditacontacto-autoridades/creaeditacontacto-autoridades.component';
+import { CiudadComponent } from './components/ciudad/ciudad.component';
+import { CreaeditaciudadComponent } from './components/ciudad/creaeditaciudad/creaeditaciudad.component';
 
 export const routes: Routes = [
     {
-        path:'usuarios', component:UserComponent,
-        children:[
+        path: 'usuarios', 
+        component: UserComponent,
+        children: [
             {
-                path:'nuevo', component:CreaeditauserComponent
-
+                path: 'nuevo', 
+                component: CreaeditauserComponent
+            },
+            {
+                path: 'ediciones/:id', 
+                component: CreaeditauserComponent
             }
         ]
     },
-
     {
-        path: 'contacto-autoridades', component: ContactoAutoridadesComponent,
+        path: 'Ciudad', 
+        component: CiudadComponent,
         children: [
             {
-                path: 'nuevo', component: CreaEditaContactoAutoridadesComponent
+                path: 'registrar', 
+                component:CreaeditaciudadComponent
             },
             {
-                path: 'editar/:id', component: CreaEditaContactoAutoridadesComponent
+                path:'ediciones/:id',component:CreaeditaciudadComponent
             }
         ]
     }
