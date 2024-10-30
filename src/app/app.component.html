@@ -1,0 +1,38 @@
+<mat-toolbar class="custom-toolbar">
+    <mat-icon>menu</mat-icon>
+  
+    <div>
+      <button
+        mat-button
+        [matMenuTriggerFor]="menuSV64"
+        style="color: rgb(0, 0, 0)"
+      >
+        Usuarios
+      </button>
+    </div>
+
+    <mat-menu #menuSV64="matMenu">
+      <button mat-menu-item routerLink="/usuarios">Listar</button>
+    
+      <button mat-menu-item routerLink="/usuarios/nuevo">Registrar</button>
+    </mat-menu>
+
+    <div>
+      <button
+        mat-button
+        [matMenuTriggerFor]="menuSV65"
+        style="color: rgb(0, 0, 0)"
+      >
+        Ciudad
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-menu #menuSV65="matMenu">
+    <button mat-menu-item routerLink="/Ciudad">Listar</button>
+  
+    <button mat-menu-item routerLink="/Ciudad/registrar">Registrar</button>
+  </mat-menu>
+
+  
+  <router-outlet></router-outlet>

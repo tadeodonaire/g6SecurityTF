@@ -1,0 +1,22 @@
+<!-- src/app/components/menu/menu.component.html -->
+<div class="header">
+    <h1>Mi Aplicación Web</h1>
+  </div>
+  
+  <nav class="navbar">
+    <ul>
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/users">Usuarios</a></li>
+      <li><a routerLink="/about">Acerca de</a></li>
+    </ul>
+  </nav>
+  
+  <div class="content">
+    <!-- Aquí se carga dinámicamente el contenido -->
+    <router-outlet></router-outlet>
+  </div>
+  
+  <div class="footer">
+    <p>© 2024 Mi Aplicación Web. Todos los derechos reservados.</p>
+  </div>
+  
