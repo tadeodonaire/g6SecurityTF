@@ -39,8 +39,8 @@ export class ContactoAutoridadesService {
     return this.http.get<Contacto_Autoridades>(`${this.url}/${id}`);
   }
 
-  update(contacto: Contacto_Autoridades) {
-    return this.http.put(this.url, contacto);
+  update(c: Contacto_Autoridades) {
+    return this.http.put(this.url, c);
   }
 }
 

@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class ListarContactoAutoridadesComponent implements OnInit {
   dataSource: MatTableDataSource<Contacto_Autoridades> = new MatTableDataSource();
-  displayedColumns: string[] = ['IdContacAuto', 'nombre_contac_Auto', 'numeTelefono_contac_Auto', 'accion01', 'accion02'];
+  displayedColumns: string[] = ['idContacAuto', 'nombre_contac_Auto', 'numeTelefono_contac_Auto', 'accion01', 'accion02'];
 
   constructor(private cAS: ContactoAutoridadesService) {}
 
@@ -29,7 +29,7 @@ export class ListarContactoAutoridadesComponent implements OnInit {
   }
 
   eliminar(id: number) {
-    this.cAS.delete(id).subscribe(() => {
+    this.cAS.delete(id).subscribe((data) => {
       this.cAS.list().subscribe((data) => {
         this.cAS.setList(data);
       });

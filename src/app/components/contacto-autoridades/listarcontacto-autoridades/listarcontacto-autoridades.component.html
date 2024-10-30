@@ -2,9 +2,9 @@
     <div style="text-align: center;margin: 5%;"><h1>Lista de Contacto de Autoridad</h1></div>
     <div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="IdContacAuto">
+            <ng-container matColumnDef="idContacAuto">
               <th mat-header-cell *matHeaderCellDef> ID </th>
-              <td mat-cell *matCellDef="let contacto"> {{ contacto.IdContacAuto }} </td>
+              <td mat-cell *matCellDef="let contacto"> {{ contacto.idContacAuto }} </td>
             </ng-container>
           
             <ng-container matColumnDef="nombre_contac_Auto">
@@ -18,23 +18,21 @@
             </ng-container>
           
             <ng-container matColumnDef="accion01">
-              <th mat-header-cell *matHeaderCellDef> Editar </th>
-              <td mat-cell *matCellDef="let contacto">
-                <button mat-icon-button color="accent" [routerLink]="['/contacto-autoridades/editar', contacto.IdContacAuto]">
-                  <mat-icon>edit</mat-icon>
-                </button>
-              </td>
-            </ng-container>
-          
-            <ng-container matColumnDef="accion02">
-              <th mat-header-cell *matHeaderCellDef> Eliminar </th>
-              <td mat-cell *matCellDef="let contacto">
-                <button mat-icon-button color="warn" (click)="eliminar(contacto.IdContacAuto)">
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </td>
-            </ng-container>
-          
+                <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                <td mat-cell *matCellDef="let contacto" (click)="eliminar(contacto.idContacAuto)" >
+                  <mat-icon style="color:hsl(4, 97%, 48%) ;">delete</mat-icon>
+                </td>
+               </ng-container>
+
+
+               <ng-container matColumnDef="accion02">
+                <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+                <td mat-cell *matCellDef="let contacto"  [routerLink]="['editar',contacto.idContacAuto]">
+                  <mat-icon style="color:hsl(4, 97%, 48%) ;">edit</mat-icon>
+                </td>
+               </ng-container>
+           
+    
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>

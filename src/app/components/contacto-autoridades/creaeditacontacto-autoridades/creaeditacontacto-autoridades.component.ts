@@ -38,12 +38,7 @@ export class CreaEditaContactoAutoridadesComponent implements OnInit {
   id: number = 0;
   edicion: boolean = false;
 
-  listaContactos: { value: string; viewValue: string }[] = [
-    { value: 'juan', viewValue: 'juan' },
-    { value: 'carlos', viewValue: 'carlos' },
-    { value: 'dr.perez', viewValue: 'dr.perez' },
-  ];
-
+  
   constructor(
     private formBuilder: FormBuilder,
     private cAS: ContactoAutoridadesService,
@@ -59,7 +54,7 @@ export class CreaEditaContactoAutoridadesComponent implements OnInit {
     });
 
     this.form = this.formBuilder.group({
-      hIdContacAuto: [''],
+      hidContacAuto: [''],
       hnombre_contac_Auto: ['', Validators.required],
       hnumeTelefono_contac_Auto: ['', Validators.required],
     });
@@ -67,19 +62,19 @@ export class CreaEditaContactoAutoridadesComponent implements OnInit {
 
   aceptar() {
     if (this.form.valid) {
-      this.contacto.IdContacAuto = this.form.value.hIdContacAuto;
+      this.contacto.idContacAuto = this.form.value.hidContacAuto;
       this.contacto.nombre_contac_Auto = this.form.value.hnombre_contac_Auto;
       this.contacto.numeTelefono_contac_Auto = this.form.value.hnumeTelefono_contac_Auto;
 
       if (this.edicion) {
-        this.cAS.update(this.contacto).subscribe(() => {
-          this.cAS.list().subscribe(data => {
+        this.cAS.update(this.contacto).subscribe(data => {
+          this.cAS.list().subscribe((data) => {
             this.cAS.setList(data);
           });
         });
       } else {
-        this.cAS.insert(this.contacto).subscribe(() => {
-          this.cAS.list().subscribe(data => {
+        this.cAS.insert(this.contacto).subscribe((data) => {
+          this.cAS.list().subscribe((data) => {
             this.cAS.setList(data);
           });
         });
@@ -92,7 +87,7 @@ export class CreaEditaContactoAutoridadesComponent implements OnInit {
     if (this.edicion) {
       this.cAS.listId(this.id).subscribe((data) => {
         this.form= new FormGroup({
-          hIdContacAuto: new FormControl(data.IdContacAuto),
+          hidContacAuto: new FormControl(data.idContacAuto),
           hnombre_contac_Auto: new FormControl(data.nombre_contac_Auto),
           hnumeTelefono_contac_Auto: new FormControl(data.numeTelefono_contac_Auto),
         });
