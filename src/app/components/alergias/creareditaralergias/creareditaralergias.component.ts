@@ -55,7 +55,7 @@ export class CreareditaralergiasComponent implements OnInit{
       hcausas: ['', Validators.required],
     });
   }
-  aceptar() {
+  Registrar() {
     if (this.form.valid) {
       this.alergia.idAlergias = this.form.value.hcodigo;
       this.alergia.nombre_alergias = this.form.value.hnombre;
