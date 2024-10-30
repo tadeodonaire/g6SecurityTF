@@ -2,9 +2,9 @@
     <div><h1 class="title">Registrar usuario</h1></div>
     <div class="form-container">
       <form class="example-form form-style" [formGroup]="form" (ngSubmit)="aceptar()">
-        <mat-form-field class="example-full-width form-field">
+        <mat-form-field class="example-full-width form-field" *ngIf="edicion">
           <mat-label>IdUsuario</mat-label>
-          <input matInput placeholder="IdUsuario" formControlName="hid" />
+          <input matInput placeholder="IdUsuario" formControlName="hcodigo" />
         </mat-form-field>
         <br />
         <mat-form-field class="example-full-width form-field">
