@@ -1,0 +1,47 @@
+<div class="container">
+    <div style="text-align: center;margin: 5%;"><h1>Listar Contacto de Emergencia</h1></div>
+    <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="idContacto">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let contacto"> {{ contacto.idContacto }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="nombre_contacto">
+              <th mat-header-cell *matHeaderCellDef> Nombre </th>
+              <td mat-cell *matCellDef="let contacto"> {{ contacto.nombre_contacto }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="relacion_contacto">
+              <th mat-header-cell *matHeaderCellDef> Relación </th>
+              <td mat-cell *matCellDef="let contacto"> {{ contacto.relacion_contacto }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="num_telefono_contacto">
+              <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+              <td mat-cell *matCellDef="let contacto"> {{ contacto.num_telefono_contacto }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="accion01">
+                <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                <td mat-cell *matCellDef="let contacto" (click)="eliminar(contacto.idContacto)" >
+                  <mat-icon style="color:hsl(4, 97%, 48%) ;">delete</mat-icon>
+                </td>
+               </ng-container>
+
+               <ng-container matColumnDef="accion02">
+                <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+                <td mat-cell *matCellDef="let contacto"  [routerLink]="['editar',contacto.idContacto]">
+                  <mat-icon style="color:hsl(4, 97%, 48%) ;">edit</mat-icon>
+                </td>
+               </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 8, 10, 20, 30]" showFirstLastButtons aria-label="Selecciona la página"></mat-paginator>
+
+    </div>
+
+</div>
