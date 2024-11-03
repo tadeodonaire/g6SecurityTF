@@ -1,0 +1,29 @@
+<div class="container" style="text-align: center; margin: 5%">
+    <div><h1>Registro de Contactos de Autoridad</h1></div>
+    <div>
+      <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+        
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>ID</mat-label>
+            <input matInput formControlName="hidContacAuto" />
+          </mat-form-field>
+          <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre del Contacto</mat-label>
+          <input matInput placeholder="Nombre" formControlName="hnombre_contac_Auto" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Teléfono</mat-label>
+          <input matInput type="number" placeholder="Número de Teléfono" formControlName="hnumeTelefono_contac_Auto" />
+        </mat-form-field>
+        <br />
+  
+        <div>
+            <button mat-flat-button class="custom-button" type="submit">Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
