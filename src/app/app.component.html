@@ -1,1 +1,25 @@
-<app-user></app-user>
+<mat-toolbar class="custom-toolbar">
+    <mat-icon>menu</mat-icon>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuSV64" style="color: rgb(17, 17, 17)">
+        Contacto Autoridades
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-menu #menuSV64="matMenu">
+  <button mat-menu-item routerLink="/contactosautoridades" class="custom-menu-item">Listar</button>
+  <button mat-menu-item routerLink="/contactosautoridades/nuevo" class="custom-menu-item">Registrar</button>
+</mat-menu>
+
+    <div>
+    <button mat-button [matMenuTriggerFor]="menuSV64" style="color: rgb(17, 17, 17)">
+        Contacto Emergencias
+    </button>
+  </div>
+
+<mat-menu #menuSV64="matMenu">
+  <button mat-menu-item routerLink="/contactosemergencias" class="custom-menu-item">Listar</button>
+  <button mat-menu-item routerLink="/contactosemergencias/nuevo" class="custom-menu-item">Registrar</button>
+</mat-menu>
+<router-outlet></router-outlet> 
