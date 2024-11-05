@@ -22,7 +22,7 @@
 th {
     font-weight: bold;  /* Los títulos de las columnas son más gruesos */
     background-color: #21262d;  /* Fondo oscuro para los encabezados de las columnas */
-    color: #ffffff;  /* Texto blanco para los títulos de las columnas */
+    color: #000000;  /* Texto blanco para los títulos de las columnas */
     padding: 15px;  /* Espacio alrededor del texto en los encabezados */
     text-transform: uppercase;  /* Convierte el texto a mayúsculas */
 }
@@ -30,11 +30,11 @@ th {
 td {
     padding: 15px;  /* Espacio interno (padding) dentro de las celdas */
     border-bottom: 1px solid #30363d;  /* Una línea divisoria entre las filas de la tabla */
-    color: #e6e6e6;  /* Color gris claro para el texto de las celdas */
+    color: #000000;  /* Color gris claro para el texto de las celdas */
 }
 
 tr:hover {
-    background-color: #2d333b;  /* Cambia el color de fondo cuando el cursor pasa sobre una fila */
+    background-color: #324b5c;  /* Cambia el color de fondo cuando el cursor pasa sobre una fila */
 }
 
 button.security-action {
