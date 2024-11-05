@@ -7,12 +7,7 @@ import {
   NoopAnimationDriver,
   WebAnimationsDriver,
   WebAnimationsStyleNormalizer
-<<<<<<< Updated upstream
 } from "./chunk-XZQLVYQA.js";
-import "./chunk-IB6FHE64.js";
-=======
-} from "./chunk-GEWOEIMK.js";
->>>>>>> Stashed changes
 import {
   BrowserDomAdapter,
   BrowserModule,
@@ -23,12 +18,8 @@ import {
 import {
   HTTP_ROOT_INTERCEPTOR_FNS,
   HttpClientModule
-<<<<<<< Updated upstream
 } from "./chunk-P5GWU64E.js";
-=======
-} from "./chunk-7L6OGBIP.js";
-import "./chunk-GYQEXEL3.js";
->>>>>>> Stashed changes
+import "./chunk-IB6FHE64.js";
 import {
   DOCUMENT,
   NullViewportScroller,

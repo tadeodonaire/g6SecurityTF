@@ -5,17 +5,10 @@ import {
   OverlayConfig,
   OverlayModule,
   TemplatePortal
-<<<<<<< Updated upstream
-} from "./chunk-MGBRTDY4.js";
+} from "./chunk-SYS5LCHF.js";
 import {
   CdkScrollableModule
-} from "./chunk-LKVN2ABU.js";
-=======
-} from "./chunk-G42VHJOF.js";
-import {
-  CdkScrollableModule
-} from "./chunk-B2QYESW3.js";
->>>>>>> Stashed changes
+} from "./chunk-7PECJFWK.js";
 import {
   animate,
   state,
@@ -41,11 +34,7 @@ import {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-<<<<<<< Updated upstream
-} from "./chunk-DSFRNMSV.js";
-=======
-} from "./chunk-C4PPKEET.js";
->>>>>>> Stashed changes
+} from "./chunk-GGLW5HT7.js";
 import {
   CommonModule,
   DOCUMENT

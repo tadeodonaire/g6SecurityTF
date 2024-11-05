@@ -1,32 +1,31 @@
 <mat-toolbar class="custom-toolbar">
-    <mat-icon>menu</mat-icon>
+  <mat-icon>menu</mat-icon>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV64"
+      style="color: rgb(0, 0, 0)"
+    >
+      Usuarios
+    </button>
+  </div>
+
+  <mat-menu #menuSV64="matMenu">
+    <button mat-menu-item routerLink="/usuarios">Listar</button>
   
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV64"
-        style="color: rgb(0, 0, 0)"
-      >
-        Usuarios
-      </button>
-    </div>
+    <button mat-menu-item routerLink="/usuarios/nuevo">Registrar</button>
+  </mat-menu>
 
-    <mat-menu #menuSV64="matMenu">
-      <button mat-menu-item routerLink="/usuarios">Listar</button>
-    
-      <button mat-menu-item routerLink="/usuarios/nuevo">Registrar</button>
-    </mat-menu>
-
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV65"
-        style="color: rgb(0, 0, 0)"
-      >
-        Ciudad
-      </button>
-    </div>
-  </mat-toolbar>
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV65"
+      style="color: rgb(0, 0, 0)"
+    >
+      Ciudad
+    </button>
+  </div>
 
   <mat-menu #menuSV65="matMenu">
     <button mat-menu-item routerLink="/Ciudad">Listar</button>
@@ -34,5 +33,54 @@
     <button mat-menu-item routerLink="/Ciudad/registrar">Registrar</button>
   </mat-menu>
 
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV66"
+      style="color: rgb(0, 0, 0)"
+    >
+      Alergias
+    </button>
+  </div>
+
+  <mat-menu #menuSV66="matMenu">
+    <button mat-menu-item routerLink="/alergias">Listar</button>
   
-  <router-outlet></router-outlet>
+    <button mat-menu-item routerLink="/alergias/nuevo">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV67"
+      style="color: rgb(0, 0, 0)"
+    >
+      Contacto Autoridad
+    </button>
+  </div>
+
+  <mat-menu #menuSV67="matMenu">
+    <button mat-menu-item routerLink="/contactosautoridades">Listar</button>
+  
+    <button mat-menu-item routerLink="/contactosautoridades/nuevo">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV68"
+      style="color: rgb(0, 0, 0)"
+    >
+      Contacto Emergencia
+    </button>
+  </div>
+
+  <mat-menu #menuSV68="matMenu">
+    <button mat-menu-item routerLink="/contactosemergencias">Listar</button>
+  
+    <button mat-menu-item routerLink="/contactosemergencias/nuevo">Registrar</button>
+  </mat-menu>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

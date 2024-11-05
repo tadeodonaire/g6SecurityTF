@@ -1,9 +1,9 @@
 <div>
-    <div><h1>Registrar Dispositivo</h1></div>
+    <div><h1>Registrar Ciudad</h1></div>
     <div>
       <form class="example-form" [formGroup]="form" (ngSubmit)="aceptar()">
   
-        <mat-form-field class="example-full-width" >
+        <mat-form-field class="example-full-width"  *ngIf="edicion">
           <mat-label>Codigo</mat-label>
           <input matInput placeholder="Codigo" formControlName="hcodigo1"/>
           <mat-error
@@ -18,7 +18,7 @@
         <br />
 
         <mat-form-field>
-          <mat-label>Marca</mat-label>
+          <mat-label>Ciudad</mat-label>
           <mat-select formControlName="hciudad">
             @for (m of listarCiudades; track m) {
             <mat-option [value]="m.value">{{ m.viewValue }}</mat-option>
