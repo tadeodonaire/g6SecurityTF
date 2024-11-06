@@ -113,6 +113,39 @@
     <button mat-menu-item routerLink="/ubicaciones/registrar">Registrar</button>
   </mat-menu>
 
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV52"
+      style="color: rgb(0, 0, 0)"
+    >
+      Historial Clinico
+    </button>
+  </div>
+
+  <mat-menu #menuSV52="matMenu">
+    <button mat-menu-item routerLink="/historialClinico">Listar</button>
+  
+    <button mat-menu-item routerLink="/historialClinico/nuevo">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV53"
+      style="color: rgb(0, 0, 0)"
+    >
+      Detalle Medico
+    </button>
+  </div>
+
+  <mat-menu #menuSV53="matMenu">
+    <button mat-menu-item routerLink="/detalleMedico">Listar</button>
+  
+    <button mat-menu-item routerLink="/detalleMedico/nuevo">Registrar</button>
+  </mat-menu>
+
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>

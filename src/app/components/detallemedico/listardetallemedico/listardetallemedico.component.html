@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div  style="text-align: center;margin: 5%;"><h1>Lista de Historial Clinico</h1></div>
+      <div>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+              <ng-container matColumnDef="c1">
+                <th mat-header-cell *matHeaderCellDef> Código </th>
+                <td mat-cell *matCellDef="let element"> {{element.idDetalleMedico}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="c2">
+                <th mat-header-cell *matHeaderCellDef> Alergias</th>
+                <td mat-cell *matCellDef="let element"> {{element.alergias.nombre_alergias}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="c3">
+                <th mat-header-cell *matHeaderCellDef> Historial Clinico</th>
+                <td mat-cell *matCellDef="let element"> {{element.historialClinico.users.us_nombre + ' ' + element.historialClinico.users.us_apellido + ' - ' + element.historialClinico.seguroMed }} </td>
+              </ng-container>
+                        
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>          
+            <mat-paginator [pageSizeOptions]="[5, 8, 10, 20, 30]"
+                   showFirstLastButtons
+                   aria-label="Selecciona la página">
+    </mat-paginator>
+      </div>
+  </div>

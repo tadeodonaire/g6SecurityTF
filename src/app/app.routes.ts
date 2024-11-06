@@ -4,6 +4,10 @@ import { UserComponent } from './components/user/user.component';
 import { CreaeditauserComponent } from './components/user/creaeditauser/creaeditauser.component';
 import { AlergiasComponent } from './components/alergias/alergias.component';
 import { CreareditaralergiasComponent } from './components/alergias/creareditaralergias/creareditaralergias.component';
+import { HistorialclinicoComponent } from './components/historialclinico/historialclinico.component';
+import { CreareditahistorialclinicoComponent } from './components/historialclinico/creareditahistorialclinico/creareditahistorialclinico.component';
+import { DetallemedicoComponent } from './components/detallemedico/detallemedico.component';
+import { CreareditardetallemedicoComponent } from './components/detallemedico/creareditardetallemedico/creareditardetallemedico.component';
 import { CiudadComponent } from './components/ciudad/ciudad.component';
 import { CreaeditaciudadComponent } from './components/ciudad/creaeditaciudad/creaeditaciudad.component';
 import { ContactoautoridadesComponent } from './components/contactoautoridades/contactoautoridades.component';
@@ -14,6 +18,7 @@ import { CreaeditadistritoComponent } from './components/distrito/creaeditadistr
 import { DistritoComponent } from './components/distrito/distrito.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { CreaeditaubicacionComponent } from './components/ubicacion/creaeditaubicacion/creaeditaubicacion.component';
+
 
 export const routes: Routes = [
     {
@@ -41,7 +46,15 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'Ciudad', component: CiudadComponent,
+        path:'historialClinico', component:HistorialclinicoComponent,
+        children:[
+            {
+                path:'nuevo', component:CreareditahistorialclinicoComponent
+            }
+        ]
+    },
+    {
+        path: 'Ciudad', component:CiudadComponent,
         children: [
             {
                 path: 'registrar', 
@@ -53,6 +66,13 @@ export const routes: Routes = [
         ]
     },
     {
+        path:'detalleMedico', component:DetallemedicoComponent,
+        children:[
+            {
+                path:'nuevo', component:CreareditardetallemedicoComponent
+            }
+        ]
+    },{
         path: 'Distritos', component: DistritoComponent,
         children: [
             {
