@@ -81,6 +81,22 @@
     <button mat-menu-item routerLink="/contactosemergencias/nuevo">Registrar</button>
   </mat-menu>
 
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV50"
+      style="color: rgb(0, 0, 0)"
+    >
+      Distritos
+    </button>
+  </div>
+
+  <mat-menu #menuSV50="matMenu">
+    <button mat-menu-item routerLink="/Distritos">Listar</button>
+  
+    <button mat-menu-item routerLink="/Distritos/registrar">Registrar</button>
+  </mat-menu>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>

@@ -1,95 +1,63 @@
+/* Contenedor principal centrado */
 .container {
-    display: flex;  /* Utilizamos flexbox para alinear los elementos dentro del contenedor */
-    flex-direction: column;  /* Los elementos hijos se organizan en una columna */
-    align-items: center;  /* Centramos horizontalmente los elementos en el eje X */
-    justify-content: center;  /* Centramos verticalmente los elementos en el eje Y */
-    height: 100vh;  /* La altura del contenedor se ajusta a toda la pantalla */
-    background-color: #0d1117;  /* Fondo oscuro estilo terminal para el contenedor */
-    color: #e6e6e6;  /* Color de texto claro para mejorar el contraste */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0d1117;
+  color: #e6e6e6;
 }
 
 .security-table {
-    width: 85%;  /* La tabla ocupa el 85% del ancho disponible */
-    max-width: 1000px;  /* La tabla no superará los 1000px de ancho */
-    background-color: #161b22;  /* Fondo oscuro para la tabla */
-    color: #e6e6e6;  /* Texto claro para las celdas de la tabla */
-    border-radius: 10px;  /* Bordes redondeados para dar un aspecto suave */
-    padding: 25px;  /* Espacio interno (padding) alrededor de la tabla */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  /* Sombra alrededor de la tabla para darle profundidad */
-    transition: transform 0.2s ease-in-out;  /* Transición suave en el hover (opcional) */
+  width: 85%;
+  max-width: 600px;
+  background-color: #161b22;
+  color: #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
 }
 
-th {
-    font-weight: bold;  /* Los títulos de las columnas son más gruesos */
-    background-color: #21262d;  /* Fondo oscuro para los encabezados de las columnas */
-    color: #000000;  /* Texto blanco para los títulos de las columnas */
-    padding: 15px;  /* Espacio alrededor del texto en los encabezados */
-    text-transform: uppercase;  /* Convierte el texto a mayúsculas */
+/* Encabezados de la tabla */
+th.mat-header-cell {
+  font-weight: bold;
+  background-color: #21262d;
+  color: #ffffff;
+  padding: 12px;
+  text-transform: uppercase;
 }
 
-td {
-    padding: 15px;  /* Espacio interno (padding) dentro de las celdas */
-    border-bottom: 1px solid #30363d;  /* Una línea divisoria entre las filas de la tabla */
-    color: #000000;  /* Color gris claro para el texto de las celdas */
+/* Celdas de la tabla */
+td.mat-cell {
+  padding: 10px;
+  border-bottom: 1px solid #30363d;
+  color: #e6e6e6;
 }
 
-tr:hover {
-    background-color: #324b5c;  /* Cambia el color de fondo cuando el cursor pasa sobre una fila */
+/* Hover en filas */
+tr.mat-row:hover {
+  background-color: #2d333b;
 }
 
-button.security-action {
-    background-color: #28a745;  /* Color verde para los botones que habilitan/deshabilitan usuarios */
-    border: none;  /* Sin bordes adicionales alrededor del botón */
-    color: white;  /* Texto blanco para contrastar con el fondo verde */
-    padding: 8px 16px;  /* Espaciado interno del botón para hacerlo más grande y cómodo de hacer clic */
-    border-radius: 5px;  /* Bordes redondeados para el botón */
-    cursor: pointer;  /* Cambia el cursor a mano al pasar sobre el botón */
-    transition: background-color 0.3s ease-in-out;  /* Transición suave al cambiar el color en el hover */
-    margin-top: 10px;  /* Espacio superior entre el botón y el contenido anterior */
+/* Botón de eliminación */
+button.delete-button {
+  color: #ff4d4d;  /* Color rojo para el icono de eliminar */
 }
 
-button.security-action:hover {
-    background-color: #218838;  /* Cambia el color del botón cuando el cursor pasa sobre él (más oscuro) */
+/* Botón de actualización */
+button.update-button {
+  color: #28a745;  /* Color verde para el icono de actualizar */
 }
 
-/* Estilo mejorado para el input de contraseña */
-input[readonly] {
-    border: 1px solid #30363d;  /* Borde del campo de texto */
-    background-color: #161b22;  /* Fondo del input para combinar con el tema oscuro */
-    color: #e6e6e6;  /* Texto claro */
-    padding: 10px 14px;  /* Espacio interno aumentado para hacer el campo más cómodo */
-    border-radius: 5px;  /* Bordes redondeados para el input */
-    outline: none;  /* Remover el borde azul al hacer clic */
-    width: 75%;  /* Ajuste del ancho del input */
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  /* Cambia el borde del input cuando se hace focus */
-  input[readonly]:focus {
-    border-color: #00bfff;  /* Cambia el color del borde al hacer focus */
-    box-shadow: 0 0 8px rgba(0, 191, 255, 0.5);  /* Añade una sombra luminosa alrededor del input */
-  }
-  
-  /* Estilo mejorado del botón Mostrar/Esconder */
-  button.toggle-password {
-    background-color: #00bfff;  /* Color azul claro para resaltar el botón */
-    border: none;  /* Sin bordes */
-    color: white;  /* Texto blanco para hacer contraste */
-    padding: 10px 14px;  /* Espaciado interno mayor para mejorar el tamaño del botón */
-    border-radius: 5px;  /* Bordes suaves para el botón */
-    cursor: pointer;  /* Cambia el cursor al pasar el mouse */
-    margin-left: 10px;  /* Espacio entre el input y el botón */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    font-weight: bold;  /* Negrita para el texto del botón */
-  }
-  
-  /* Añadir un efecto de sombra y cambio de color al pasar el mouse */
-  button.toggle-password:hover {
-    background-color: #007acc;  /* Color más oscuro al hacer hover */
-    box-shadow: 0 0 10px rgba(0, 122, 204, 0.7);  /* Sombra luminosa alrededor del botón */
-  }
-  
-  button.toggle-password:active {
-    background-color: #005f99;  /* Color más oscuro cuando el botón es presionado */
-  }
-  
+/* Estilos del paginador */
+.mat-paginator {
+  background-color: #161b22;
+  color: #e6e6e6;
+  border-top: 1px solid #30363d;
+}
+.mat-paginator .mat-paginator-page-size,
+.mat-paginator .mat-button {
+  color: #e6e6e6;
+}
