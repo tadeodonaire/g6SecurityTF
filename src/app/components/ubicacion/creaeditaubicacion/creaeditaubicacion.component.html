@@ -1,0 +1,46 @@
+<div>
+  <div><h1>Registrar Ubicaciones</h1></div>
+  <div>
+    <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field>
+        <mat-label>Longitud</mat-label>
+        <input matInput formControlName="hlongitud" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Latitud</mat-label>
+        <input matInput formControlName="hlatitud" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Fecha de Ubicacion</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="hfecha" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Distrito</mat-label>
+        <mat-select formControlName="hdistrito">
+          @for (d of listaDistrito; track d) {
+          <mat-option [value]="d.idDistrito">{{
+            d.nombre_Distrito
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <div>
+        <button mat-flat-button class="custom-button">Aceptar</button>
+      </div>
+    </form>
+  </div>
+</div>

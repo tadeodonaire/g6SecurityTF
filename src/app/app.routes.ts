@@ -8,6 +8,17 @@ import { HistorialclinicoComponent } from './components/historialclinico/histori
 import { CreareditahistorialclinicoComponent } from './components/historialclinico/creareditahistorialclinico/creareditahistorialclinico.component';
 import { DetallemedicoComponent } from './components/detallemedico/detallemedico.component';
 import { CreareditardetallemedicoComponent } from './components/detallemedico/creareditardetallemedico/creareditardetallemedico.component';
+import { CiudadComponent } from './components/ciudad/ciudad.component';
+import { CreaeditaciudadComponent } from './components/ciudad/creaeditaciudad/creaeditaciudad.component';
+import { ContactoautoridadesComponent } from './components/contactoautoridades/contactoautoridades.component';
+import { CreaeditacontactoautoridadeComponent } from './components/contactoautoridades/creaeditacontactoautoridade/creaeditacontactoautoridade.component';
+import { ContactoemergenciasComponent } from './components/contactoemergencias/contactoemergencias.component';
+import { CreareditarcontactoemergenciasComponent } from './components/contactoemergencias/creareditarcontactoemergencias/creareditarcontactoemergencias.component';
+import { CreaeditadistritoComponent } from './components/distrito/creaeditadistrito/creaeditadistrito.component';
+import { DistritoComponent } from './components/distrito/distrito.component';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { CreaeditaubicacionComponent } from './components/ubicacion/creaeditaubicacion/creaeditaubicacion.component';
+
 
 export const routes: Routes = [
     {
@@ -39,7 +50,18 @@ export const routes: Routes = [
         children:[
             {
                 path:'nuevo', component:CreareditahistorialclinicoComponent
-
+            }
+        ]
+    },
+    {
+        path: 'Ciudad', component:CiudadComponent,
+        children: [
+            {
+                path: 'registrar', 
+                component:CreaeditaciudadComponent
+            },
+            {
+                path:'ediciones/:id',component:CreaeditaciudadComponent
             }
         ]
     },
@@ -48,7 +70,45 @@ export const routes: Routes = [
         children:[
             {
                 path:'nuevo', component:CreareditardetallemedicoComponent
-
+            }
+        ]
+    },{
+        path: 'Distritos', component: DistritoComponent,
+        children: [
+            {
+                path: 'registrar', 
+                component:CreaeditadistritoComponent
+            }
+        ]
+    },
+    {
+        path: 'ubicaciones', component: UbicacionComponent,
+        children: [
+            {
+                path: 'registrar', 
+                component:CreaeditaubicacionComponent
+            }
+        ]
+    },
+    {
+        path:'contactosautoridades', component:ContactoautoridadesComponent,
+        children:[
+            {
+                path:'nuevo', component:CreaeditacontactoautoridadeComponent
+            },
+            {
+                path: 'editar/:id', component:CreaeditacontactoautoridadeComponent
+            }
+        ]
+    },
+    {
+        path:'contactosemergencias', component:ContactoemergenciasComponent,
+        children:[
+            {
+                path:'nuevo', component:CreareditarcontactoemergenciasComponent
+            },
+            {
+                path: 'editar/:id', component:CreareditarcontactoemergenciasComponent
             }
         ]
     }

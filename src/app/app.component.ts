@@ -6,6 +6,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
+import { ContactoautoridadesComponent } from "./components/contactoautoridades/contactoautoridades.component";
+import { ContactoemergenciasComponent } from "./components/contactoemergencias/contactoemergencias.component";
 
 @Component({
   selector: "app-root",
@@ -14,6 +16,8 @@ import { MatButtonModule } from "@angular/material/button";
     RouterOutlet,
     UserComponent,
     AlergiasComponent,
+    ContactoautoridadesComponent,
+    ContactoemergenciasComponent,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,

@@ -1,0 +1,63 @@
+/* Contenedor principal centrado */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0d1117;
+  color: #e6e6e6;
+}
+
+.security-table {
+  width: 85%;
+  max-width: 600px;
+  background-color: #161b22;
+  color: #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+/* Encabezados de la tabla */
+th.mat-header-cell {
+  font-weight: bold;
+  background-color: #21262d;
+  color: #ffffff;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+/* Celdas de la tabla */
+td.mat-cell {
+  padding: 10px;
+  border-bottom: 1px solid #30363d;
+  color: #e6e6e6;
+}
+
+/* Hover en filas */
+tr.mat-row:hover {
+  background-color: #2d333b;
+}
+
+/* Botón de eliminación */
+button.delete-button {
+  color: #ff4d4d;  /* Color rojo para el icono de eliminar */
+}
+
+/* Botón de actualización */
+button.update-button {
+  color: #28a745;  /* Color verde para el icono de actualizar */
+}
+
+/* Estilos del paginador */
+.mat-paginator {
+  background-color: #161b22;
+  color: #e6e6e6;
+  border-top: 1px solid #30363d;
+}
+.mat-paginator .mat-paginator-page-size,
+.mat-paginator .mat-button {
+  color: #e6e6e6;
+}
