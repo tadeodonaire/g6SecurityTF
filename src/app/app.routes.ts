@@ -10,6 +10,8 @@ import { ContactoautoridadesComponent } from './components/contactoautoridades/c
 import { CreaeditacontactoautoridadeComponent } from './components/contactoautoridades/creaeditacontactoautoridade/creaeditacontactoautoridade.component';
 import { ContactoemergenciasComponent } from './components/contactoemergencias/contactoemergencias.component';
 import { CreareditarcontactoemergenciasComponent } from './components/contactoemergencias/creareditarcontactoemergencias/creareditarcontactoemergencias.component';
+import { CreaeditadistritoComponent } from './components/distrito/creaeditadistrito/creaeditadistrito.component';
+import { DistritoComponent } from './components/distrito/distrito.component';
 
 export const routes: Routes = [
     {
@@ -45,6 +47,15 @@ export const routes: Routes = [
             },
             {
                 path:'ediciones/:id',component:CreaeditaciudadComponent
+            }
+        ]
+    },
+    {
+        path: 'Distritos', component: DistritoComponent,
+        children: [
+            {
+                path: 'registrar', 
+                component:CreaeditadistritoComponent
             }
         ]
     },
