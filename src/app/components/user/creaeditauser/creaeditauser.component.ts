@@ -11,6 +11,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {
   FormBuilder,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -20,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Users } from '../../../models/Users';
 import { UserService } from '../../../services/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-creaeditauser',
@@ -35,8 +37,8 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
+    CommonModule
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './creaeditauser.component.html',
   styleUrls: ['./creaeditauser.component.css'],
 })
@@ -46,15 +48,26 @@ export class CreaeditauserComponent implements OnInit {
   user: Users = new Users();
   errorMessage = signal('');
   hide = signal(true);
+  id:number=0;
+  edicion:boolean=false;
 
   constructor(
     private formBuilder: FormBuilder,
     private uS: UserService,
-    private router: Router
+    private router: Router,
+    private route:ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+
+    this.route.params.subscribe((data: Params)=>{
+      this.id=data['id'];
+      this.edicion=data['id'] !=null;
+      this.init();
+    })
+
     this.form = this.formBuilder.group({
+      hcodigo: [''],
       hnombre: ['', Validators.required],
       hapellido: ['', Validators.required],
       hcelular: ['', Validators.required],
@@ -73,7 +86,7 @@ export class CreaeditauserComponent implements OnInit {
 
   aceptar() {
     if (this.form.valid) {
-      this.user.IdUsario=this.form.value.hid;
+      this.user.idUsario=this.form.value.hcodigo;
       this.user.us_nombre = this.form.value.hnombre;
       this.user.us_apellido = this.form.value.hapellido;
       this.user.us_telefono = this.form.value.hcelular;
@@ -83,12 +96,42 @@ export class CreaeditauserComponent implements OnInit {
       this.user.username = this.form.value.husuario;
       this.user.password = this.form.value.hcontrasena;
 
-      this.uS.insert(this.user).subscribe((data) => {
-        this.uS.list().subscribe((data) => {
-          this.uS.setList(data);
+      if(this.edicion) {
+        this.uS.update(this.user).subscribe((data) => {
+          this.uS.list().subscribe((data) => {
+            this.uS.setList(data);
+          });
+        });
+      } else {
+        this.uS.insert(this.user).subscribe((data) => {
+          this.uS.list().subscribe((data) => {
+            this.uS.setList(data);
+          });
+        });
+      }
+
+      
+    } else {
+      this.form.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar mensajes de error
+    }this.router.navigate(['usuarios']);
+    
+  }
+
+  init(){
+    if(this.edicion){
+      this.uS.listId(this.id).subscribe((data)=>{
+        this.form=new FormGroup({
+          hcodigo: new FormControl(data.idUsario),
+          hnombre: new FormControl(data.us_nombre),
+          hapellido: new FormControl(data.us_apellido),
+          hcelular: new FormControl(data.us_telefono),
+          hdni: new FormControl(data.us_dni),
+          hfecha: new FormControl(data.us_fechanacimiento),
+          hemail: new FormControl(data.us_email),
+          husuario: new FormControl(data.username),
+          hcontrasena: new FormControl(data.password)
         });
       });
     }
-    this.router.navigate(['usuarios']);
   }
 }

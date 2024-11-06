@@ -1,0 +1,35 @@
+<body>
+<div class="container">
+    <div><h1 class="tituloCentral">Registro de Historial Clinico</h1></div>
+    <div class="contenedorForm">
+      <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+        
+        <h6 class="tituloForm">Historial Clinico</h6>
+  
+        <section class="contenedor">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Seguro Medico</mat-label>
+          <input matInput placeholder="Nombre de la aseguradora" formControlName="hseguroMed" />
+        </mat-form-field>
+    
+        <mat-form-field>
+          <mat-label>Usuario</mat-label>
+          <mat-select matInput placeholder="Usuario asegurado" formControlName="husuarios">
+            @for (m of listaUsuarios; track m) {
+            <mat-option [value]="m.idUsario">{{ m.us_nombre + ' ' + m.us_apellido}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <br>        
+        
+        </section>
+
+        <div>
+          <button mat-flat-button class="custom-button" type="submit">Aceptar</button>
+        </div>
+    </form>
+    </div>
+  </div>
+  
+</body>

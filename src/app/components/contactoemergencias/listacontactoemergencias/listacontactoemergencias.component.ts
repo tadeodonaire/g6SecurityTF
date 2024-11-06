@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableDataSource } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { Contactoemergencias } from '../../../models/contactoemergencias';
+import { ContactoautoridadesService } from '../../../services/contactoautoridades.service';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { ContactoemergenciasService } from '../../../services/contactoemergencias.service';
