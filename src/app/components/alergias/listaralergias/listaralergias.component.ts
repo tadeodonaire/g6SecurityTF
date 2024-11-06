@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { Alergias } from '../../../models/Alergias';
 import { AlergiasService } from '../../../services/alergia.service';
+import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-listaralergias',
   standalone: true,
-  imports: [MatTableModule, MatIconModule, RouterModule],
+  imports: [MatTableModule, MatIconModule, RouterModule,MatPaginator],
   templateUrl: './listaralergias.component.html',
   styleUrl: './listaralergias.component.css',
 })
@@ -31,5 +32,10 @@ displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'accion01', 'accion02'];
         });
       });
     }
+
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+}
 }
 

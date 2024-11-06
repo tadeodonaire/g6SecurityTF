@@ -4,8 +4,10 @@ import { UserComponent } from './components/user/user.component';
 import { CreaeditauserComponent } from './components/user/creaeditauser/creaeditauser.component';
 import { AlergiasComponent } from './components/alergias/alergias.component';
 import { CreareditaralergiasComponent } from './components/alergias/creareditaralergias/creareditaralergias.component';
-import { CiudadComponent } from './components/ciudad/ciudad.component';
-import { CreaeditaciudadComponent } from './components/ciudad/creaeditaciudad/creaeditaciudad.component';
+import { HistorialclinicoComponent } from './components/historialclinico/historialclinico.component';
+import { CreareditahistorialclinicoComponent } from './components/historialclinico/creareditahistorialclinico/creareditahistorialclinico.component';
+import { DetallemedicoComponent } from './components/detallemedico/detallemedico.component';
+import { CreareditardetallemedicoComponent } from './components/detallemedico/creareditardetallemedico/creareditardetallemedico.component';
 
 export const routes: Routes = [
     {
@@ -14,6 +16,9 @@ export const routes: Routes = [
             {
                 path:'nuevo', component:CreaeditauserComponent
 
+            },
+            {
+                path:'ediciones/:id', component:CreaeditauserComponent
             }
         ]
     },
@@ -30,15 +35,20 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'Ciudad', 
-        component: CiudadComponent,
-        children: [
+        path:'historialClinico', component:HistorialclinicoComponent,
+        children:[
             {
-                path: 'registrar', 
-                component:CreaeditaciudadComponent
-            },
+                path:'nuevo', component:CreareditahistorialclinicoComponent
+
+            }
+        ]
+    },
+    {
+        path:'detalleMedico', component:DetallemedicoComponent,
+        children:[
             {
-                path:'ediciones/:id',component:CreaeditaciudadComponent
+                path:'nuevo', component:CreareditardetallemedicoComponent
+
             }
         ]
     }

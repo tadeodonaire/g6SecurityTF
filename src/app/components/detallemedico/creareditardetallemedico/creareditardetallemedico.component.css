@@ -1,8 +1,9 @@
 body {
     background-image: url(../../../../assets/images/image\ 1.png);
-    font-family: Arial, sans-serif;background-size: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: Arial, sans-serif;
 }
 /*="text-align: center;margin:5%"-->*/
 .container {
@@ -25,8 +26,7 @@ body {
     max-width: 600px;
     padding: 40px;
     border-radius: 21px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .contenedor {
