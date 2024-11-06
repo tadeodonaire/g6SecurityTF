@@ -6,6 +6,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
+import { EnfermedadesComponent } from "./components/enfermedades/enfermedades.component";
 
 @Component({
   selector: "app-root",
@@ -19,6 +20,7 @@ import { MatButtonModule } from "@angular/material/button";
     MatMenuModule,
     MatButtonModule,
     RouterModule,
+    EnfermedadesComponent,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",

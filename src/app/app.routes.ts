@@ -10,6 +10,8 @@ import { ContactoautoridadesComponent } from './components/contactoautoridades/c
 import { CreaeditacontactoautoridadeComponent } from './components/contactoautoridades/creaeditacontactoautoridade/creaeditacontactoautoridade.component';
 import { ContactoemergenciasComponent } from './components/contactoemergencias/contactoemergencias.component';
 import { CreareditarcontactoemergenciasComponent } from './components/contactoemergencias/creareditarcontactoemergencias/creareditarcontactoemergencias.component';
+import { EnfermedadesComponent } from './components/enfermedades/enfermedades.component';
+import { CreareditarenfermedadesComponent } from './components/enfermedades/creareditarenfermedades/creareditarenfermedades.component';
 
 export const routes: Routes = [
     {
@@ -67,6 +69,18 @@ export const routes: Routes = [
             },
             {
                 path: 'editar/:id', component:CreareditarcontactoemergenciasComponent
+            }
+        ]
+    },
+    {
+        path:'enfermedades', component:EnfermedadesComponent,
+        children:[
+            {
+                path:'nuevo', component:CreareditarenfermedadesComponent
+
+            },
+            {
+                path:'ediciones/:id', component:CreareditarenfermedadesComponent
             }
         ]
     }
