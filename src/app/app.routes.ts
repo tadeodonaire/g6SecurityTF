@@ -12,6 +12,8 @@ import { ContactoemergenciasComponent } from './components/contactoemergencias/c
 import { CreareditarcontactoemergenciasComponent } from './components/contactoemergencias/creareditarcontactoemergencias/creareditarcontactoemergencias.component';
 import { CreaeditadistritoComponent } from './components/distrito/creaeditadistrito/creaeditadistrito.component';
 import { DistritoComponent } from './components/distrito/distrito.component';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { CreaeditaubicacionComponent } from './components/ubicacion/creaeditaubicacion/creaeditaubicacion.component';
 
 export const routes: Routes = [
     {
@@ -56,6 +58,15 @@ export const routes: Routes = [
             {
                 path: 'registrar', 
                 component:CreaeditadistritoComponent
+            }
+        ]
+    },
+    {
+        path: 'ubicaciones', component: UbicacionComponent,
+        children: [
+            {
+                path: 'registrar', 
+                component:CreaeditaubicacionComponent
             }
         ]
     },
