@@ -4,6 +4,20 @@
   <div>
     <button
       mat-button
+      [matMenuTriggerFor]="menuSV53"
+      style="color: rgb(0, 0, 0)"
+    >
+      Menu
+    </button>
+  </div>
+
+  <mat-menu #menuSV53="matMenu">
+    <button mat-menu-item routerLink="/menu">Mostrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
       [matMenuTriggerFor]="menuSV64"
       style="color: rgb(0, 0, 0)"
     >
