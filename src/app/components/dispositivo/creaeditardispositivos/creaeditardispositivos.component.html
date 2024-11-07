@@ -1,0 +1,41 @@
+<body>
+    <div class="container">
+        <div><h1 class="tituloCentral">Registro de Dispositivo</h1></div>
+        <div class="contenedorForm">
+          <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+            
+            <h6 class="tituloForm">Dispositivo</h6>
+      
+            <section class="contenedor">
+    
+            <mat-form-field>
+              <mat-label>Contacto Autoridad</mat-label>
+              <mat-select matInput placeholder="Contacto Autoridad" formControlName="hcontactoAutoridad">
+                @for (m of listaContactoAutoridad; track m) {
+                <mat-option [value]="m.idContacAuto">{{ m.nombre_contac_Auto + ' - ' + m.numeTelefono_contac_Auto}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+            <br>
+            
+
+              <mat-form-field>
+                <mat-label>Contacto Emergencia</mat-label>
+                <mat-select matInput placeholder="Contacto Emergencia" formControlName="hcontactoEmergencia">
+                  @for (m of listaContactoEmergencias; track m) {
+                  <mat-option [value]="m.idContacto">{{ m.nombre_contacto + ' - ' + m.num_telefono_contacto + ' - ' + m.relacion_contacto}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+              <br>
+            
+            </section>
+    
+            <div>
+              <button mat-flat-button class="custom-button" type="submit">Aceptar</button>
+            </div>
+        </form>
+        </div>
+      </div>
+      
+    </body>
