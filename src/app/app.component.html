@@ -145,6 +145,23 @@
     <button mat-menu-item routerLink="/detalleMedico/nuevo">Registrar</button>
   </mat-menu>
 
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV54"
+      style="color: rgb(0, 0, 0)"
+    >
+      Dispositivos
+    </button>
+  </div>
+
+  <mat-menu #menuSV54="matMenu">
+    <button mat-menu-item routerLink="/dispositivo">Listar</button>
+  
+    <button mat-menu-item routerLink="/dispositivo/nuevo">Registrar</button>
+  </mat-menu>
+
+
 
 </mat-toolbar>
 

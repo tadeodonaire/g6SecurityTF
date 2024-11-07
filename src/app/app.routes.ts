@@ -18,6 +18,8 @@ import { CreaeditadistritoComponent } from './components/distrito/creaeditadistr
 import { DistritoComponent } from './components/distrito/distrito.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { CreaeditaubicacionComponent } from './components/ubicacion/creaeditaubicacion/creaeditaubicacion.component';
+import { DispositivoComponent } from './components/dispositivo/dispositivo.component';
+import { CreaeditardispositivosComponent } from './components/dispositivo/creaeditardispositivos/creaeditardispositivos.component';
 
 
 export const routes: Routes = [
@@ -72,7 +74,8 @@ export const routes: Routes = [
                 path:'nuevo', component:CreareditardetallemedicoComponent
             }
         ]
-    },{
+    },
+    {
         path: 'Distritos', component: DistritoComponent,
         children: [
             {
@@ -109,6 +112,14 @@ export const routes: Routes = [
             },
             {
                 path: 'editar/:id', component:CreareditarcontactoemergenciasComponent
+            }
+        ]
+    },
+    {
+        path:'dispositivo', component:DispositivoComponent,
+        children:[
+            {
+                path:'nuevo', component:CreaeditardispositivosComponent
             }
         ]
     }
