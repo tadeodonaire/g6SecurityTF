@@ -20,9 +20,13 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { CreaeditaubicacionComponent } from './components/ubicacion/creaeditaubicacion/creaeditaubicacion.component';
 import { DispositivoComponent } from './components/dispositivo/dispositivo.component';
 import { CreaeditardispositivosComponent } from './components/dispositivo/creaeditardispositivos/creaeditardispositivos.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 export const routes: Routes = [
+    {
+        path:'menu', component:MenuComponent
+    },
     {
         path:'usuarios', component:UserComponent,
         children:[
