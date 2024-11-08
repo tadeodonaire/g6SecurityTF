@@ -1,0 +1,137 @@
+<header>
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul #navLinks class="nav-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="login-button">
+        <a href="#" class="btn-login">Iniciar Sesión</a>
+      </div>
+      <div #hamburger class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </header>
+  <section class="landing-section">
+    <div class="landing-content">
+      <h1>SECURITY</h1>
+      <p>Gestiona tus contactos de emergencia, accede a tu historial clínico y comparte tu ubicación fácilmente.</p>
+      <a href="#" class="cta-button">Quiero empezar</a>
+    </div>
+    <div class="landing-images">
+      <img src="ruta/a/tu/imagen1.png" alt="Seguridad Digital" />
+      <img src="ruta/a/tu/imagen2.png" alt="Contacto de Emergencia" />
+      <img src="ruta/a/tu/imagen3.png" alt="Historial Clínico" />
+      <img src="ruta/a/tu/imagen4.png" alt="Ubicación" />
+    </div>
+  </section>
+  
+  <section class="about-section">
+    <div class="about-content">
+      <h1>Sobre Nosotros</h1>
+      <a href="#" class="about-button">Quiero saber más</a>
+    </div>
+    <div class="about-description">
+      <p>Somos un grupo de <span class="highlight">[Desarrolladores/Nombre]</span> que desean ayudar a las personas a que se sientan más seguras cuando salen a las calles mediante el rápido llamado a los contactos de emergencia.</p>
+    </div>
+  </section>
+  
+  <section class="features-section">
+    <div class="feature">
+      <i class="fas fa-star feature-icon"></i>
+      <h3>Siéntete seguro</h3>
+      <p>Con SECURITY camina con confianza por las calles.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-star feature-icon"></i>
+      <h3>Cuida tu salud</h3>
+      <p>En SECURITY tendrás acceso a tu historial médico en todo momento, igual que los servicios de emergencia.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-star feature-icon"></i>
+      <h3>Facilidad</h3>
+      <p>SECURITY hace más rápido el contactar a los servicios de emergencia.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-star feature-icon"></i>
+      <h3>Fácil manejo</h3>
+      <p>SECURITY tiene herramientas que te facilitan el funcionamiento de la aplicación.</p>
+    </div>
+  </section>
+  
+  
+  <section class="testimonials-section">
+    <h2>COMENTARIOS</h2>
+    <div class="carousel">
+      <div #testimonialsContainer class="testimonials-container">
+        <div class="testimonial-card">
+          <img src="ruta/a/tu/avatar1.png" alt="Avatar de Leonardo" class="testimonial-avatar">
+          <h3>Nombre: Leonardo</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <p>Hola, gracias a esta aplicación pude llamar fácil a la policía cuando entraron a robar a mi casa.</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="ruta/a/tu/avatar2.png" alt="Avatar de Alexandra" class="testimonial-avatar">
+          <h3>Nombre: Alexandra</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <p>Hola, gracias a esta aplicación pude llamar fácil a la policía cuando entraron a robar a mi casa.</p>
+        </div>
+        <!-- Add more testimonials here if needed -->
+      </div>
+      <div #indicators class="carousel-indicators">
+        <span class="indicator active" (click)="currentSlide(0)"></span>
+        <span class="indicator" (click)="currentSlide(1)"></span>
+        <!-- Add more indicators if you have more slides -->
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  <footer class="footer">
+    <div class="footer-section about">
+      <h2>SECURITY</h2>
+      <p>Es una startup dedicada a la seguridad de las personas. Nos enfocamos en todas las personas debido a la inseguridad que sienten hoy en día.</p>
+      <p>&copy; 2024 Next Evolution. Todos los derechos reservados</p>
+    </div>
+  
+    <div class="footer-section navigation">
+      <h3>NAVEGACIÓN</h3>
+      <ul>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Nuestros Servicios</a></li>
+        <li><a href="#">Comentarios</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  
+    <div class="footer-section contact">
+      <h3>CONTACTOS</h3>
+      <p><strong>Email:</strong> securityapp.com</p>
+      <p><strong>Phones:</strong> (808) 768-9375 or (303) 896-3926</p>
+    </div>
+  </footer>
+  
+  
