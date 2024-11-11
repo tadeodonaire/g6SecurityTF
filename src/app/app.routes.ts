@@ -21,6 +21,8 @@ import { CreaeditaubicacionComponent } from './components/ubicacion/creaeditaubi
 import { DispositivoComponent } from './components/dispositivo/dispositivo.component';
 import { CreaeditardispositivosComponent } from './components/dispositivo/creaeditardispositivos/creaeditardispositivos.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { CreaeditahistorialubicacionComponent } from './components/historialubicacion/creaeditahistorialubicacion/creaeditahistorialubicacion.component';
+import { HistorialubicacionComponent } from './components/historialubicacion/historialubicacion.component';
 
 
 export const routes: Routes = [
@@ -126,5 +128,13 @@ export const routes: Routes = [
                 path:'nuevo', component:CreaeditardispositivosComponent
             }
         ]
+    },
+    {
+        path:'historialubicaciones', component:HistorialubicacionComponent,
+        children:[
+            {
+                path:'registrar', component:CreaeditahistorialubicacionComponent
+            },
+        ],
     }
 ];
