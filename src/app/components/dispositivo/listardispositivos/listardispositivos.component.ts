@@ -9,19 +9,19 @@ import { DispositivoService } from '../../../services/dispositivo.service';
 @Component({
   selector: 'app-listardispositivos',
   standalone: true,
-  imports: [MatTableModule, RouterModule,MatPaginator],
+  imports: [MatTableModule, RouterModule, MatPaginator],
   templateUrl: './listardispositivos.component.html',
   styleUrl: './listardispositivos.component.css'
 })
 export class ListardispositivosComponent implements OnInit{
-  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4'];
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5'];
   dataSource: MatTableDataSource<dispositivo> = new MatTableDataSource();
-  constructor(private diS: DispositivoService) {}
+  constructor(private dS: DispositivoService) {}
   ngOnInit(): void {
-    this.diS.list().subscribe((data) => {
+    this.dS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
-    this.diS.getList().subscribe((data) => {
+    this.dS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
 }

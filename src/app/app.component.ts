@@ -8,6 +8,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
 import { ContactoautoridadesComponent } from "./components/contactoautoridades/contactoautoridades.component";
 import { ContactoemergenciasComponent } from "./components/contactoemergencias/contactoemergencias.component";
+import { DispositivoComponent } from "./components/dispositivo/dispositivo.component";
 
 @Component({
   selector: "app-root",
@@ -18,6 +19,7 @@ import { ContactoemergenciasComponent } from "./components/contactoemergencias/c
     AlergiasComponent,
     ContactoautoridadesComponent,
     ContactoemergenciasComponent,
+    DispositivoComponent,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
