@@ -82,7 +82,7 @@ export class CreareditarenfermedadesComponent implements  OnInit{
         });
       }
     }
-    this.router.navigate(['enfermedades']);
+    this.router.navigate(['enfermedad']);
   }
 
   init() {
