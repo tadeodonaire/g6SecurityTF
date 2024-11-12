@@ -7,7 +7,7 @@
         <mat-label>Ciudades</mat-label>
         <mat-select formControlName="hciudad">
           <mat-option *ngFor="let c of listaCiudades" [value]="c.idCiudad">
-            {{ c.nombre_ciudad }}
+            {{ c.nombre_ciudad }} / ID: {{c.idCiudad}}
           </mat-option>
         </mat-select>
       </mat-form-field>

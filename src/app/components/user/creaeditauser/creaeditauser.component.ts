@@ -1,7 +1,6 @@
 import {
   Component,
   signal,
-  ChangeDetectionStrategy,
   OnInit,
 } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -37,34 +36,32 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './creaeditauser.component.html',
   styleUrls: ['./creaeditauser.component.css'],
 })
-
 export class CreaeditauserComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   user: Users = new Users();
   errorMessage = signal('');
   hide = signal(true);
-  id:number=0;
-  edicion:boolean=false;
+  id: number = 0;
+  edicion: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private uS: UserService,
     private router: Router,
-    private route:ActivatedRoute
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-
-    this.route.params.subscribe((data: Params)=>{
-      this.id=data['id'];
-      this.edicion=data['id'] !=null;
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
       this.init();
-    })
+    });
 
     this.form = this.formBuilder.group({
       hcodigo: [''],
@@ -86,7 +83,7 @@ export class CreaeditauserComponent implements OnInit {
 
   aceptar() {
     if (this.form.valid) {
-      this.user.idUsario=this.form.value.hcodigo;
+      this.user.idUsario = this.form.value.hcodigo;
       this.user.us_nombre = this.form.value.hnombre;
       this.user.us_apellido = this.form.value.hapellido;
       this.user.us_telefono = this.form.value.hcelular;
@@ -96,31 +93,30 @@ export class CreaeditauserComponent implements OnInit {
       this.user.username = this.form.value.husuario;
       this.user.password = this.form.value.hcontrasena;
 
-      if(this.edicion) {
-        this.uS.update(this.user).subscribe((data) => {
+      if (this.edicion) {
+        this.uS.update(this.user).subscribe(() => {
           this.uS.list().subscribe((data) => {
             this.uS.setList(data);
           });
         });
       } else {
-        this.uS.insert(this.user).subscribe((data) => {
+        this.uS.insert(this.user).subscribe(() => {
           this.uS.list().subscribe((data) => {
             this.uS.setList(data);
           });
         });
       }
 
-      
+      this.router.navigate(['usuarios']);
     } else {
-      this.form.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar mensajes de error
-    }this.router.navigate(['usuarios']);
-    
+      this.form.markAllAsTouched();
+    }
   }
 
-  init(){
-    if(this.edicion){
-      this.uS.listId(this.id).subscribe((data)=>{
-        this.form=new FormGroup({
+  init() {
+    if (this.edicion) {
+      this.uS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
           hcodigo: new FormControl(data.idUsario),
           hnombre: new FormControl(data.us_nombre),
           hapellido: new FormControl(data.us_apellido),
@@ -129,7 +125,7 @@ export class CreaeditauserComponent implements OnInit {
           hfecha: new FormControl(data.us_fechanacimiento),
           hemail: new FormControl(data.us_email),
           husuario: new FormControl(data.username),
-          hcontrasena: new FormControl(data.password)
+          hcontrasena: new FormControl(data.password),
         });
       });
     }
