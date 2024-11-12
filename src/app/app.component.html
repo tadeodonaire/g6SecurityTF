@@ -98,12 +98,19 @@
   <div>
     <button
       mat-button
-      [matMenuTriggerFor]="menuSV50"
+
+      [matMenuTriggerFor]="menuSV69"
       style="color: rgb(0, 0, 0)"
     >
-      Distritos
+      Enfermedades
     </button>
   </div>
+
+  <mat-menu #menuSV69="matMenu">
+    <button mat-menu-item routerLink="/enfermedad">Listar</button>
+  
+    <button mat-menu-item routerLink="/enfermedad/registrar">Registrar</button>
+  </mat-menu>
 
   <mat-menu #menuSV50="matMenu">
     <button mat-menu-item routerLink="/Distritos">Listar</button>
@@ -191,7 +198,22 @@
     <button mat-menu-item routerLink="/historialubicaciones/registrar">Registrar</button>
   </mat-menu>
 
+  <div>
+    <button
+      mat-button
 
+      [matMenuTriggerFor]="menuSV56"
+      style="color: rgb(0, 0, 0)"
+    >
+      Roles
+    </button>
+  </div>
+
+  <mat-menu #menuSV56="matMenu">
+    <button mat-menu-item routerLink="/roles">Listar</button>
+  
+    <button mat-menu-item routerLink="/roles/registrar">Registrar</button>
+  </mat-menu>
 
 </mat-toolbar>
 

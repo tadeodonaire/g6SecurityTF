@@ -14,6 +14,9 @@ import { ContactoautoridadesComponent } from './components/contactoautoridades/c
 import { CreaeditacontactoautoridadeComponent } from './components/contactoautoridades/creaeditacontactoautoridade/creaeditacontactoautoridade.component';
 import { ContactoemergenciasComponent } from './components/contactoemergencias/contactoemergencias.component';
 import { CreareditarcontactoemergenciasComponent } from './components/contactoemergencias/creareditarcontactoemergencias/creareditarcontactoemergencias.component';
+import { EnfermedadesComponent } from './components/enfermedades/enfermedades.component';
+import { CreareditarenfermedadesComponent } from './components/enfermedades/creareditarenfermedades/creareditarenfermedades.component';
+import { CreaeditahistorialubicacionComponent } from './components/historialubicacion/creaeditahistorialubicacion/creaeditahistorialubicacion.component';
 import { CreaeditadistritoComponent } from './components/distrito/creaeditadistrito/creaeditadistrito.component';
 import { DistritoComponent } from './components/distrito/distrito.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
@@ -21,9 +24,9 @@ import { CreaeditaubicacionComponent } from './components/ubicacion/creaeditaubi
 import { DispositivoComponent } from './components/dispositivo/dispositivo.component';
 import { CreaeditardispositivosComponent } from './components/dispositivo/creaeditardispositivos/creaeditardispositivos.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { CreaeditahistorialubicacionComponent } from './components/historialubicacion/creaeditahistorialubicacion/creaeditahistorialubicacion.component';
 import { HistorialubicacionComponent } from './components/historialubicacion/historialubicacion.component';
-
+import { RolesComponent } from './components/roles/roles.component';
+import { CreareditarrolesComponent } from './components/roles/creareditarroles/creareditarroles.component';
 
 export const routes: Routes = [
     {
@@ -122,6 +125,18 @@ export const routes: Routes = [
         ]
     },
     {
+        path:'enfermedad', component:EnfermedadesComponent,
+        children:[
+            {
+                path:'registrar', component:CreareditarenfermedadesComponent
+
+            },
+            {
+                path:'editar/:id', component:CreareditarenfermedadesComponent
+            }
+        ]
+    },
+    {
         path:'dispositivo', component:DispositivoComponent,
         children:[
             {
@@ -136,5 +151,18 @@ export const routes: Routes = [
                 path:'registrar', component:CreaeditahistorialubicacionComponent
             },
         ],
+
+    },
+    {
+        path:'roles', component:RolesComponent,
+        children:[
+            {
+                path:'registrar', component:CreareditarrolesComponent
+
+            },
+            {
+                path:'editar/:id', component:CreareditarrolesComponent
+            }
+        ]
     }
 ];
