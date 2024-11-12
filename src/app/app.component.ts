@@ -6,9 +6,11 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
+import { EnfermedadesComponent } from "./components/enfermedades/enfermedades.component";
 import { ContactoautoridadesComponent } from "./components/contactoautoridades/contactoautoridades.component";
 import { ContactoemergenciasComponent } from "./components/contactoemergencias/contactoemergencias.component";
 import { DispositivoComponent } from "./components/dispositivo/dispositivo.component";
+import { RolesComponent } from "./components/roles/roles.component";
 
 @Component({
   selector: "app-root",
@@ -25,6 +27,8 @@ import { DispositivoComponent } from "./components/dispositivo/dispositivo.compo
     MatMenuModule,
     MatButtonModule,
     RouterModule,
+    EnfermedadesComponent,
+    RolesComponent
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",

@@ -1,0 +1,37 @@
+<body>
+    <div class="container" >
+        <div><h1 class="tituloCentral">Registro de Roles</h1></div>
+        <div class="contenedorForm">
+          <form class="example-form" [formGroup]="form" (submit)="Registrar()">
+            
+            <h6 class="tituloForm">Roles</h6>
+    
+            <section class="contenedor">
+            
+              <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>Id</mat-label>
+                <input matInput formControlName="hid" />
+              </mat-form-field>
+              <br/>
+    
+            <mat-form-field class="example-full-width">
+              <mat-label>Rol</mat-label>
+              <input matInput placeholder="Rol" formControlName="hrol" />
+            </mat-form-field>
+            <br>
+  
+            <mat-form-field class="example-full-width">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="Usuario" formControlName="husuario" />
+            </mat-form-field>
+            <br>
+
+           </section>
+      
+            <div>
+              <button mat-flat-button class="custom-button" type="submit">Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </body>
