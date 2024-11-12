@@ -27,6 +27,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HistorialubicacionComponent } from './components/historialubicacion/historialubicacion.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { CreareditarrolesComponent } from './components/roles/creareditarroles/creareditarroles.component';
+import { ReporteComponent } from './components/reporte/reporte.component';
+import { ReportecantidadrelacioncontactosComponent } from './components/reporte/reportecantidadrelacioncontactos/reportecantidadrelacioncontactos.component';
 
 export const routes: Routes = [
     {
@@ -162,6 +164,14 @@ export const routes: Routes = [
             },
             {
                 path:'editar/:id', component:CreareditarrolesComponent
+            }
+        ]
+    },
+    {
+        path:'reportes', component:ReporteComponent,
+        children:[
+            {
+                path:'cantidadrelacioncontactos', component:ReportecantidadrelacioncontactosComponent
             }
         ]
     }
