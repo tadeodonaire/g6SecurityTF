@@ -1,0 +1,55 @@
+<div>
+    <div><h1></h1></div>
+    <div>
+        <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+        
+            <mat-form-field>
+                <mat-label>Fecha de mantenimiento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="hfecha">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>hora</mat-label>
+              <input matInput formControlName="hhora" />
+            </mat-form-field>
+            <br/>    
+
+            <mat-form-field>
+              <mat-label>Latitud</mat-label>
+              <mat-select  formControlName="hlatitud">
+                @for (u of listaLatitud; track u) {
+                <mat-option [value]="u.IdUbicacion">{{ u.latitud }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+            <br>       
+            
+            <mat-form-field>
+                <mat-label>Longitud</mat-label>
+                <mat-select  formControlName="hlongitud">
+                  @for (u of listaLongitud; track u) {
+                  <mat-option [value]="u.IdUbicacion">{{ u.longitud }}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Nombre de Dispositivo</mat-label>
+                <mat-select  formControlName="hdispositivo">
+                  @for (d of listaDispositivos; track d) {
+                  <mat-option [value]="d.idispositivo">{{ d.nombre_dispositivo }}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+            <br>      
+
+            <div>
+              <button mat-flat-button class="custom-button">Aceptar</button>
+            </div>
+          </form>
+    </div>
+</div>

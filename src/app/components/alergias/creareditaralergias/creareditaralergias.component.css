@@ -1,7 +1,9 @@
 body {
     background-image: url(../../../../assets/images/image\ 1.png);
+    font-family: Arial, sans-serif;background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
-    height: 100vh;
 }
 /*="text-align: center;margin:5%"-->*/
 .container {

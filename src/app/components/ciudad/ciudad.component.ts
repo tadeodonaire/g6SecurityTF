@@ -5,7 +5,7 @@ import { ListarciudadComponent } from './listarciudad/listarciudad.component';
 @Component({
   selector: 'app-ciudad',
   standalone: true,
-  imports: [RouterOutlet,ListarciudadComponent],
+  imports: [RouterOutlet, ListarciudadComponent],
   templateUrl: './ciudad.component.html',
   styleUrl: './ciudad.component.css'
 })

@@ -9,5 +9,4 @@ export class Users {
   username: string = ""
   password: string = ""
   enabled: boolean = true
-
 }

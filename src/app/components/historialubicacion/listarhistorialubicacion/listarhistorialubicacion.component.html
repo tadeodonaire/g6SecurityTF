@@ -1,0 +1,55 @@
+<div>
+    <div><h1></h1></div>
+    <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="c1">
+              <th mat-header-cell *matHeaderCellDef> Codigo </th>
+              <td mat-cell *matCellDef="let element"> {{element.IdHistorial_Ubicacion}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="c2">
+              <th mat-header-cell *matHeaderCellDef> Fecha </th>
+              <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="c3">
+              <th mat-header-cell *matHeaderCellDef> Hora </th>
+              <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="c4">
+              <th mat-header-cell *matHeaderCellDef> Latitud </th>
+              <td mat-cell *matCellDef="let element"> {{element.ubicacion.latitud}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="c5">
+                <th mat-header-cell *matHeaderCellDef> Logitud </th>
+                <td mat-cell *matCellDef="let element"> {{element.ubicacion.longitud}} </td>
+              </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="c6">
+              <th mat-header-cell *matHeaderCellDef> Nombre del Dispositivo </th>
+              <td mat-cell *matCellDef="let element"> {{element.dispositivo.nombre_dispositivo}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 10,15]"
+                 showFirstLastButtons
+                 aria-label="Selecciona la página">
+            </mat-paginator>
+            <br>
+    </div>
+</div>

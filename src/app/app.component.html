@@ -4,6 +4,20 @@
   <div>
     <button
       mat-button
+      [matMenuTriggerFor]="menuSV53"
+      style="color: rgb(0, 0, 0)"
+    >
+      Menu
+    </button>
+  </div>
+
+  <mat-menu #menuSV53="matMenu">
+    <button mat-menu-item routerLink="/menu">Mostrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
       [matMenuTriggerFor]="menuSV64"
       style="color: rgb(0, 0, 0)"
     >
@@ -84,6 +98,7 @@
   <div>
     <button
       mat-button
+
       [matMenuTriggerFor]="menuSV69"
       style="color: rgb(0, 0, 0)"
     >
@@ -95,6 +110,109 @@
     <button mat-menu-item routerLink="/enfermedad">Listar</button>
   
     <button mat-menu-item routerLink="/enfermedad/registrar">Registrar</button>
+  </mat-menu>
+
+  <mat-menu #menuSV50="matMenu">
+    <button mat-menu-item routerLink="/Distritos">Listar</button>
+  
+    <button mat-menu-item routerLink="/Distritos/registrar">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV51"
+      style="color: rgb(0, 0, 0)"
+    >
+      Ubicaciones
+    </button>
+  </div>
+
+  <mat-menu #menuSV51="matMenu">
+    <button mat-menu-item routerLink="/ubicaciones">Listar</button>
+  
+    <button mat-menu-item routerLink="/ubicaciones/registrar">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV52"
+      style="color: rgb(0, 0, 0)"
+    >
+      Historial Clinico
+    </button>
+  </div>
+
+  <mat-menu #menuSV52="matMenu">
+    <button mat-menu-item routerLink="/historialClinico">Listar</button>
+  
+    <button mat-menu-item routerLink="/historialClinico/nuevo">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV53"
+      style="color: rgb(0, 0, 0)"
+    >
+      Detalle Medico
+    </button>
+  </div>
+
+  <mat-menu #menuSV53="matMenu">
+    <button mat-menu-item routerLink="/detalleMedico">Listar</button>
+  
+    <button mat-menu-item routerLink="/detalleMedico/nuevo">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV54"
+      style="color: rgb(0, 0, 0)"
+    >
+      Dispositivos
+    </button>
+  </div>
+
+  <mat-menu #menuSV54="matMenu">
+    <button mat-menu-item routerLink="/dispositivo">Listar</button>
+  
+    <button mat-menu-item routerLink="/dispositivo/nuevo">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuSV55"
+      style="color: rgb(0, 0, 0)"
+    >
+      Historial Ubicacion
+    </button>
+  </div>
+
+  <mat-menu #menuSV55="matMenu">
+    <button mat-menu-item routerLink="/historialubicaciones">Listar</button>
+  
+    <button mat-menu-item routerLink="/historialubicaciones/registrar">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
+
+      [matMenuTriggerFor]="menuSV56"
+      style="color: rgb(0, 0, 0)"
+    >
+      Roles
+    </button>
+  </div>
+
+  <mat-menu #menuSV56="matMenu">
+    <button mat-menu-item routerLink="/roles">Listar</button>
+  
+    <button mat-menu-item routerLink="/roles/registrar">Registrar</button>
   </mat-menu>
 
 </mat-toolbar>

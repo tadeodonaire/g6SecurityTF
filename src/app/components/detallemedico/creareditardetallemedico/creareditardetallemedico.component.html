@@ -1,0 +1,41 @@
+<body>
+    <div class="container">
+        <div><h1 class="tituloCentral">Registro de Detalle Medico</h1></div>
+        <div class="contenedorForm">
+          <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+            
+            <h6 class="tituloForm">Detalle Medico</h6>
+      
+            <section class="contenedor">
+    
+            <mat-form-field>
+              <mat-label>Alergia</mat-label>
+              <mat-select matInput placeholder="Alergias" formControlName="halergia">
+                @for (m of listaAlergias; track m) {
+                <mat-option [value]="m.idAlergias">{{ m.nombre_alergias}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+            <br>
+            
+
+              <mat-form-field>
+                <mat-label>Historial Clinico</mat-label>
+                <mat-select matInput placeholder="Historial Clinico" formControlName="hhistoriaClinica">
+                  @for (m of listaHistorialClinico; track m) {
+                  <mat-option [value]="m.idHistorialClinico">{{ m.users.us_nombre + ' ' + m.users.us_apellido + ' - ' + m.seguroMed}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+              <br>
+            
+            </section>
+    
+            <div>
+              <button mat-flat-button class="custom-button" type="submit">Aceptar</button>
+            </div>
+        </form>
+        </div>
+      </div>
+      
+    </body>
