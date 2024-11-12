@@ -32,6 +32,8 @@ export class CreareditardetallemedicoComponent implements OnInit{
   listaHistorialClinico: Historialclinico[] = [];
   listaAlergias: Alergias[] = [];
   maint: Detallemedico = new Detallemedico();
+  
+
   constructor(
     private formBuilder: FormBuilder,
     private uS: HistorialclinicoService,

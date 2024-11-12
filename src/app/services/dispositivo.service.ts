@@ -12,7 +12,7 @@ const base_url = environment.base;
 })
 
 export class DispositivoService{
-    private url=`${base_url}/Dispositivo`
+    private url=`${base_url}/dispositivos`
   private listaCambio = new Subject<dispositivo[]>();
 
   constructor(private http: HttpClient) {}
