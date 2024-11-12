@@ -7,7 +7,7 @@ import { Enfermedades } from '../models/Enfermedades';
 const base_url = environment.base;
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class EnfermedadesService {
   private url = `${base_url}/enfermedades`;

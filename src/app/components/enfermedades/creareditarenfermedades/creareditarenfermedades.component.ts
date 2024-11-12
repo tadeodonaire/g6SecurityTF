@@ -31,12 +31,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   templateUrl: './creareditarenfermedades.component.html',
   styleUrl: './creareditarenfermedades.component.css'
 })
-export class CreareditarenfermedadesComponent {
-  form: FormGroup = new FormGroup({});
-  enfermedades: Enfermedades = new Enfermedades();
- 
-  id:number=0;
-  edicion:boolean=false;
+export class CreareditarenfermedadesComponent implements  OnInit{
+  form: FormGroup =  new FormGroup({});
+  enfermedades: Enfermedades=new Enfermedades();
+
+  id: number = 0;
+  edicion: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -44,35 +44,37 @@ export class CreareditarenfermedadesComponent {
     private router: Router,
     private route: ActivatedRoute
   ) {}
+
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
+      //data de la tabla para mostrarla
       this.init();
     });
 
     this.form = this.formBuilder.group({
-      hid: [''],
+      hidenfermedades: [''],
       hnombre: ['', Validators.required],
       hdescripcion: ['', Validators.required],
       htipo: ['', Validators.required],
     });
   }
-  aceptar() {
+  Registrar() {
     if (this.form.valid) {
-      this.enfermedades.IdEnfermedades = this.form.value.hid;
-      this.enfermedades.nombre_enfermedad = this.form.value.hnombre;
+      this.enfermedades.idEnfermedades = this.form.value.hidenfermedades;
+      this.enfermedades.nombre_enfermedad= this.form.value.hnombre;
       this.enfermedades.descripcion_enfermedad = this.form.value.hdescripcion;
       this.enfermedades.tipo_enfermedad = this.form.value.htipo;
+
       if (this.edicion) {
         //update
-        this.eS.update(this.enfermedades).subscribe(data=> {
-          this.eS.list().subscribe(data=>{
-            this.eS.setList(data)
-          })
+        this.eS.update(this.enfermedades).subscribe((data) => {
+          this.eS.list().subscribe((data) => {
+            this.eS.setList(data);
+          });
         });
       } else {
-        //insertar
         this.eS.insert(this.enfermedades).subscribe((data) => {
           this.eS.list().subscribe((data) => {
             this.eS.setList(data);
@@ -82,14 +84,15 @@ export class CreareditarenfermedadesComponent {
     }
     this.router.navigate(['enfermedades']);
   }
+
   init() {
     if (this.edicion) {
       this.eS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          hcodigo: new FormControl(data.IdEnfermedades),
+          hidenfermedades: new FormControl(data.idEnfermedades),
           hnombre: new FormControl(data.nombre_enfermedad),
-          hmarca: new FormControl(data.descripcion_enfermedad),
-          hfecha: new FormControl(data.tipo_enfermedad),
+          hdescripcion: new FormControl(data.descripcion_enfermedad),
+          htipo: new FormControl(data.tipo_enfermedad),
         });
       });
     }

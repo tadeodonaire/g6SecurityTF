@@ -76,11 +76,11 @@ export const routes: Routes = [
         path:'enfermedades', component:EnfermedadesComponent,
         children:[
             {
-                path:'nuevo', component:CreareditarenfermedadesComponent
+                path:'registrar', component:CreareditarenfermedadesComponent
 
             },
             {
-                path:'ediciones/:id', component:CreareditarenfermedadesComponent
+                path:'editar/:id', component:CreareditarenfermedadesComponent
             }
         ]
     }
