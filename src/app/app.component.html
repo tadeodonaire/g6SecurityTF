@@ -50,6 +50,22 @@
   <div>
     <button
       mat-button
+      [matMenuTriggerFor]="menuSV70"
+      style="color: rgb(0, 0, 0)"
+    >
+      Distritos
+    </button>
+  </div>
+
+  <mat-menu #menuSV70="matMenu">
+    <button mat-menu-item routerLink="/Distritos">Listar</button>
+  
+    <button mat-menu-item routerLink="/Distritos/registrar">Registrar</button>
+  </mat-menu>
+
+  <div>
+    <button
+      mat-button
       [matMenuTriggerFor]="menuSV66"
       style="color: rgb(0, 0, 0)"
     >
