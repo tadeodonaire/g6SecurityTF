@@ -231,6 +231,21 @@
     <button mat-menu-item routerLink="/roles/registrar">Registrar</button>
   </mat-menu>
 
+  <div>
+    <button
+      mat-button
+
+      [matMenuTriggerFor]="menuSV71"
+      style="color: rgb(0, 0, 0)"
+    >
+      Reportes
+    </button>
+  </div>
+
+  <mat-menu #menuSV71="matMenu">
+    <button mat-menu-item routerLink="/reportes">Listar</button>
+  </mat-menu>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>
