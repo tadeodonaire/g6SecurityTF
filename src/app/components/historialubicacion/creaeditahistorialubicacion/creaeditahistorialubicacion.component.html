@@ -1,47 +1,64 @@
-<div>
-    <div><h1></h1></div>
-    <div>
-        <form class="example-form" [formGroup]="form" (submit)="aceptar()">
-        
-            <mat-form-field>
-                <mat-label>Fecha de mantenimiento</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="hfecha">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+<body>
+  <div class="register-container">
+    <div><h1 class="title">Registrar Historial de Ubicacion</h1></div>
+    <div class="form-container">
+      <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+        <div class="form-row">
+          <div class="form-column">
+            <mat-form-field class="form-field">
+              <mat-label>Fecha de mantenimiento</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="hfecha"
+              />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-            <br>
+            <br />
 
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width" class="form-field">
               <mat-label>hora</mat-label>
               <input matInput formControlName="hhora" />
             </mat-form-field>
-            <br/>    
-
-            <mat-form-field>
+            <br />
+          </div>
+          <div class="form-column">
+            <mat-form-field class="form-field">
               <mat-label>Latitud y Longitud</mat-label>
-              <mat-select  formControlName="hlatitud">
+              <mat-select formControlName="hlatitud">
                 @for (u of listaLatitud; track u) {
-                <mat-option [value]="u.idUbicacion">({{ u.latitud }}) ; ({{u.longitud}})</mat-option>
+                <mat-option [value]="u.idUbicacion"
+                  >({{ u.latitud }}) ; ({{ u.longitud }})</mat-option
+                >
                 }
               </mat-select>
             </mat-form-field>
-            <br>       
+            <br />
             
-
-            <mat-form-field>
-                <mat-label>Nombre de Dispositivo</mat-label>
-                <mat-select  formControlName="hdispositivo">
-                  @for (d of listaDispositivos; track d) {
-                  <mat-option [value]="d.idispositivo">{{ d.nombre_dispositivo }}</mat-option>
-                  }
-                </mat-select>
-              </mat-form-field>
-            <br>      
-
-            <div>
-              <button mat-flat-button class="custom-button">Aceptar</button>
-            </div>
-          </form>
+            <mat-form-field class="form-field">
+              <mat-label>Nombre de Dispositivo</mat-label>
+              <mat-select formControlName="hdispositivo">
+                @for (d of listaDispositivos; track d) {
+                <mat-option [value]="d.idispositivo">{{
+                  d.nombre_dispositivo
+                }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+            <br />
+          </div>
+        </div>
+        <div class="button-container">
+          <button mat-flat-button class="submit-button" type="submit">
+            Aceptar
+          </button>
+        </div>
+      </form>
     </div>
-</div>
+  </div>
+</body>
