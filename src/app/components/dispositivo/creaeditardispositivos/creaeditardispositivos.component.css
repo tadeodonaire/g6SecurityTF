@@ -1,58 +1,79 @@
+/* Import Catamaran font */
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
+
+
+/* General Page Styles */
 body {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-}
-/*="text-align: center;margin:5%"-->*/
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 5%;
+  background-color: #13132b; /* Dark background color */
+  color: white;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.tituloCentral {
-    color: rgb(0, 0, 0);
-    font-size: 2em;
-    margin-bottom: 20px;
+/* Register Container */
+.register-container {
+  background-color: #13132b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.contenedorForm {
-    background-color: #F1F1F1;
-    width: 60%;
-    max-width: 600px;
-    padding: 40px;
-    border-radius: 21px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+/* Title */
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Catamaran', sans-serif;
+  color: white;
 }
 
-.contenedor {
-    margin-bottom: 20px;
-    width: 100%;
+/* Form Container */
+.form-container {
+  background-color: #b0b0bb; /* Dark background color for the form */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  width: 15%;
+  max-width: 600px;
+  align-items: center;
 }
 
-.tituloForm {
-    font-size: 1.1em;
-    color: #494B6B;
-    font-weight: bold;
+/* Form Row */
+.form-row {
+  display: flex;
+  gap: 20px;
 }
 
-mat-form-field {
-    width: 80%;
-    margin-bottom: 20px;
+/* Form Column */
+.form-column {
+  flex: 1;
 }
 
-.custom-button {
-    background-color: #181A43;   
-    color: white;   
-    padding: 10px 30px;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
+/* Form Fields */
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-.custom-button:hover {
-    background-color: #2a2d63;
+/* Button Styles */
+.button-container {
+  text-align: center;
+}
+
+.submit-button {
+  background-color: #151541;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #1d1d55;;
 }
