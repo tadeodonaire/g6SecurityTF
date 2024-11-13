@@ -29,7 +29,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class CreareditaralergiasComponent implements OnInit{
   form: FormGroup =  new FormGroup({});
   alergia: Alergias=new Alergias();
-
   id: number = 0;
   edicion: boolean = false;
 
@@ -39,7 +38,6 @@ export class CreareditaralergiasComponent implements OnInit{
     private router: Router,
     private route: ActivatedRoute
   ) {}
-
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -47,6 +45,8 @@ export class CreareditaralergiasComponent implements OnInit{
       //data de la tabla para mostrarla
       this.init();
     });
+
+    
 
     this.form = this.formBuilder.group({
       hcodigo: [''],

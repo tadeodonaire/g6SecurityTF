@@ -1,14 +1,13 @@
-<body>
     <div class="container">
         <div><h1 class="tituloCentral">Registro de Detalle Medico</h1></div>
         <div class="contenedorForm">
           <form class="example-form" [formGroup]="form" (submit)="aceptar()">
             
             <h6 class="tituloForm">Detalle Medico</h6>
-      
+            
             <section class="contenedor">
     
-            <mat-form-field>
+            <mat-form-field appearance="outline">
               <mat-label>Alergia</mat-label>
               <mat-select matInput placeholder="Alergias" formControlName="halergia">
                 @for (m of listaAlergias; track m) {
@@ -16,10 +15,18 @@
                 }
               </mat-select>
             </mat-form-field>
-            <br>
+            
+            <mat-form-field appearance="outline">
+              <mat-label>Enfermedades</mat-label>
+              <mat-select matInput placeholder="Enfermedades" formControlName="henfermedad">
+                @for (m of listaEnfermedades; track m) {
+                <mat-option [value]="m.idEnfermedades">{{ m.nombre_enfermedad}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
             
 
-              <mat-form-field>
+              <mat-form-field appearance="outline">
                 <mat-label>Historial Clinico</mat-label>
                 <mat-select matInput placeholder="Historial Clinico" formControlName="hhistoriaClinica">
                   @for (m of listaHistorialClinico; track m) {
@@ -27,7 +34,6 @@
                   }
                 </mat-select>
               </mat-form-field>
-              <br>
             
             </section>
     
@@ -38,4 +44,3 @@
         </div>
       </div>
       
-    </body>
