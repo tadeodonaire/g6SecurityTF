@@ -13,7 +13,7 @@ import { UbicacionService } from '../../../services/ubicacion.service';
 })
 export class ListarubicacionComponent implements OnInit{
 
-  displayedColumns: string[] = ['c5','c2','c3','c4',"c7"]
+  displayedColumns: string[] = ['c1','c5','c2','c3','c4']
   dataSource: MatTableDataSource<Ubicacion> = new MatTableDataSource();
 
   constructor (private uS: UbicacionService) {}
