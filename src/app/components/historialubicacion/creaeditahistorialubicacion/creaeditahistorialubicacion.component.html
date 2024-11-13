@@ -19,24 +19,16 @@
             <br/>    
 
             <mat-form-field>
-              <mat-label>Latitud</mat-label>
+              <mat-label>Latitud y Longitud</mat-label>
               <mat-select  formControlName="hlatitud">
                 @for (u of listaLatitud; track u) {
-                <mat-option [value]="u.IdUbicacion">{{ u.latitud }}</mat-option>
+                <mat-option [value]="u.idUbicacion">({{ u.latitud }}) ; ({{u.longitud}})</mat-option>
                 }
               </mat-select>
             </mat-form-field>
             <br>       
             
-            <mat-form-field>
-                <mat-label>Longitud</mat-label>
-                <mat-select  formControlName="hlongitud">
-                  @for (u of listaLongitud; track u) {
-                  <mat-option [value]="u.IdUbicacion">{{ u.longitud }}</mat-option>
-                  }
-                </mat-select>
-              </mat-form-field>
-            <br>
+
             <mat-form-field>
                 <mat-label>Nombre de Dispositivo</mat-label>
                 <mat-select  formControlName="hdispositivo">
