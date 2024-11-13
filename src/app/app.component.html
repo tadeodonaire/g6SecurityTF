@@ -68,15 +68,15 @@
       mat-button
       [matMenuTriggerFor]="menuSV66"
       style="color: rgb(0, 0, 0)"
-    >
+    ><mat-icon> local_florist</mat-icon>
       Alergias
     </button>
   </div>
 
   <mat-menu #menuSV66="matMenu">
-    <button mat-menu-item routerLink="/alergias">Listar</button>
+    <button mat-menu-item routerLink="/alergias"><mat-icon>list</mat-icon>Listar</button>
   
-    <button mat-menu-item routerLink="/alergias/nuevo">Registrar</button>
+    <button mat-menu-item routerLink="/alergias/nuevo">	<mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
 
   <div>
@@ -156,14 +156,14 @@
       [matMenuTriggerFor]="menuSV52"
       style="color: rgb(0, 0, 0)"
     >
-      Historial Clinico
+    <mat-icon>description</mat-icon>Historial Clinico
     </button>
   </div>
 
   <mat-menu #menuSV52="matMenu">
-    <button mat-menu-item routerLink="/historialClinico">Listar</button>
+    <button mat-menu-item routerLink="/historialClinico"><mat-icon>list</mat-icon>Listar</button>
   
-    <button mat-menu-item routerLink="/historialClinico/nuevo">Registrar</button>
+    <button mat-menu-item routerLink="/historialClinico/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
 
   <div>
@@ -172,14 +172,14 @@
       [matMenuTriggerFor]="menuSV80"
       style="color: rgb(0, 0, 0)"
     >
-      Detalle Medico
+    <mat-icon>book</mat-icon>Detalle Medico
     </button>
   </div>
 
   <mat-menu #menuSV80="matMenu">
-    <button mat-menu-item routerLink="/detalleMedico">Listar</button>
+    <button mat-menu-item routerLink="/detalleMedico"><mat-icon>list</mat-icon>Listar</button>
   
-    <button mat-menu-item routerLink="/detalleMedico/nuevo">Registrar</button>
+    <button mat-menu-item routerLink="/detalleMedico/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
 
   <div>
