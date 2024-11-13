@@ -12,6 +12,8 @@ import { DetallemedicoService } from '../../../services/detallemedico.service';
 import { Router } from '@angular/router';
 import { Alergias } from '../../../models/Alergias';
 import { AlergiasService } from '../../../services/alergia.service';
+import { Enfermedades } from '../../../models/Enfermedades';
+import { EnfermedadesService } from '../../../services/enfermedades.service';
 
 @Component({
   selector: 'app-creareditardetallemedico',
@@ -31,6 +33,7 @@ export class CreareditardetallemedicoComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   listaHistorialClinico: Historialclinico[] = [];
   listaAlergias: Alergias[] = [];
+  listaEnfermedades: Enfermedades[] = [];
   maint: Detallemedico = new Detallemedico();
   
 
@@ -38,6 +41,7 @@ export class CreareditardetallemedicoComponent implements OnInit{
     private formBuilder: FormBuilder,
     private uS: HistorialclinicoService,
     private aS: AlergiasService,
+    private eS: EnfermedadesService,
     private hcS: DetallemedicoService,
     private router: Router
   ) {}
@@ -45,7 +49,8 @@ export class CreareditardetallemedicoComponent implements OnInit{
   
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      halergia: ['', Validators.required],
+      halergia: [],
+      henfermedad: [],
       hhistoriaClinica: ['', Validators.required],
     });
     this.uS.list().subscribe((data) => {
@@ -54,11 +59,15 @@ export class CreareditardetallemedicoComponent implements OnInit{
     this.aS.list().subscribe((data) => {
       this.listaAlergias = data;
     });
+    this.eS.list().subscribe((data) => {
+      this.listaEnfermedades = data;
+    });
   }
  
   aceptar(): void {
     if (this.form.valid) {
       this.maint.alergias.idAlergias = this.form.value.halergia;
+      this.maint.enfermedades.idEnfermedades=this.form.value.henfermedad;
       this.maint.historialClinico.idHistorialClinico = this.form.value.hhistoriaClinica;
 
       this.hcS.insert(this.maint).subscribe((data) => {
