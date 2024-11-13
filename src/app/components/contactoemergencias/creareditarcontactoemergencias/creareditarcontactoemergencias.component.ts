@@ -27,9 +27,9 @@ import { ActivatedRoute, Params , Router} from '@angular/router';
 export class CreareditarcontactoemergenciasComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   contacto: Contactoemergencias = new Contactoemergencias();
-
   id: number = 0;
   edicion: boolean = false;
+  relacion: string[] = ['Madre','Padre','Hermano','Conyuge','Hijo','Otros']
 
   constructor(
     private formBuilder: FormBuilder,
