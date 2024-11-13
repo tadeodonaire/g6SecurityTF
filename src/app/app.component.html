@@ -68,15 +68,15 @@
       mat-button
       [matMenuTriggerFor]="menuSV66"
       style="color: rgb(0, 0, 0)"
-    >
+    ><mat-icon> local_florist</mat-icon>
       Alergias
     </button>
   </div>
 
   <mat-menu #menuSV66="matMenu">
-    <button mat-menu-item routerLink="/alergias">Listar</button>
+    <button mat-menu-item routerLink="/alergias"><mat-icon>list</mat-icon>Listar</button>
   
-    <button mat-menu-item routerLink="/alergias/nuevo">Registrar</button>
+    <button mat-menu-item routerLink="/alergias/nuevo">	<mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
 
   <div>

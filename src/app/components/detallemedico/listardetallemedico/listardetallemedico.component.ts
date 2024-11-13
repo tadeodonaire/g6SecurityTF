@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './listardetallemedico.component.css'
 })
 export class ListardetallemedicoComponent implements OnInit{
-  displayedColumns: string[] = ['c1', 'c2', 'c3'];
+  displayedColumns: string[] = ['c1', 'c2', 'c3','c4'];
   dataSource: MatTableDataSource<Detallemedico> = new MatTableDataSource();
   constructor(private dmS: DetallemedicoService) {}
   ngOnInit(): void {

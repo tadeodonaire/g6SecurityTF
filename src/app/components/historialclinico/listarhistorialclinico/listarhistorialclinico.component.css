@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
+
+.container {
+    display: flex;  /* Utilizamos flexbox para alinear los elementos dentro del contenedor */
+    flex-direction: column;  /* Los elementos hijos se organizan en una columna */
+    align-items: center;  /* Centramos horizontalmente los elementos en el eje X */
+    justify-content: center;  /* Centramos verticalmente los elementos en el eje Y */
+    height: 100vh;  /* La altura del contenedor se ajusta a toda la pantalla */
+    background-color: #13132b;  /* Fondo oscuro estilo terminal para el contenedor */
+    color: #e6e6e6;  /* Color de texto claro para mejorar el contraste */
+}
+/* Title */
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Catamaran', sans-serif;
+  color: white;
+}
+
+.hclinico-table {
+    width: 85%;  /* La tabla ocupa el 85% del ancho disponible */
+    max-width: 1000px;  /* La tabla no superará los 1000px de ancho */
+    background-color: #222246;  /* Fondo oscuro para la tabla */
+    color: #e6e6e6;  /* Texto claro para las celdas de la tabla */
+    border-radius: 10px;  /* Bordes redondeados para dar un aspecto suave */
+    padding: 25px;  /* Espacio interno (padding) alrededor de la tabla */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  /* Sombra alrededor de la tabla para darle profundidad */
+    transition: transform 0.2s ease-in-out;  /* Transición suave en el hover (opcional) */
+}
+
+th {
+    font-weight: bold;  /* Los títulos de las columnas son más gruesos */
+    background-color: #21262d;  /* Fondo oscuro para los encabezados de las columnas */
+    color: #ffffff;  /* Texto blanco para los títulos de las columnas */
+    padding: 15px;  /* Espacio alrededor del texto en los encabezados */
+    text-transform: uppercase;  /* Convierte el texto a mayúsculas */
+}
+
+td {
+    padding: 15px;  /* Espacio interno (padding) dentro de las celdas */
+    border-bottom: 1px solid #30363d;  /* Una línea divisoria entre las filas de la tabla */
+    color: #e6e6e6;  /* Color gris claro para el texto de las celdas */
+}
+
+tr:hover {
+    background-color: #13132b;  /* Cambia el color de fondo cuando el cursor pasa sobre una fila */
+}
+
+
