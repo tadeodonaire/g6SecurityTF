@@ -7,7 +7,7 @@
             
             <section class="contenedor">
     
-            <mat-form-field>
+            <mat-form-field appearance="outline">
               <mat-label>Alergia</mat-label>
               <mat-select matInput placeholder="Alergias" formControlName="halergia">
                 @for (m of listaAlergias; track m) {
@@ -16,7 +16,7 @@
               </mat-select>
             </mat-form-field>
             
-            <mat-form-field>
+            <mat-form-field appearance="outline">
               <mat-label>Enfermedades</mat-label>
               <mat-select matInput placeholder="Enfermedades" formControlName="henfermedad">
                 @for (m of listaEnfermedades; track m) {
@@ -26,7 +26,7 @@
             </mat-form-field>
             
 
-              <mat-form-field>
+              <mat-form-field appearance="outline">
                 <mat-label>Historial Clinico</mat-label>
                 <mat-select matInput placeholder="Historial Clinico" formControlName="hhistoriaClinica">
                   @for (m of listaHistorialClinico; track m) {

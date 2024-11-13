@@ -1,8 +1,8 @@
 <div class="container">
 
-    <div><h1>Lista de Detalle Medico</h1></div>
-      <div>
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 dmedico-table">
+    <div><h1 class="title">Lista de Detalle Medico</h1></div>
+      <div class="dmedico-table">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
               <ng-container matColumnDef="c1">
                 <th mat-header-cell *matHeaderCellDef> Código </th>
@@ -27,9 +27,14 @@
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>          
-            <mat-paginator [pageSizeOptions]="[5, 8, 10, 20, 30]"
-                   showFirstLastButtons
-                   aria-label="Selecciona la página">
-    </mat-paginator>
+            <div class="paginator">
+              <mat-paginator
+                [pageSizeOptions]="[5, 8, 10, 20, 30]"
+                showFirstLastButtons
+                aria-label="Selecciona la página"
+              >
+              </mat-paginator>
+            </div>
       </div>
   </div>
+  
