@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-creaeditaciudad',
@@ -25,6 +26,7 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     ReactiveFormsModule,
     CommonModule,
+    MatIconModule
   ],
   templateUrl: './creaeditaciudad.component.html',
   styleUrl: './creaeditaciudad.component.css',

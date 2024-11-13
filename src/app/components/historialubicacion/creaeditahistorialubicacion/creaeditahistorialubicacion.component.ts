@@ -12,13 +12,14 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatOptionModule, provideNativeDateAdapter } from '@angular/material/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-creaeditahistorialubicacion',
   standalone: true,
   providers: [provideNativeDateAdapter()],
-  imports: [MatDatepickerModule,MatFormField,ReactiveFormsModule,MatInputModule,MatSelectModule,MatButtonModule],
+  imports: [MatDatepickerModule,MatFormField,ReactiveFormsModule,MatInputModule,MatSelectModule,MatButtonModule, CommonModule,MatOptionModule],
   templateUrl: './creaeditahistorialubicacion.component.html',
   styleUrl: './creaeditahistorialubicacion.component.css'
 })
@@ -26,7 +27,6 @@ export class CreaeditahistorialubicacionComponent {
 
   form: FormGroup = new FormGroup({});
   listaLatitud: Ubicacion[] = [];
-  listaLongitud: Ubicacion[] = [];
   listaDispositivos: dispositivo[] = [];
   hubicacion: Historialubicacion = new Historialubicacion();
 
@@ -37,17 +37,13 @@ export class CreaeditahistorialubicacionComponent {
       hfecha: ['', Validators.required],
       hhora: ['', Validators.required],
       hlatitud: ['', Validators.required],
-      hlongitud: ['', Validators.required],
       hdispositivo: ['', Validators.required]
-    });
-    this.dS.list().subscribe((data) => {
-      this.listaDispositivos = data;
     });
     this.uS.list().subscribe((data) => {
       this.listaLatitud = data;
     });
-    this.uS.list().subscribe((data) => {
-      this.listaLongitud = data;
+    this.dS.list().subscribe((data) => {
+      this.listaDispositivos = data;
     });
   }
 
@@ -56,7 +52,6 @@ export class CreaeditahistorialubicacionComponent {
       this.hubicacion.fecha = this.form.value.hfecha;
       this.hubicacion.hora = this.form.value.hhora;
       this.hubicacion.ubicacion.latitud = this.form.value.hlatitud;
-      this.hubicacion.ubicacion.longitud = this.form.value.hlongitud;
       this.hubicacion.dispositivo.nombre_dispositivo = this.form.value.hdispositivo;
 
       this.huS.insert(this.hubicacion).subscribe((data) => {
