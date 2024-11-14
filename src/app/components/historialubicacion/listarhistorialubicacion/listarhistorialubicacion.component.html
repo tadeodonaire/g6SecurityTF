@@ -2,48 +2,41 @@
   <div><h1 class="title">Lista Historial de Ubicacion</h1></div>
   <div class="mat-elevation-z8 security-table">
     <table mat-table [dataSource]="dataSource">
-      <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
+      <!-- ID Column -->
       <ng-container matColumnDef="c1">
         <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.IdHistorial_Ubicacion }}
-        </td>
+        <td mat-cell *matCellDef="let element">{{ element.IdHistorial_Ubicacion }}</td>
       </ng-container>
-      <!-- Name Column -->
+
+      <!-- Fecha Column -->
       <ng-container matColumnDef="c2">
         <th mat-header-cell *matHeaderCellDef>Fecha</th>
         <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
       </ng-container>
 
-      <!-- Weight Column -->
+      <!-- Hora Column -->
       <ng-container matColumnDef="c3">
         <th mat-header-cell *matHeaderCellDef>Hora</th>
         <td mat-cell *matCellDef="let element">{{ element.hora }}</td>
       </ng-container>
 
-      <!-- Symbol Column -->
+      <!-- Latitud Column -->
       <ng-container matColumnDef="c4">
         <th mat-header-cell *matHeaderCellDef>Latitud</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.ubicacion.latitud }}
-        </td>
+        <td mat-cell *matCellDef="let element">{{ element.ubicacion.latitud }}</td>
       </ng-container>
 
-      <!-- Symbol Column -->
+      <!-- Longitud Column -->
       <ng-container matColumnDef="c5">
-        <th mat-header-cell *matHeaderCellDef>Logitud</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.ubicacion.longitud }}
-        </td>
+        <th mat-header-cell *matHeaderCellDef>Longitud</th>
+        <td mat-cell *matCellDef="let element">{{ element.ubicacion.longitud }}</td>
       </ng-container>
 
-      <!-- Symbol Column -->
+      <!-- Nombre del Dispositivo Column -->
       <ng-container matColumnDef="c6">
         <th mat-header-cell *matHeaderCellDef>Nombre del Dispositivo</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.dispositivo.nombre_dispositivo }} -
-          {{ element.dispositivo.us.us_nombre }}
+          {{ element.dispositivo.nombre_dispositivo }} - {{ element.dispositivo.us.us_nombre }}
         </td>
       </ng-container>
 
@@ -55,8 +48,8 @@
       [pageSizeOptions]="[5, 10, 15]"
       showFirstLastButtons
       aria-label="Selecciona la página"
-    >
-    </mat-paginator>
+    ></mat-paginator>
     <br />
   </div>
 </div>
+
