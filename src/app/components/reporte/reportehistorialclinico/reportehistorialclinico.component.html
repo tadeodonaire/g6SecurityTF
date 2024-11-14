@@ -1,0 +1,10 @@
+<div class="container">
+    <h2 class="title">Ingrese el ID del Usuario</h2>
+    <form (submit)="verReporte()" class="form">
+      <mat-form-field appearance="outline" class="input-field">
+        <mat-label>ID del Usuario</mat-label>
+        <input matInput [(ngModel)]="idUsuario" name="idUsuario" type="number" required />
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" class="submit-button">Ver Reporte</button>
+    </form>
+  </div>
