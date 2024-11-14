@@ -46,7 +46,7 @@
                 @for (d of listaDispositivos; track d) {
                 <mat-option [value]="d.idispositivo">{{
                   d.nombre_dispositivo
-                }}</mat-option>
+                }}-{{d.us.us_nombre}}</mat-option>
                 }
               </mat-select>
             </mat-form-field>
