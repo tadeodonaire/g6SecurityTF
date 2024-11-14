@@ -6,7 +6,9 @@
                   The actual rendered columns are set as a property on the row definition" -->
       <ng-container matColumnDef="c1">
         <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let element">{{ element.IdHistorial_Ubicacion }}</td>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IdHistorial_Ubicacion }}
+        </td>
       </ng-container>
       <!-- Name Column -->
       <ng-container matColumnDef="c2">
@@ -40,20 +42,14 @@
       <ng-container matColumnDef="c6">
         <th mat-header-cell *matHeaderCellDef>Nombre del Dispositivo</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.dispositivo.nombre_dispositivo }}
+          {{ element.dispositivo.nombre_dispositivo }} -
+          {{ element.dispositivo.us.us_nombre }}
         </td>
       </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="c6">
-              <th mat-header-cell *matHeaderCellDef> Nombre del Dispositivo </th>
-              <td mat-cell *matCellDef="let element"> {{element.dispositivo.nombre_dispositivo}} -  {{element.dispositivo.us.us_nombre}} </td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
 
     <mat-paginator
       [pageSizeOptions]="[5, 10, 15]"
