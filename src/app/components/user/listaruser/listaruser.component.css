@@ -1,95 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
+
 .container {
-    display: flex;  /* Utilizamos flexbox para alinear los elementos dentro del contenedor */
-    flex-direction: column;  /* Los elementos hijos se organizan en una columna */
-    align-items: center;  /* Centramos horizontalmente los elementos en el eje X */
-    justify-content: center;  /* Centramos verticalmente los elementos en el eje Y */
-    height: 100vh;  /* La altura del contenedor se ajusta a toda la pantalla */
-    background-color: #0d1117;  /* Fondo oscuro estilo terminal para el contenedor */
-    color: #e6e6e6;  /* Color de texto claro para mejorar el contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #13132b; /* Dark background for the entire page */
+    padding: 20px;
 }
 
+/* Title */
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Catamaran', sans-serif;
+    color: white;
+}
+
+/* Table Container with different color from table itself */
 .security-table {
-    width: 85%;  /* La tabla ocupa el 85% del ancho disponible */
-    max-width: 1000px;  /* La tabla no superará los 1000px de ancho */
-    background-color: #161b22;  /* Fondo oscuro para la tabla */
-    color: #e6e6e6;  /* Texto claro para las celdas de la tabla */
-    border-radius: 10px;  /* Bordes redondeados para dar un aspecto suave */
-    padding: 25px;  /* Espacio interno (padding) alrededor de la tabla */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  /* Sombra alrededor de la tabla para darle profundidad */
-    transition: transform 0.2s ease-in-out;  /* Transición suave en el hover (opcional) */
+    background-color: #1a1a3d; /* Dark background color for the table container */
+    width: 85%; /* Table occupies 85% of the available width */
+    max-width: 1000px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Actual table styling */
+table {
+    width: 100%; /* Table takes full width of container */
+    background-color: #222246; /* Specific background color for the table */
+    border-radius: 8px; /* Optional: if you want rounded corners inside */
+    overflow: hidden; /* Clips any overflow if using rounded corners */
 }
 
 th {
-    font-weight: bold;  /* Los títulos de las columnas son más gruesos */
-    background-color: #21262d;  /* Fondo oscuro para los encabezados de las columnas */
-    color: #ffffff;  /* Texto blanco para los títulos de las columnas */
-    padding: 15px;  /* Espacio alrededor del texto en los encabezados */
-    text-transform: uppercase;  /* Convierte el texto a mayúsculas */
+    font-weight: bold;
+    background-color: #1a2b76; /* Darker background for header cells */
+    color: #ffffff; /* White text color for headers */
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-align: left;
+    border-bottom: 2px solid #30363d; /* Dark border for separation */
 }
 
 td {
-    padding: 15px;  /* Espacio interno (padding) dentro de las celdas */
-    border-bottom: 1px solid #30363d;  /* Una línea divisoria entre las filas de la tabla */
-    color: #e6e6e6;  /* Color gris claro para el texto de las celdas */
+    padding: 15px;
+    border-bottom: 1px solid #30363d; /* Divider line between rows */
+    color: #fdfdfd; /* Light gray text color for cells */
+    font-size: 0.9rem;
 }
 
 tr:hover {
-    background-color: #2d333b;  /* Cambia el color de fondo cuando el cursor pasa sobre una fila */
+    background-color: #2a2a4a; /* Background color on row hover */
 }
 
-button.security-action {
-    background-color: #28a745;  /* Color verde para los botones que habilitan/deshabilitan usuarios */
-    border: none;  /* Sin bordes adicionales alrededor del botón */
-    color: white;  /* Texto blanco para contrastar con el fondo verde */
-    padding: 8px 16px;  /* Espaciado interno del botón para hacerlo más grande y cómodo de hacer clic */
-    border-radius: 5px;  /* Bordes redondeados para el botón */
-    cursor: pointer;  /* Cambia el cursor a mano al pasar sobre el botón */
-    transition: background-color 0.3s ease-in-out;  /* Transición suave al cambiar el color en el hover */
-    margin-top: 10px;  /* Espacio superior entre el botón y el contenido anterior */
+/* Icon Styles */
+td mat-icon {
+    cursor: pointer;
+    vertical-align: middle;
 }
 
-button.security-action:hover {
-    background-color: #218838;  /* Cambia el color del botón cuando el cursor pasa sobre él (más oscuro) */
+td mat-icon.delete-icon {
+    color: brown; /* Red color for delete icon */
 }
 
-/* Estilo mejorado para el input de contraseña */
-input[readonly] {
-    border: 1px solid #30363d;  /* Borde del campo de texto */
-    background-color: #161b22;  /* Fondo del input para combinar con el tema oscuro */
-    color: #e6e6e6;  /* Texto claro */
-    padding: 10px 14px;  /* Espacio interno aumentado para hacer el campo más cómodo */
-    border-radius: 5px;  /* Bordes redondeados para el input */
-    outline: none;  /* Remover el borde azul al hacer clic */
-    width: 75%;  /* Ajuste del ancho del input */
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  /* Cambia el borde del input cuando se hace focus */
-  input[readonly]:focus {
-    border-color: #00bfff;  /* Cambia el color del borde al hacer focus */
-    box-shadow: 0 0 8px rgba(0, 191, 255, 0.5);  /* Añade una sombra luminosa alrededor del input */
-  }
-  
-  /* Estilo mejorado del botón Mostrar/Esconder */
-  button.toggle-password {
-    background-color: #00bfff;  /* Color azul claro para resaltar el botón */
-    border: none;  /* Sin bordes */
-    color: white;  /* Texto blanco para hacer contraste */
-    padding: 10px 14px;  /* Espaciado interno mayor para mejorar el tamaño del botón */
-    border-radius: 5px;  /* Bordes suaves para el botón */
-    cursor: pointer;  /* Cambia el cursor al pasar el mouse */
-    margin-left: 10px;  /* Espacio entre el input y el botón */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    font-weight: bold;  /* Negrita para el texto del botón */
-  }
-  
-  /* Añadir un efecto de sombra y cambio de color al pasar el mouse */
-  button.toggle-password:hover {
-    background-color: #007acc;  /* Color más oscuro al hacer hover */
-    box-shadow: 0 0 10px rgba(0, 122, 204, 0.7);  /* Sombra luminosa alrededor del botón */
-  }
-  
-  button.toggle-password:active {
-    background-color: #005f99;  /* Color más oscuro cuando el botón es presionado */
-  }
-  
+td mat-icon.edit-icon {
+    color: rgb(14, 147, 25); /* Green color for edit icon */
+}
+
+
