@@ -7,10 +7,10 @@
     </div>
     <nav>
       <ul #navLinks class="nav-links">
-        <li><a [routerLink]="['/navegacion']">Inicio</a></li>
+        <li><a href="#">Inicio</a></li>
         <li><a href="#">Nosotros</a></li>
         <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a [routerLink]="['/navegacion']">Mi Cuenta</a></li>
       </ul>
     </nav>
     <div class="login-button">
@@ -95,12 +95,12 @@
         </div>
         <p>Hola, gracias a esta aplicación pude llamar fácil a la policía cuando entraron a robar a mi casa.</p>
       </div>
-      <!-- Add more testimonials here if needed -->
+
     </div>
     <div #indicators class="carousel-indicators">
       <span class="indicator active" (click)="currentSlide(0)"></span>
       <span class="indicator" (click)="currentSlide(1)"></span>
-      <!-- Add more indicators if you have more slides -->
+
     </div>
   </div>
 </section>
@@ -112,7 +112,7 @@
   <div class="footer-section about">
     <h2>SECURITY</h2>
     <p>Es una startup dedicada a la seguridad de las personas. Nos enfocamos en todas las personas debido a la inseguridad que sienten hoy en día.</p>
-    <p>&copy; 2024 Next Evolution. Todos los derechos reservados</p>
+    <p>&copy; 2024 UPC - Arquitectura Web</p>
   </div>
 
   <div class="footer-section navigation">

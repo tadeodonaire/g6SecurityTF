@@ -10,10 +10,8 @@
       <input matInput placeholder="Username" [(ngModel)]="username" />
     </mat-form-field>
 
-    <br />
-
     <mat-form-field class="example-full-width form-field">
-      <mat-label>Password</mat-label>
+      <mat-label>Contraseña</mat-label>
       <input
         matInput
         type="password"
@@ -32,11 +30,18 @@
       </button>
     </mat-form-field>
 
-    <br />
-    <div>
     <button mat-raised-button color="primary" class="submit-button" (click)="login()">
       Iniciar Sesión
     </button>
+
+    <div class="register-option">
+      <p>¿No tienes cuenta?</p>
+      <button
+        class="register-button"
+        (click)="navigateToRegister()"
+      >
+        Crear cuenta
+      </button>
     </div>
   </div>
 </body>

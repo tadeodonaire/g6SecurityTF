@@ -16,26 +16,26 @@ import { CommonModule } from '@angular/common';
 })
 export class NavegacionComponent {
 
-  role: string = '';
+  rol: string = '';
   constructor(private loginService: LoginService) {}
   cerrar() {
     sessionStorage.clear();
   }
 
   verificar() {
-    this.role = this.loginService.showRole();
+    this.rol = this.loginService.showRole();
     return this.loginService.verificar();
   }
   isAdministrador() {
-    return this.role === 'ADMINISTRADOR';
+    return this.rol === 'ADMINISTRADOR';
   }
 
   isPersonal() {
-    return this.role === 'PERSONALEMERGENCIA';
+    return this.rol === 'PERSONALEMERGENCIA';
   }
 
   isUsuario() {
-    return this.role === 'USUARIO';
+    return this.rol === 'USUARIO';
   }
 
 }

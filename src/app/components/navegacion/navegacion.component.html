@@ -108,7 +108,7 @@
     </div>
 
     <!-- Contacto Emergencia Menu -->
-    <div *ngIf="isUsuario()">
+    <div>
       <button mat-button [matMenuTriggerFor]="menuSV68" style="color: rgb(0, 0, 0)">
         <mat-icon>contacts</mat-icon>Contacto Emergencia
       </button>
@@ -153,7 +153,7 @@
     </div>
 
     <!-- Historial Clinico Menu -->
-    <div *ngIf="isUsuario()">
+    <div>
       <button mat-button [matMenuTriggerFor]="menuSV52" style="color: rgb(0, 0, 0)">
         <mat-icon>description</mat-icon>Historial Clinico
       </button>
@@ -168,7 +168,7 @@
     </div>
 
     <!-- Detalle Medico Menu -->
-    <div *ngIf="isPersonal()">
+    <div>
       <button mat-button [matMenuTriggerFor]="menuSV80" style="color: rgb(0, 0, 0)">
         <mat-icon>book</mat-icon>Detalle Medico
       </button>
@@ -183,7 +183,7 @@
     </div>
 
     <!-- Dispositivos Menu -->
-    <div *ngIf="isUsuario()">
+    <div>
       <button mat-button [matMenuTriggerFor]="menuSV54" style="color: rgb(0, 0, 0)">
         <mat-icon>devices_other</mat-icon>Dispositivos
       </button>
@@ -198,7 +198,7 @@
     </div>
 
     <!-- Historial Ubicacion Menu -->
-    <div *ngIf="isUsuario()">
+    <div>
       <button mat-button [matMenuTriggerFor]="menuSV55" style="color: rgb(0, 0, 0)">
         <mat-icon>person_pin</mat-icon>Historial Ubicacion
       </button>
@@ -242,14 +242,11 @@
     <!-- Logout Menu -->
     <div>
       <button mat-button [matMenuTriggerFor]="menuSalir" style="color: rgb(0, 0, 0)">
-        <mat-icon>logout</mat-icon>LogOut
+        <mat-icon>verified_user</mat-icon>Rol:
       </button>
       <mat-menu #menuSalir="matMenu">
-        <button mat-menu-item routerLink="/menu" (click)="cerrar()" class="custom-menu-item">
-          <mat-icon>logout</mat-icon><span>Cerrar sesión</span>
-        </button>
         <button mat-menu-item class="custom-menu-item">
-          Rol:<span>{{ role }}</span>
+          Rol:<span>{{ rol }}</span>
         </button>
       </mat-menu>
     </div>
