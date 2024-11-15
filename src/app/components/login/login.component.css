@@ -1,7 +1,64 @@
-mat-form-field {
-    width: 50%;
-}
-.custom-button {
-    background-color: #ce940c;     
-    color: white;         
-}
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
+
+/* Background container for the login */
+.login-container {
+    background-color: #141437;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Central container styling */
+  .container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
+  
+  /* Profile icon styling */
+  .profile-icon {
+    background-color: #243665;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+  }
+  
+  /* Heading styling */
+  h2 {
+    font-family: Arial, sans-serif;
+    color: #243665;
+    margin-bottom: 20px;
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+  /* Form field styling */
+  .form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Login button styling */
+  .submit-button {
+    background-color: white;
+    color: #151541;
+    font-weight: bold;
+    padding: 10px 95px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+  .submit-button:hover {
+    background-color: #1d1d55;;
+  }
+  

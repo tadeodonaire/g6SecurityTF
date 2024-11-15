@@ -1,23 +1,42 @@
-<div class="container" style="text-align: center">
-    <div>
-      <img src="assets/logo.png" alt="Logo de la empresa" >
-
+<body class="login-container">
+  <div class="container">
+    <div class="profile-icon">
+      <img src="assets/logo.png" alt="Logo de la empresa" />
     </div>
-    <h2>Inicie sesión</h2>
-    <mat-form-field class="example-full-width">
+    <h2>Iniciar Sesión</h2>
+
+    <mat-form-field class="example-full-width form-field">
       <mat-label>Usuario</mat-label>
       <input matInput placeholder="Username" [(ngModel)]="username" />
     </mat-form-field>
+
     <br />
-    <mat-form-field class="example-full-width">
+
+    <mat-form-field class="example-full-width form-field">
       <mat-label>Password</mat-label>
       <input
-        type="password"
         matInput
+        type="password"
+        [type]="hide() ? 'password' : 'text'"
         placeholder="Password"
         [(ngModel)]="password"
       />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="clickEvent($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+      >
+        <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
     </mat-form-field>
+
     <br />
-    <button mat-raised-button class="custom-button " (click)="login()">Ingresar</button>
+    <div>
+    <button mat-raised-button color="primary" class="submit-button" (click)="login()">
+      Iniciar Sesión
+    </button>
+    </div>
   </div>
+</body>
