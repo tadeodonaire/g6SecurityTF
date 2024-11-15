@@ -6,7 +6,7 @@ import { ReporteHistorialClinicoComponent } from './reportehistorialclinico/repo
 @Component({
   selector: 'app-reporte',
   standalone: true,
-  imports: [RouterOutlet,ReportecantidadrelacioncontactosComponent, ReporteHistorialClinicoComponent],
+  imports: [RouterOutlet,ReportecantidadrelacioncontactosComponent],
   templateUrl: './reporte.component.html',
   styleUrl: './reporte.component.css'
 })
