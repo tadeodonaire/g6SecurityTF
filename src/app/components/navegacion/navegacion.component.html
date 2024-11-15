@@ -1,252 +1,285 @@
-
-<mat-toolbar class="custom-toolbar">
-    
+<!-- Header Section -->
+<header>
+  <div class="container">
+    <!-- Logo Button -->
     <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV64"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>people</mat-icon>Usuarios
-      </button>
-    </div>
-  
-    <mat-menu #menuSV64="matMenu">
-      <button mat-menu-item routerLink="/usuarios"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/usuarios/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV65"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>location_city</mat-icon>Ciudad
-      </button>
-    </div>
-  
-    <mat-menu #menuSV65="matMenu">
-      <button mat-menu-item routerLink="/Ciudad"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/Ciudad/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV70"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>domain</mat-icon>Distritos
-      </button>
-    </div>
-  
-    <mat-menu #menuSV70="matMenu">
-      <button mat-menu-item routerLink="/Distritos"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/Distritos/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV66"
-        style="color: rgb(0, 0, 0)"
-      ><mat-icon> local_florist</mat-icon>
-        Alergias
-      </button>
-    </div>
-  
-    <mat-menu #menuSV66="matMenu">
-      <button mat-menu-item routerLink="/alergias"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/alergias/nuevo">	<mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV67"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon> contact_phone</mat-icon>Contacto Autoridad
-      </button>
-    </div>
-  
-    <mat-menu #menuSV67="matMenu">
-      <button mat-menu-item routerLink="/contactosautoridades"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/contactosautoridades/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV68"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon> contacts</mat-icon>Contacto Emergencia
-      </button>
-    </div>
-  
-    <mat-menu #menuSV68="matMenu">
-      <button mat-menu-item routerLink="/contactosemergencias"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/contactosemergencias/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-  
-        [matMenuTriggerFor]="menuSV69"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>report_problem</mat-icon>Enfermedades
-      </button>
-    </div>
-  
-    <mat-menu #menuSV69="matMenu">
-      <button mat-menu-item routerLink="/enfermedad"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/enfermedad/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <mat-menu #menuSV50="matMenu">
-      <button mat-menu-item routerLink="/Distritos">Listar</button>
-    
-      <button mat-menu-item routerLink="/Distritos/registrar">Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV51"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon> edit_location</mat-icon>Ubicaciones
-      </button>
-    </div>
-  
-    <mat-menu #menuSV51="matMenu">
-      <button mat-menu-item routerLink="/ubicaciones"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/ubicaciones/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV52"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>description</mat-icon>Historial Clinico
-      </button>
-    </div>
-  
-    <mat-menu #menuSV52="matMenu">
-      <button mat-menu-item routerLink="/historialClinico"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/historialClinico/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV80"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>book</mat-icon>Detalle Medico
-      </button>
-    </div>
-  
-    <mat-menu #menuSV80="matMenu">
-      <button mat-menu-item routerLink="/detalleMedico"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/detalleMedico/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV54"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>devices_other</mat-icon>Dispositivos
-      </button>
-    </div>
-  
-    <mat-menu #menuSV54="matMenu">
-      <button mat-menu-item routerLink="/dispositivo"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/dispositivo/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="menuSV55"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon> person_pin</mat-icon>Historial Ubicacion
-      </button>
-    </div>
-  
-    <mat-menu #menuSV55="matMenu">
-      <button mat-menu-item routerLink="/historialubicaciones"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/historialubicaciones/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-  
-        [matMenuTriggerFor]="menuSV56"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>how_to_reg</mat-icon>Roles
-      </button>
-    </div>
-  
-    <mat-menu #menuSV56="matMenu">
-      <button mat-menu-item routerLink="/roles"><mat-icon>list</mat-icon>Listar</button>
-    
-      <button mat-menu-item routerLink="/roles/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
-    </mat-menu>
-  
-    <div>
-      <button
-        mat-button
-  
-        [matMenuTriggerFor]="menuSV71"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon> insert_chart_outlined</mat-icon>Reportes
-      </button>
-    </div>
-  
-    <mat-menu #menuSV71="matMenu">
-      <button mat-menu-item routerLink="/reportes"><mat-icon> pie_chart</mat-icon>Cantidad Relacion de Contactos</button>
-    </mat-menu>
-
-    <div>
-      <button
-        mat-button
-  
-        [matMenuTriggerFor]="menuSalir"
-        style="color: rgb(0, 0, 0)"
-      >
-      <mat-icon>logout</mat-icon>LogOut
+      <button [routerLink]="['/menu']" class="logo-button">
+        <img src="assets/logo.png" alt="Logo" />
       </button>
     </div>
 
-    <mat-menu #menuSalir="matMenu">
-      <button mat-menu-item routerLink="/menu" (click)="cerrar()" class="custom-menu-item"><mat-icon>logout</mat-icon><span>Cerrar sesión</span></button>
-      <button mat-menu-item class="custom-menu-item"> Rol:<span>{{ role }}</span></button>
-    </mat-menu>
-  
-  </mat-toolbar>
-  
+    <!-- Navigation Links -->
+    <nav>
+      <ul #navLinks class="nav-links">
+        <li><a [routerLink]="['/navegacion']">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Login Button -->
+    <div class="login-button">
+      <a [routerLink]="['/menu']" (click)="cerrar()" class="btn-login">Cerrar Sesión</a>
+    </div>
+  </div>
+</header>
+
+<!-- Sidenav and Content Container -->
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav mode="over" class="sidenav" [opened]="false">
+    <!-- Sidenav Toolbar -->
+    <mat-toolbar color="primary" class="sidenav-toolbar">Módulos</mat-toolbar>
+
+    <!-- Usuarios Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV64" style="color: rgb(0, 0, 0)">
+        <mat-icon>people</mat-icon>Usuarios
+      </button>
+      <mat-menu #menuSV64="matMenu">
+        <button mat-menu-item routerLink="/usuarios">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/usuarios/nuevo">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Ciudad Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV65" style="color: rgb(0, 0, 0)">
+        <mat-icon>location_city</mat-icon>Ciudad
+      </button>
+      <mat-menu #menuSV65="matMenu">
+        <button mat-menu-item routerLink="/Ciudad">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/Ciudad/registrar">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Distritos Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV70" style="color: rgb(0, 0, 0)">
+        <mat-icon>domain</mat-icon>Distritos
+      </button>
+      <mat-menu #menuSV70="matMenu">
+        <button mat-menu-item routerLink="/Distritos">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/Distritos/registrar">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Alergias Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV66" style="color: rgb(0, 0, 0)">
+        <mat-icon>local_florist</mat-icon>Alergias
+      </button>
+      <mat-menu #menuSV66="matMenu">
+        <button mat-menu-item routerLink="/alergias">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/alergias/nuevo">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Contacto Autoridad Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV67" style="color: rgb(0, 0, 0)">
+        <mat-icon>contact_phone</mat-icon>Contacto Autoridad
+      </button>
+      <mat-menu #menuSV67="matMenu">
+        <button mat-menu-item routerLink="/contactosautoridades">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/contactosautoridades/nuevo">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Contacto Emergencia Menu -->
+    <div *ngIf="isUsuario()">
+      <button mat-button [matMenuTriggerFor]="menuSV68" style="color: rgb(0, 0, 0)">
+        <mat-icon>contacts</mat-icon>Contacto Emergencia
+      </button>
+      <mat-menu #menuSV68="matMenu">
+        <button mat-menu-item routerLink="/contactosemergencias">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/contactosemergencias/nuevo">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Enfermedades Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV69" style="color: rgb(0, 0, 0)">
+        <mat-icon>report_problem</mat-icon>Enfermedades
+      </button>
+      <mat-menu #menuSV69="matMenu">
+        <button mat-menu-item routerLink="/enfermedad">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/enfermedad/registrar">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Ubicaciones Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV51" style="color: rgb(0, 0, 0)">
+        <mat-icon>edit_location</mat-icon>Ubicaciones
+      </button>
+      <mat-menu #menuSV51="matMenu">
+        <button mat-menu-item routerLink="/ubicaciones">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/ubicaciones/registrar">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Historial Clinico Menu -->
+    <div *ngIf="isUsuario()">
+      <button mat-button [matMenuTriggerFor]="menuSV52" style="color: rgb(0, 0, 0)">
+        <mat-icon>description</mat-icon>Historial Clinico
+      </button>
+      <mat-menu #menuSV52="matMenu">
+        <button mat-menu-item routerLink="/historialClinico">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/historialClinico/nuevo">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Detalle Medico Menu -->
+    <div *ngIf="isPersonal()">
+      <button mat-button [matMenuTriggerFor]="menuSV80" style="color: rgb(0, 0, 0)">
+        <mat-icon>book</mat-icon>Detalle Medico
+      </button>
+      <mat-menu #menuSV80="matMenu">
+        <button mat-menu-item routerLink="/detalleMedico">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/detalleMedico/nuevo">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Dispositivos Menu -->
+    <div *ngIf="isUsuario()">
+      <button mat-button [matMenuTriggerFor]="menuSV54" style="color: rgb(0, 0, 0)">
+        <mat-icon>devices_other</mat-icon>Dispositivos
+      </button>
+      <mat-menu #menuSV54="matMenu">
+        <button mat-menu-item routerLink="/dispositivo">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/dispositivo/nuevo">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Historial Ubicacion Menu -->
+    <div *ngIf="isUsuario()">
+      <button mat-button [matMenuTriggerFor]="menuSV55" style="color: rgb(0, 0, 0)">
+        <mat-icon>person_pin</mat-icon>Historial Ubicacion
+      </button>
+      <mat-menu #menuSV55="matMenu">
+        <button mat-menu-item routerLink="/historialubicaciones">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/historialubicaciones/registrar">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Roles Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV56" style="color: rgb(0, 0, 0)">
+        <mat-icon>how_to_reg</mat-icon>Roles
+      </button>
+      <mat-menu #menuSV56="matMenu">
+        <button mat-menu-item routerLink="/roles">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item routerLink="/roles/registrar">
+          <mat-icon>add_circle_outline</mat-icon>Registrar
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Reportes Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSV71" style="color: rgb(0, 0, 0)">
+        <mat-icon>insert_chart_outlined</mat-icon>Reportes
+      </button>
+      <mat-menu #menuSV71="matMenu">
+        <button mat-menu-item routerLink="/reportes">
+          <mat-icon>pie_chart</mat-icon>Cantidad Relacion de Contactos
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Logout Menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menuSalir" style="color: rgb(0, 0, 0)">
+        <mat-icon>logout</mat-icon>LogOut
+      </button>
+      <mat-menu #menuSalir="matMenu">
+        <button mat-menu-item routerLink="/menu" (click)="cerrar()" class="custom-menu-item">
+          <mat-icon>logout</mat-icon><span>Cerrar sesión</span>
+        </button>
+        <button mat-menu-item class="custom-menu-item">
+          Rol:<span>{{ role }}</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Main Toolbar -->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Security</span>
+    </mat-toolbar>
+
+    <!-- Landing Section -->
+    <section class="landing-section">
+      <div class="landing-content">
+        <h1>Bienvenido a Security</h1>
+        <p>Gestiona tus contactos de emergencia, accede a tu historial clínico y comparte tu ubicación fácilmente.</p>
+        <a href="#" class="cta-button">Quiero empezar</a>
+      </div>
+
+      <!-- Images Section -->
+      <div class="landing-images">
+        <img src="assets/img1.png" alt="Seguridad Digital" />
+        <img src="assets/img2.png" alt="Contacto de Emergencia" />
+        <img src="assets/img3.png" alt="Historial Clínico" />
+        <img src="assets/img4.png" alt="Ubicación" />
+      </div>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

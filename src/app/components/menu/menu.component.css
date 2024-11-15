@@ -32,6 +32,17 @@ header {
   height: 30px; /* Reduce la altura de la imagen del logo */
 }
 
+.logo-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.logo-button img {
+  display: block;
+}
+
 nav ul {
   display: flex;
   list-style: none;
