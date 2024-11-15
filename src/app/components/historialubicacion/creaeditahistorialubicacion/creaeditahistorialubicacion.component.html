@@ -4,26 +4,23 @@
     <div class="form-container">
       <form class="example-form" [formGroup]="form" (submit)="aceptar()">
         <div class="form-row">
+          
           <div class="form-column">
             <mat-form-field class="form-field">
-              <mat-label>Fecha de mantenimiento</mat-label>
-              <input
-                matInput
-                [matDatepicker]="picker"
-                formControlName="hfecha"
-              />
+              <mat-label>Fecha de ubicacion</mat-label>
+              <input matInput [matDatepicker]="picker" [max]="fechaActual" formControlName="hfecha"/>
               <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle
-                matIconSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
+            <div *ngIf="form.get('hfecha')?.hasError('fechaInvalida')">
+              La fecha debe ser anterior a la fecha actual.
+            </div>
             <br />
 
-            <mat-form-field class="example-full-width" class="form-field">
-              <mat-label>hora</mat-label>
-              <input matInput formControlName="hhora" />
+            <mat-form-field class="example-full-width form-field">
+              <mat-label>Hora</mat-label>
+              <input matInput type="time" min="00:00:00" max="24:00:00" formControlName="hhora" />
             </mat-form-field>
             <br />
           </div>
@@ -45,7 +42,7 @@
               <mat-select formControlName="hdispositivo">
                 @for (d of listaDispositivos; track d) {
                 <mat-option [value]="d.idispositivo">{{
-                  d.nombre_dispositivo
+                  d.us.us_nombre + ' - "'+ d.nombre_dispositivo +'"'
                 }}</mat-option>
                 }
               </mat-select>
