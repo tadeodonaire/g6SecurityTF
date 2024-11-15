@@ -19,8 +19,8 @@ export class HistorialubicacionService {
   list() {
     return this.http.get<Historialubicacion[]>(this.url);
   }
-  insert(de: Historialubicacion) {
-    return this.http.post(this.url, de);
+  insert(hu: Historialubicacion) {
+    return this.http.post(this.url, hu);
   }
   //get y set
   

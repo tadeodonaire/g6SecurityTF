@@ -30,13 +30,7 @@ export class CreaeditahistorialubicacionComponent {
   listaDispositivos: dispositivo[] = [];
   hubicacion: Historialubicacion = new Historialubicacion();
 
-  constructor(
-    private formBuilder: FormBuilder, 
-    private uS: UbicacionService, 
-    private dS: DispositivoService, 
-    private huS: HistorialubicacionService, 
-    private router: Router
-  ) {}
+  constructor(private formBuilder: FormBuilder, private uS: UbicacionService, private dS: DispositivoService, private huS: HistorialubicacionService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -57,8 +51,8 @@ export class CreaeditahistorialubicacionComponent {
     if (this.form.valid) {
       this.hubicacion.fecha = this.form.value.hfecha;
       this.hubicacion.hora = this.form.value.hhora;
-      this.hubicacion.ubicacion.idUbicacion = this.form.value.hlatitud;
-      this.hubicacion.dispositivo.idispositivo = this.form.value.hdispositivo;
+      this.hubicacion.ubicacion.latitud = this.form.value.hlatitud;
+      this.hubicacion.dispositivo.nombre_dispositivo = this.form.value.hdispositivo;
 
       this.huS.insert(this.hubicacion).subscribe((data) => {
         this.huS.list().subscribe((data) => {
