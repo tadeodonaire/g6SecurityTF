@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Users } from '../models/Users';
 import { environment } from '../../environments/environment';
-import { Observable, Subject } from 'rxjs';
-import { UsuarioDispositivoRolDTO } from '../models/usuariodispositivorolDTO';
-import { UsuarioHistorialClinicoDTO } from '../models/UsuarioHistorialClinicoDTO';
+import { Subject } from 'rxjs';
 
 const base_url=environment.base
 @Injectable({
@@ -40,12 +38,6 @@ export class UserService {
   }
   update(u:Users){
     return this.http.put(this.url, u)
-  }
-  getRolxDispositivo(): Observable<UsuarioDispositivoRolDTO[]> {
-    return this.http.get<UsuarioDispositivoRolDTO[]>(`${this.url}/rolxdispositivodeusuario`);
-  }
-  getHistorialClinicoxUsuario(idUsuario: number): Observable<UsuarioHistorialClinicoDTO[]> {
-    return this.http.get<UsuarioHistorialClinicoDTO[]>(`${this.url}/${idUsuario}/informacion-clinica`);
   }
 }
 
