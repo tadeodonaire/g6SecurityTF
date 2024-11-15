@@ -31,6 +31,11 @@ import { ReportecantidadrelacioncontactosComponent } from './components/reporte/
 import { NavegacionComponent } from './components/navegacion/navegacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { seguridadGuard } from './guard/seguridad.guard';
+import { ListarreportehistorialubicacionesComponent } from './components/reporte/reportehistorialubicaciones/listarreportehistorialubicaciones/listarreportehistorialubicaciones.component';
+import { ReportehistorialubicacionesComponent } from './components/reporte/reportehistorialubicaciones/reportehistorialubicaciones.component';
+import { ListarreportehistorialclinicoComponent } from './components/reporte/reportehistorialclinico/listarreportehistorialclinico/listarreportehistorialclinico.component';
+import { ReporteHistorialClinicoComponent } from './components/reporte/reportehistorialclinico/reportehistorialclinico.component';
+import { ReporteusuariodispositivoxrolesComponent } from './components/reporte/reporteusuariodispositivoxroles/reporteusuariodispositivoxroles.component';
 
 export const routes: Routes = [
   {
@@ -41,12 +46,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-
   },
   {
     path: 'menu',
     component: MenuComponent,
-
   },
   {
     path: 'navegacion',
@@ -231,6 +234,26 @@ export const routes: Routes = [
       {
         path: 'cantidadrelacioncontactos',
         component: ReportecantidadrelacioncontactosComponent,
+      },
+      {
+        path: 'rolxdispositivodeusuario',
+        component: ReporteusuariodispositivoxrolesComponent,
+      },
+      {
+        path: 'reportehistorialclinico',
+        component: ReporteHistorialClinicoComponent,
+      },
+      {
+        path: 'informacion-clinica/:idUsuario',
+        component: ListarreportehistorialclinicoComponent,
+      },
+      {
+        path: 'reportehistorialubicaciones',
+        component: ReportehistorialubicacionesComponent,
+      },
+      {
+        path: 'historial-ubicaciones/:idUsuario',
+        component: ListarreportehistorialubicacionesComponent,
       },
     ],
   },
