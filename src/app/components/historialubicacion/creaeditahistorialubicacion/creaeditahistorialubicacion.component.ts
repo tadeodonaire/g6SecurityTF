@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Ubicacion } from '../../../models/Ubicacion';
 import { dispositivo } from '../../../models/dispositivo';
 import { Historialubicacion } from '../../../models/Historialubicacion';
@@ -24,17 +24,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './creaeditahistorialubicacion.component.css'
 })
 export class CreaeditahistorialubicacionComponent {
-
+// fecha maxima (hoy)
+fechaActual: Date = new Date();
   form: FormGroup = new FormGroup({});
   listaLatitud: Ubicacion[] = [];
   listaDispositivos: dispositivo[] = [];
   hubicacion: Historialubicacion = new Historialubicacion();
 
-  constructor(private formBuilder: FormBuilder, private uS: UbicacionService, private dS: DispositivoService, private huS: HistorialubicacionService, private router: Router) {}
-
+  constructor(
+    private formBuilder: FormBuilder, 
+    private uS: UbicacionService, 
+    private dS: DispositivoService, 
+    private huS: HistorialubicacionService, 
+    private router: Router
+  ) {}
+  
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      hfecha: ['', Validators.required],
+      hfecha: ['', [Validators.required,this.fechaPasadaValidator.bind(this)]],
       hhora: ['', Validators.required],
       hlatitud: ['', Validators.required],
       hdispositivo: ['', Validators.required]
@@ -51,8 +58,8 @@ export class CreaeditahistorialubicacionComponent {
     if (this.form.valid) {
       this.hubicacion.fecha = this.form.value.hfecha;
       this.hubicacion.hora = this.form.value.hhora;
-      this.hubicacion.ubicacion.latitud = this.form.value.hlatitud;
-      this.hubicacion.dispositivo.nombre_dispositivo = this.form.value.hdispositivo;
+      this.hubicacion.ubicacion.idUbicacion = this.form.value.hlatitud;
+      this.hubicacion.dispositivo.idispositivo = this.form.value.hdispositivo;
 
       this.huS.insert(this.hubicacion).subscribe((data) => {
         this.huS.list().subscribe((data) => {
@@ -61,6 +68,17 @@ export class CreaeditahistorialubicacionComponent {
       });
       this.router.navigate(['historialubicaciones']);
     }
+  }
+
+  fechaPasadaValidator(control: FormControl) {
+    const fechaSeleccionada = new Date(control.value);
+    const hoy = new Date();
+
+    // Si la fecha seleccionada es posterior a hoy, marca como error
+    if (fechaSeleccionada > hoy) {
+      return { fechaInvalida: true };
+    }
+    return null;
   }
 
 }
