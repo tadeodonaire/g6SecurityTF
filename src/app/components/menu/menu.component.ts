@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
 })
 export class MenuComponent implements OnInit, AfterViewInit {
 
-  imagenSrc = 'assets/img1'; // Ruta de la imagen
 
   constructor() {}
 
