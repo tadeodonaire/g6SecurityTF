@@ -29,6 +29,9 @@ import { RolesComponent } from './components/roles/roles.component';
 import { CreareditarrolesComponent } from './components/roles/creareditarroles/creareditarroles.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
 import { ReportecantidadrelacioncontactosComponent } from './components/reporte/reportecantidadrelacioncontactos/reportecantidadrelacioncontactos.component';
+import { ReporteusuariodispositivoxrolesComponent } from './components/reporte/reporteusuariodispositivoxroles/reporteusuariodispositivoxroles.component';
+import { ReporteHistorialClinicoComponent } from './components/reporte/reportehistorialclinico/reportehistorialclinico.component';
+import { ListarreportehistorialclinicoComponent } from './components/reporte/reportehistorialclinico/listarreportehistorialclinico/listarreportehistorialclinico.component';
 
 export const routes: Routes = [
     {
@@ -172,6 +175,15 @@ export const routes: Routes = [
         children:[
             {
                 path:'cantidadrelacioncontactos', component:ReportecantidadrelacioncontactosComponent
+            },
+            {
+                path: 'rolxdispositivodeusuario',component: ReporteusuariodispositivoxrolesComponent
+            },
+            {
+                path:'reportehistorialclinico', component:ReporteHistorialClinicoComponent
+            },
+            {
+                path: 'informacion-clinica/:idUsuario', component: ListarreportehistorialclinicoComponent
             }
         ]
     }
