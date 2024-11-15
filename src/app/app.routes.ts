@@ -32,6 +32,8 @@ import { ReportecantidadrelacioncontactosComponent } from './components/reporte/
 import { ReporteusuariodispositivoxrolesComponent } from './components/reporte/reporteusuariodispositivoxroles/reporteusuariodispositivoxroles.component';
 import { ReporteHistorialClinicoComponent } from './components/reporte/reportehistorialclinico/reportehistorialclinico.component';
 import { ListarreportehistorialclinicoComponent } from './components/reporte/reportehistorialclinico/listarreportehistorialclinico/listarreportehistorialclinico.component';
+import { ReportehistorialubicacionesComponent } from './components/reporte/reportehistorialubicaciones/reportehistorialubicaciones.component';
+import { ListarreportehistorialubicacionesComponent } from './components/reporte/reportehistorialubicaciones/listarreportehistorialubicaciones/listarreportehistorialubicaciones.component';
 
 export const routes: Routes = [
     {
@@ -184,7 +186,14 @@ export const routes: Routes = [
             },
             {
                 path: 'informacion-clinica/:idUsuario', component: ListarreportehistorialclinicoComponent
+            },
+            {
+                path:'reportehistorialubicaciones', component: ReportehistorialubicacionesComponent
+            },
+            {
+                path:'historial-ubicaciones/:idUsuario', component: ListarreportehistorialubicacionesComponent
             }
+
         ]
     }
 ];
