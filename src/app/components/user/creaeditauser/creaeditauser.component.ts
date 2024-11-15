@@ -42,6 +42,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./creaeditauser.component.css'],
 })
 export class CreaeditauserComponent implements OnInit {
+  // fecha maxima (hoy)
+  fechaActual: Date = new Date();
+  fechaMinimaNacimiento : Date = new Date();
   form: FormGroup = new FormGroup({});
   user: Users = new Users();
   errorMessage = signal('');
@@ -57,6 +60,11 @@ export class CreaeditauserComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.fechaMinimaNacimiento = new Date(
+      this.fechaActual.getFullYear() - 18,
+      this.fechaActual.getMonth(),
+      this.fechaActual.getDate()
+    );
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
@@ -69,7 +77,7 @@ export class CreaeditauserComponent implements OnInit {
       hapellido: ['', Validators.required],
       hcelular: ['', Validators.required],
       hdni: ['', Validators.required],
-      hfecha: ['', Validators.required],
+      hfecha: ['', Validators.required,],
       hemail: ['', Validators.required],
       husuario: ['', Validators.required],
       hcontrasena: ['', Validators.required],

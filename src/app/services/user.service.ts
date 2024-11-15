@@ -52,4 +52,3 @@ export class UserService {
     return this.http.get<UsuarioHistorialUbicacionDTO[]>(`${this.url}/${idUsuario}/historial-ubicaciones`);
   }
 }
-

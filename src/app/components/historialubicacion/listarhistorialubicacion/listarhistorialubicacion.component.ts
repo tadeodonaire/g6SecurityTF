@@ -14,7 +14,7 @@ import { HistorialubicacionService } from '../../../services/historialubicacion.
 export class ListarhistorialubicacionComponent implements OnInit{
 
   dataSource: MatTableDataSource<Historialubicacion> = new MatTableDataSource();
-  displayedColumns: string[] = [ 'c2', 'c3', 'c4', 'c5','c6'];
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5','c6'];
 
   constructor (private huS: HistorialubicacionService) {}
 
