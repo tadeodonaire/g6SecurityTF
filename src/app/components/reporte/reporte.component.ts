@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { ReportecantidadrelacioncontactosComponent } from './reportecantidadrelacioncontactos/reportecantidadrelacioncontactos.component';
+import { ReporteHistorialClinicoComponent } from './reportehistorialclinico/reportehistorialclinico.component';
 
 @Component({
   selector: 'app-reporte',
