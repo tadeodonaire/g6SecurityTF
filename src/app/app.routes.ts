@@ -193,7 +193,6 @@ export const routes: Routes = [
             {
                 path:'historial-ubicaciones/:idUsuario', component: ListarreportehistorialubicacionesComponent
             }
-
         ]
     }
 ];
