@@ -24,6 +24,7 @@ export class CreaeditaubicacionComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   listaDistrito: Distrito[] = [];
   ubi: Ubicacion = new Ubicacion();
+  isFetchingLocation: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,6 +43,27 @@ export class CreaeditaubicacionComponent implements OnInit {
     this.diS.list().subscribe((data) => {
       this.listaDistrito = data;
     });
+  }
+
+  getCurrentLocation(): void {
+    if (navigator.geolocation) {
+      this.isFetchingLocation = true;
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          this.form.patchValue({
+            hlongitud: position.coords.longitude,
+            hlatitud: position.coords.latitude,
+          });
+          this.isFetchingLocation = false;
+        },
+        (error) => {
+          console.error('Error al obtener la ubicación:', error);
+          this.isFetchingLocation = false;
+        }
+      );
+    } else {
+      alert('El navegador no soporta geolocalización.');
+    }
   }
 
   aceptar(): void {
