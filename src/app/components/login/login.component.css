@@ -88,3 +88,46 @@ h2 {
 .register-button:hover {
   color: #243665; /* Un azul más oscuro al pasar el cursor */
 }
+
+.arrow-button-container {
+  position: absolute;
+  top: 20px; /* Ajusta según sea necesario */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Separación entre texto y flecha */
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: "Catamaran", sans-serif;
+  font-size: 18px; /* Tamaño de fuente más grande */
+  cursor: pointer;
+}
+
+.arrow-button:hover .arrow {
+  border-top-color: #1d4ed8; /* Cambia el color de la flecha al pasar el mouse */
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent; /* Ajuste del tamaño de la flecha */
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ffffff;
+}
+
+.arrow-text {
+  color: #ffffff;
+}
+
+.arrow-button:hover .arrow-text {
+  color: #167ddf; /* Cambia el color del texto al pasar el mouse */
+}
+
+

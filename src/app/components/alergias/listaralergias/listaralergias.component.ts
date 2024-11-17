@@ -20,6 +20,7 @@ displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'accion01', 'accion02'];
   ngOnInit(): void {
     this.aS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.aS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);

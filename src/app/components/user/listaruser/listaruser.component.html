@@ -1,6 +1,7 @@
 <div class="container">
   <div><h1 class="title">LISTA DE USUARIOS</h1></div>
   <div>
+ 
     <table
       mat-table
       [dataSource]="dataSource"
@@ -74,11 +75,14 @@
       </ng-container>
     </table>
     <div class="paginator">
-      <mat-paginator
-        [pageSizeOptions]="[5, 8, 10, 20, 30]"
-        showFirstLastButtons
-        aria-label="Selecciona la página"
-      ></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
     </div>
+    <br /><br />
+    <button mat-stroked-button class="menu-button" [routerLink]="['/navegacion']">
+      <span class="arrow-symbol"><mat-icon>keyboard_return</mat-icon></span> Volver al Menú
+    </button>
   </div>
 </div>

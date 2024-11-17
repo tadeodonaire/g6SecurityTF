@@ -54,7 +54,6 @@ export const routes: Routes = [
   {
     path: 'navegacion',
     component: NavegacionComponent,
-
   },
   {
     path: 'usuarios',
@@ -69,6 +68,7 @@ export const routes: Routes = [
         component: CreaeditauserComponent,
       },
     ],
+    canActivate: [seguridadGuard],
   },
   {
     path: 'alergias',

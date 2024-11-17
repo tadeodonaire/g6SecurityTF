@@ -25,6 +25,7 @@ export class ListacontactoemergenciasComponent implements OnInit{
   ngOnInit(): void {
     this.cES.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.cES.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
