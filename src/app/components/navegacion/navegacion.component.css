@@ -106,17 +106,18 @@ nav ul li a:hover {
 }
 
 .btn-login {
-  background-color: #1e90ff; /* Botón azul */
-  color: white; /* Letras blancas */
-  padding: 8px 20px; /* Ajusta el padding del botón para reducir su altura */
-  text-decoration: none;
-  font-size: 16px; /* Reduce el tamaño de la fuente */
+  background-color: #1e90ff;
+  color: #ffffff;
+  padding: 8px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 .btn-login:hover {
-  background-color: #104e8b; /* Azul más oscuro al pasar el cursor */
+  background-color: #104e8b;
 }
 
 /* Menú hamburguesa */
@@ -166,71 +167,53 @@ nav ul li a:hover {
 }
 
 /*----sidenav------------------------------*/
-/* Container and sidebar */
-.sidenav-container {
-  height: 100vh;
-}
-
-.sidenav {
-  width: 250px;
-  background-color: #141437; /* Dark sidebar background */
-  color: #ffffff; /* White text */
-}
-
-.sidenav-toolbar {
-  font-weight: bold;
-  color: #ffffff;
-}
-
-/* Menu item styling */
-.menu-item {
-  width: 100%;
-  justify-content: flex-start;
-  color: #ffffff !important;
-  font-weight: 500;
-  padding-left: 20px;
-  text-transform: none;
-}
-
-.menu-item .mat-icon {
-  margin-right: 10px;
-  color: #ffffff;
-}
-
-/* Hover effect for menu items */
-.menu-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-/* Styling for mat-toolbar in main content */
-mat-toolbar {
+.custom-toolbar {
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  position: relative;
-  background-color: #141437; /* Black background */
-  color: #ffffff; /* White text */
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top of the toolbar */
+  padding: 0px; /* Increase padding for more space */
+  background-color: #141437; /* Primary background color */
+  min-height: 120px; /* Set a minimum height to accommodate multiple rows of buttons */
 }
 
-mat-toolbar button {
-  position: absolute;
-  left: 10px; /* Position the button to the left */
+.toolbar-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  justify-content: center; /* Center buttons */
+  gap: 20px; /* Increase gap between groups */
+  width: 100%;
+  max-width: 1200px;
 }
 
-
-/* Menu dropdown items */
-.mat-menu-item {
-  color: #ffffff;
+.toolbar-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* Space between buttons in the same group */
 }
 
-.mat-menu-item:hover {
+button[mat-button] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 15px; /* Add padding for larger buttons */
+  transition: background-color 0.3s ease;
+  background-color: white;
 }
 
-.mat-menu-item .mat-icon {
-  color: #ffffff;
-  margin-right: 10px;
+button[mat-button]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white; /* Keep the text white on hover */
 }
+
+mat-icon {
+  margin-right: 5px;
+  font-size: 20px; /* Adjust icon size for consistency */
+  color: #141437;
+}
+
 
 /*--Section---------*/
 

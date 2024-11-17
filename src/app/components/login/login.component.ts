@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginService } from '../../services/login.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { JwtRequest } from '../../models/jwtRequest';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule,MatIconModule],
+  imports: [MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule,MatIconModule,RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -52,8 +52,6 @@ export class LoginComponent implements OnInit{
     );
   }
 
-  navigateToRegister() {
-    this.router.navigate(['/usuarios/nuevo']);
-  }
+
   
 }

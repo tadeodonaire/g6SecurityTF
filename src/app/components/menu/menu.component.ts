@@ -1,17 +1,21 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LoginService } from '../../services/login.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit, AfterViewInit {
 
+  isLoggedIn: boolean = false; // Initialize with false
+  rol: string | null = null; // Store the user's role
 
-  constructor() {}
+  constructor(private loginService: LoginService) {}
 
   @ViewChild('hamburger') hamburger!: ElementRef;
   @ViewChild('navLinks') navLinks!: ElementRef;
@@ -21,7 +25,10 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
   currentSlideIndex = 0;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn = this.verificar();
+    this.rol = this.loginService.showRole(); // Set role if needed
+  }
 
   ngAfterViewInit() {
     if (this.hamburger && this.hamburger.nativeElement) {
@@ -67,5 +74,26 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
   currentSlide(index: number) {
     this.showSlide(index);
+  }
+
+
+  // Handle login/logout button click
+  handleLogin() {
+    if (this.isLoggedIn) {
+      this.cerrar(); // Log out if already logged in
+    } else {
+      // Perform any additional login logic if needed
+    }
+  }
+
+  // Clear session on logout
+  cerrar() {
+    sessionStorage.clear(); // Clear session storage
+    this.isLoggedIn = false; // Update login state
+  }
+
+  // Verify if the user is logged in
+  verificar(): boolean {
+    return this.loginService.verificar();
   }
 }

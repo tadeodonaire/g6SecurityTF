@@ -4,8 +4,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { LoginService } from '../../services/login.service';
-import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule} from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
+import { RolesService } from '../../services/roles.service';
+
+
 
 @Component({
   selector: 'app-navegacion',
@@ -16,8 +19,17 @@ import { CommonModule } from '@angular/common';
 })
 export class NavegacionComponent {
 
+  roles: any[] = [];
   rol: string = '';
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private rS:RolesService) {}
+
+  ngOnInit() {
+    this.rol = this.loginService.showRole();
+    this.rS.getList().subscribe((data) => {
+      this.roles = data;
+    });
+  }
+
   cerrar() {
     sessionStorage.clear();
   }
@@ -37,5 +49,7 @@ export class NavegacionComponent {
   isUsuario() {
     return this.rol === 'USUARIO';
   }
+
+  
 
 }

@@ -36,12 +36,10 @@
 
     <div class="register-option">
       <p>¿No tienes cuenta?</p>
-      <button
-        class="register-button"
-        (click)="navigateToRegister()"
-      >
-        Crear cuenta
-      </button>
+      <a class="register-link" [routerLink]="['/usuarios/nuevo']">
+        <button class="register-button">Crear cuenta</button>
+      </a>
+      
     </div>
   </div>
 </body>

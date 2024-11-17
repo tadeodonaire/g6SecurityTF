@@ -106,17 +106,18 @@ nav ul li a:hover {
 }
 
 .btn-login {
-  background-color: #1e90ff; /* Botón azul */
-  color: white; /* Letras blancas */
-  padding: 8px 20px; /* Ajusta el padding del botón para reducir su altura */
-  text-decoration: none;
-  font-size: 16px; /* Reduce el tamaño de la fuente */
+  background-color: #1e90ff;
+  color: #ffffff;
+  padding: 8px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 .btn-login:hover {
-  background-color: #104e8b; /* Azul más oscuro al pasar el cursor */
+  background-color: #104e8b;
 }
 
 /* Menú hamburguesa */

@@ -10,12 +10,14 @@
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Nosotros</a></li>
         <li><a href="#">Servicios</a></li>
-        <li><a [routerLink]="['/navegacion']">Mi Cuenta</a></li>
+        <li *ngIf="isLoggedIn"><a [routerLink]="['/navegacion']">Mi Cuenta</a></li>
       </ul>
     </nav>
     <div class="login-button">
-      <a [routerLink]="['/login']" class="btn-login">Iniciar Sesión</a>
-    </div>
+      <a [routerLink]="isLoggedIn ? '/logout' : '/login'" (click)="handleLogin()" class="btn-login">
+        {{ isLoggedIn ? 'Cerrar Sesión' : 'Iniciar Sesión' }}
+      </a>
+    </div>    
     <div #hamburger class="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>

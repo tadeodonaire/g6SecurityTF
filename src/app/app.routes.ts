@@ -54,7 +54,7 @@ export const routes: Routes = [
   {
     path: 'navegacion',
     component: NavegacionComponent,
-    canActivate: [seguridadGuard],
+
   },
   {
     path: 'usuarios',
@@ -69,7 +69,6 @@ export const routes: Routes = [
         component: CreaeditauserComponent,
       },
     ],
-    canActivate: [seguridadGuard],
   },
   {
     path: 'alergias',
@@ -231,10 +230,6 @@ export const routes: Routes = [
     path: 'reportes',
     component: ReporteComponent,
     children: [
-      {
-        path: 'cantidadrelacioncontactos',
-        component: ReportecantidadrelacioncontactosComponent,
-      },
       {
         path: 'rolxdispositivodeusuario',
         component: ReporteusuariodispositivoxrolesComponent,
