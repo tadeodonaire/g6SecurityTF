@@ -11,7 +11,7 @@ import { Distrito } from '../../../models/Distrito';
 import { Ciudad } from '../../../models/Ciudad';
 import { CiudadService } from '../../../services/ciudad.service';
 import { DistritoService } from '../../../services/distrito.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,7 +27,7 @@ import { map, startWith } from 'rxjs';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    CommonModule,
+    CommonModule,RouterModule
   ],
   templateUrl: './creaeditadistrito.component.html',
   styleUrls: ['./creaeditadistrito.component.css'], 

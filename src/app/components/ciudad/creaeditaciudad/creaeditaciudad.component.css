@@ -53,4 +53,15 @@ body {
   button[mat-flat-button]:hover {
     background-color: #1d1d55;
   }
+
+  .menu-button {
+    margin-left: 10px; /* Espacio entre los botones */
+    background-color: #151541;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
   

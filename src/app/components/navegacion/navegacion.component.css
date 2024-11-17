@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a40; /* Fondo azul oscuro */
+}
+
+header {
+  background-color: #141437;
+  padding: 5px 0; /* Reduce aún más el padding vertical */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+/* Alineación del contenido en el centro y reducción de espacios */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* Reduce el padding lateral */
+}
+
+.logo img {
+  height: 30px; /* Reduce la altura de la imagen del logo */
+}
+
+.logo-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.logo-button img {
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+  margin: 0; /* Elimina cualquier margen sobrante */
+  padding: 0; /* Asegura que no haya padding */
+}
+
+/* Ajustes en los elementos del menú para ocupar menos espacio */
+nav ul li {
+margin-left: 15px; /* Reduce el espacio entre los elementos del menú */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white; /* Letras blancas */
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1e90ff; /* Azul claro al pasar el cursor */
+}
+
+/* Estilo del menú desplegable */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #141437; /* Fondo azul oscuro */
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+}
+
+.dropdown li {
+  padding: 10px;
+}
+
+.dropdown li a {
+  color: white; /* Letras blancas */
+}
+
+.dropdown li a:hover {
+  color: #1e90ff; /* Azul claro al pasar el cursor */
+}
+
+/* Mostrar el dropdown al pasar el cursor por encima */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* Botón de iniciar sesión */
+.login-button {
+  margin-left: 15px;
+}
+
+.btn-login {
+  background-color: #1e90ff;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #104e8b;
+}
+
+/* Menú hamburguesa */
+.hamburger .bar {
+  width: 20px;
+  height: 2px; /* Reduce el grosor de las barras */
+  margin: 4px auto; /* Ajusta el margen para un espaciado más compacto */
+  background-color: white;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #141437;
+    flex-direction: column;
+    display: none; /* Ocultar por defecto */
+  }
+
+  nav ul.show {
+    display: block; /* Mostrar el menú cuando se active la clase "show" */
+  }
+
+  /* Ajustes en los elementos del menú para ocupar menos espacio */
+  nav ul li {
+  margin-left: 15px; /* Reduce el espacio entre los elementos del menú */
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/*----sidenav------------------------------*/
+.custom-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top of the toolbar */
+  padding: 0px; /* Increase padding for more space */
+  background-color: #141437; /* Primary background color */
+  min-height: 120px; /* Set a minimum height to accommodate multiple rows of buttons */
+}
+
+.toolbar-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  justify-content: center; /* Center buttons */
+  gap: 20px; /* Increase gap between groups */
+  width: 100%;
+  max-width: 1200px;
+}
+
+.toolbar-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* Space between buttons in the same group */
+}
+
+button[mat-button] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 15px; /* Add padding for larger buttons */
+  transition: background-color 0.3s ease;
+  background-color: white;
+}
+
+button[mat-button]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white; /* Keep the text white on hover */
+}
+
+mat-icon {
+  margin-right: 5px;
+  font-size: 20px; /* Adjust icon size for consistency */
+  color: #141437;
+}
+
+
+/*--Section---------*/
+
+.landing-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+  background-color: #1a1a40;
+  color: #ffffff;
+}
+
+.landing-content {
+  flex: 1;
+  padding: 0 20px;
+  text-align: center;
+  max-width: 50%; /* Ocupa la mitad de la pantalla */
+}
+
+.landing-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.landing-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #e6e6e6;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #104e8b;
+}
+
+.landing-images {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 40%; /* Reduce el ancho total de la sección de imágenes */
+}
+
+.landing-images img {
+  width: 80%; /* Reduce el ancho de cada imagen dentro de su contenedor */
+  height: auto;
+  border-radius: 10px;
+  margin: auto; /* Centra las imágenes en sus contenedores */
+}  

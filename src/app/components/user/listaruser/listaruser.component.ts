@@ -1,20 +1,20 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Users } from '../../../models/Users';
 import { UserService } from '../../../services/user.service';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-listaruser',
   standalone: true,
-  imports: [MatTableModule,MatIconModule,CommonModule,RouterLink,MatPaginator],
+  imports: [MatTableModule,MatIconModule,CommonModule,RouterLink,MatPaginatorModule],
   templateUrl: './listaruser.component.html',
   styleUrls: ['./listaruser.component.css']
 })
-export class ListaruserComponent implements OnInit {
+export class ListaruserComponent implements OnInit, AfterViewInit {
   // Declaramos la dataSource para la tabla
   dataSource: MatTableDataSource<Users> = new MatTableDataSource();
   
@@ -31,6 +31,7 @@ export class ListaruserComponent implements OnInit {
   ngOnInit(): void {
     this.uS.list().subscribe(data=> {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.uS.getList().subscribe(data =>{
       this.dataSource=new MatTableDataSource(data);
@@ -65,9 +66,12 @@ export class ListaruserComponent implements OnInit {
   }
   
 
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+
+  ngAfterViewInit(): void {
+    if (this.paginator) {
+      this.dataSource.paginator = this.paginator;
+    }
+  }  
+  
 }

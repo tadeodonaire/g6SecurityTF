@@ -58,10 +58,15 @@
               <mat-label>Correo Electronico</mat-label>
               <input
                 matInput
-                placeholder="pepe@gmail.com"
+                placeholder="web@example.com"
                 formControlName="hemail"
+                [formControl]="email"
+                (blur)="updateErrorMessage()"
+                required
               />
-            </mat-form-field>
+              <mat-error *ngIf="email.invalid">{{ errorMessage() }}</mat-error>
+            </mat-form-field>            
+
             <mat-form-field class="example-full-width form-field">
               <mat-label>Usuario</mat-label>
               <input
@@ -70,31 +75,41 @@
                 formControlName="husuario"
               />
             </mat-form-field>
-            <mat-form-field class="form-field" *ngIf="!edicion">
+            <mat-form-field class="form-field">
               <mat-label>Contraseña</mat-label>
               <input
                 matInput
                 [type]="hide() ? 'password' : 'text'"
                 formControlName="hcontrasena"
+                (input)="generateTokenOnPasswordChange($event)"
               />
               <button
                 mat-icon-button
                 matSuffix
                 (click)="clickEvent($event)"
                 type="button"
-                [attr.aria-label]="'Hide password'"
+                [attr.aria-label]="'Ocultar contraseña'"
                 [attr.aria-pressed]="hide()"
               >
-                <mat-icon>{{
-                  hide() ? "visibility_off" : "visibility"
-                }}</mat-icon>
+                <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
               </button>
             </mat-form-field>
+            
+            
+            
           </div>
         </div>
         <div class="button-container">
           <button class="submit-button" mat-flat-button type="submit">
             Registrar
+          </button>
+          <button
+            class="menu-button"
+            mat-stroked-button
+            type="button"
+            [routerLink]="['/navegacion']"
+          >
+            Volver al Menú
           </button>
         </div>
       </form>

@@ -35,4 +35,6 @@ import { RolesComponent } from "./components/roles/roles.component";
 })
 export class AppComponent {
   title = "g6CRUDSI62";
+
+  
 }

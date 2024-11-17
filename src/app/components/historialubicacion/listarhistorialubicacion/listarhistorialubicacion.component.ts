@@ -3,11 +3,13 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Historialubicacion } from '../../../models/Historialubicacion';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { HistorialubicacionService } from '../../../services/historialubicacion.service';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-listarhistorialubicacion',
   standalone: true,
-  imports: [MatPaginatorModule, MatTableModule],
+  imports: [MatPaginatorModule, MatTableModule,MatIconModule,RouterModule],
   templateUrl: './listarhistorialubicacion.component.html',
   styleUrl: './listarhistorialubicacion.component.css'
 })

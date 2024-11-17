@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RolesService } from '../../../services/roles.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { Roles } from '../../../models/Roles';
 
 @Component({
@@ -24,7 +24,7 @@ import { Roles } from '../../../models/Roles';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
-    CommonModule
+    CommonModule,RouterModule
   ],
   templateUrl: './creareditarroles.component.html',
   styleUrl: './creareditarroles.component.css'

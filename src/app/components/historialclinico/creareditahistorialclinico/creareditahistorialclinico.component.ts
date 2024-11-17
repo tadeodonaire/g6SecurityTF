@@ -5,7 +5,7 @@ import { Historialclinico } from '../../../models/historialclinico';
 import { Users } from '../../../models/Users';
 import { UserService } from '../../../services/user.service';
 import { HistorialclinicoService } from '../../../services/historialclinico.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -20,7 +20,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './creareditahistorialclinico.component.html',

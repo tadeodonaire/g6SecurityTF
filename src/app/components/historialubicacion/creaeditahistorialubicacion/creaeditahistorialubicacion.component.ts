@@ -6,7 +6,7 @@ import { Historialubicacion } from '../../../models/Historialubicacion';
 import { UbicacionService } from '../../../services/ubicacion.service';
 import { DispositivoService } from '../../../services/dispositivo.service';
 import { HistorialubicacionService } from '../../../services/historialubicacion.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-creaeditahistorialubicacion',
   standalone: true,
   providers: [provideNativeDateAdapter()],
-  imports: [MatDatepickerModule,MatFormField,ReactiveFormsModule,MatInputModule,MatSelectModule,MatButtonModule, CommonModule,MatOptionModule],
+  imports: [MatDatepickerModule,MatFormField,ReactiveFormsModule,MatInputModule,MatSelectModule,MatButtonModule, CommonModule,MatOptionModule,RouterModule],
   templateUrl: './creaeditahistorialubicacion.component.html',
   styleUrl: './creaeditahistorialubicacion.component.css'
 })
