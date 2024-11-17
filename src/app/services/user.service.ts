@@ -6,6 +6,7 @@ import { Observable, Subject } from 'rxjs';
 import { UsuarioDispositivoRolDTO } from '../models/usuariodispositivorolDTO';
 import { UsuarioHistorialClinicoDTO } from '../models/UsuarioHistorialClinicoDTO';
 import { UsuarioHistorialUbicacionDTO } from '../models/UsuarioHistorialUbicacionDTO';
+import { UsuarioConteoAlerEnferDTO } from '../models/UsuarioConteoAlerEnferDTO';
 
 const base_url=environment.base
 @Injectable({
@@ -50,5 +51,10 @@ export class UserService {
   }
   getHistorialUbicacionesxUsuario(idUsuario: number): Observable<UsuarioHistorialUbicacionDTO[]> {
     return this.http.get<UsuarioHistorialUbicacionDTO[]>(`${this.url}/${idUsuario}/historial-ubicaciones`);
+  }
+  getCantidadAlergiaEnfermedadxNomUsuario(name: string): Observable<UsuarioConteoAlerEnferDTO[]> {
+    return this.http.get<UsuarioConteoAlerEnferDTO[]>(`${this.url}/CantidadAlerEnferXuser`, {
+    params: { name },
+  });
   }
 }
