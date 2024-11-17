@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Ubicacion } from '../models/Ubicacion';
 import { HttpClient } from '@angular/common/http';
 
@@ -10,6 +10,9 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class UbicacionService {
+
+  private geocodingAPIURL = 'https://maps.googleapis.com/maps/api/geocode/json';
+  private apiKey = 'AIzaSyDXsnJeX-3BQqcOESxwDPZrhUP94pFG3ZI';
 
   private url = `${base_url}/ubicaciones`;
   private listaCambio = new Subject<Ubicacion[]>();
@@ -29,5 +32,10 @@ export class UbicacionService {
   }
   setList(listaNueva: Ubicacion[]) {
     this.listaCambio.next(listaNueva);
+  }
+
+  getCoordinates(address: string): Observable<any> {
+    const url = `${this.geocodingAPIURL}?address=${encodeURIComponent(address)}&key=${this.apiKey}`;
+    return this.http.get(url);
   }
 }
