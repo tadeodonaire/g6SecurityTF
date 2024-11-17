@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { Ciudad } from '../../../models/Ciudad';
 import { CiudadService } from '../../../services/ciudad.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -26,7 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     ReactiveFormsModule,
     CommonModule,
-    MatIconModule
+    MatIconModule, RouterModule
   ],
   templateUrl: './creaeditaciudad.component.html',
   styleUrl: './creaeditaciudad.component.css',

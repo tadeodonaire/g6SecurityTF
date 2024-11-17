@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Enfermedades } from '../../../models/Enfermedades';
 import { EnfermedadesService } from '../../../services/enfermedades.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -26,7 +26,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
-    CommonModule
+    CommonModule,RouterModule
   ],
   templateUrl: './creareditarenfermedades.component.html',
   styleUrl: './creareditarenfermedades.component.css'

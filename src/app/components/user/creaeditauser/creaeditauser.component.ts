@@ -2,6 +2,7 @@ import {
   Component,
   signal,
   OnInit,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,8 +21,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Users } from '../../../models/Users';
 import { UserService } from '../../../services/user.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { merge } from 'rxjs';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-creaeditauser',
@@ -36,7 +39,7 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
-    CommonModule,
+    CommonModule, RouterModule
   ],
   templateUrl: './creaeditauser.component.html',
   styleUrls: ['./creaeditauser.component.css'],
@@ -44,7 +47,7 @@ import { CommonModule } from '@angular/common';
 export class CreaeditauserComponent implements OnInit {
   // fecha maxima (hoy)
   fechaActual: Date = new Date();
-  fechaMinimaNacimiento : Date = new Date();
+  fechaMinimaNacimiento: Date = new Date();
   form: FormGroup = new FormGroup({});
   user: Users = new Users();
   errorMessage = signal('');
@@ -52,12 +55,20 @@ export class CreaeditauserComponent implements OnInit {
   id: number = 0;
   edicion: boolean = false;
 
+  // New email FormControl
+  readonly email = new FormControl('', [Validators.required, Validators.email]);
+
   constructor(
     private formBuilder: FormBuilder,
     private uS: UserService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    // Subscribe to email control value and status changes for error updates
+    merge(this.email.statusChanges, this.email.valueChanges)
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => this.updateErrorMessage());
+  }
 
   ngOnInit(): void {
     this.fechaMinimaNacimiento = new Date(
@@ -65,6 +76,7 @@ export class CreaeditauserComponent implements OnInit {
       this.fechaActual.getMonth(),
       this.fechaActual.getDate()
     );
+
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
@@ -77,11 +89,21 @@ export class CreaeditauserComponent implements OnInit {
       hapellido: ['', Validators.required],
       hcelular: ['', Validators.required],
       hdni: ['', Validators.required],
-      hfecha: ['', Validators.required,],
-      hemail: ['', Validators.required],
+      hfecha: ['', Validators.required],
+      hemail: this.email, // Bind email FormControl to form group
       husuario: ['', Validators.required],
       hcontrasena: ['', Validators.required],
     });
+  }
+
+  updateErrorMessage() {
+    if (this.email.hasError('required')) {
+      this.errorMessage.set('You must enter a value');
+    } else if (this.email.hasError('email')) {
+      this.errorMessage.set('Not a valid email');
+    } else {
+      this.errorMessage.set('');
+    }
   }
 
   clickEvent(event: MouseEvent) {
@@ -131,11 +153,12 @@ export class CreaeditauserComponent implements OnInit {
           hcelular: new FormControl(data.us_telefono),
           hdni: new FormControl(data.us_dni),
           hfecha: new FormControl(data.us_fechanacimiento),
-          hemail: new FormControl(data.us_email),
+          hemail: this.email, // Keep the email FormControl here
           husuario: new FormControl(data.username),
           hcontrasena: new FormControl(data.password),
         });
       });
     }
   }
+  
 }

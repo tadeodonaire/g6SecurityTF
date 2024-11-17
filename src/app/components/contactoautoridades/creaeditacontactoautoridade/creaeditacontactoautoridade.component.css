@@ -78,3 +78,13 @@ body {
 .submit-button:hover {
   background-color: #1d1d55;;
 }
+.menu-button {
+  background-color: #151541;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px; /* Añade espacio vertical entre los botones */
+  cursor: pointer;
+}

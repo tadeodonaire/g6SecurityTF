@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Contactoemergencias } from '../../../models/contactoemergencias';
 import { ContactoemergenciasService } from '../../../services/contactoemergencias.service';
-import { ActivatedRoute, Params , Router} from '@angular/router';
+import { ActivatedRoute, Params , Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-creareditarcontactoemergencias',
@@ -20,7 +20,7 @@ import { ActivatedRoute, Params , Router} from '@angular/router';
   MatSelectModule,
   MatButtonModule,
   ReactiveFormsModule,
-  CommonModule],
+  CommonModule,RouterModule],
   templateUrl: './creareditarcontactoemergencias.component.html',
   styleUrl: './creareditarcontactoemergencias.component.css'
 })

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Contacto_Autoridades } from '../../../models/contactoautoridades';
 import { ContactoautoridadesService } from '../../../services/contactoautoridades.service';
-import { ActivatedRoute, Params,Router } from '@angular/router';
+import { ActivatedRoute, Params,Router, RouterModule } from '@angular/router';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -22,7 +22,7 @@ import { CommonModule } from '@angular/common';
     MatDatepickerModule,
     MatButtonModule,
     ReactiveFormsModule,
-    CommonModule],
+    CommonModule,RouterModule],
   templateUrl: './creaeditacontactoautoridade.component.html',
   styleUrl: './creaeditacontactoautoridade.component.css'
 })
