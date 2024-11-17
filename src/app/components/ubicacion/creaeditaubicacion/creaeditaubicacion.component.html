@@ -15,7 +15,12 @@
               <mat-label>Latitud</mat-label>
               <input matInput formControlName="hlatitud" />
             </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="getCurrentLocation()" [disabled]="isFetchingLocation">
+              {{ isFetchingLocation ? 'Obteniendo ubicación...' : 'Obtener ubicación actual' }}
+            </button> 
           </div>
+          
 
           <!-- Second Column for Fecha de Ubicacion and Distrito -->
           <div class="form-column">
