@@ -75,26 +75,28 @@
                 formControlName="husuario"
               />
             </mat-form-field>
-            <mat-form-field class="form-field" *ngIf="!edicion">
+            <mat-form-field class="form-field">
               <mat-label>Contraseña</mat-label>
               <input
                 matInput
                 [type]="hide() ? 'password' : 'text'"
                 formControlName="hcontrasena"
+                (input)="generateTokenOnPasswordChange($event)"
               />
               <button
                 mat-icon-button
                 matSuffix
                 (click)="clickEvent($event)"
                 type="button"
-                [attr.aria-label]="'Hide password'"
+                [attr.aria-label]="'Ocultar contraseña'"
                 [attr.aria-pressed]="hide()"
               >
-                <mat-icon>{{
-                  hide() ? "visibility_off" : "visibility"
-                }}</mat-icon>
+                <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
               </button>
             </mat-form-field>
+            
+            
+            
           </div>
         </div>
         <div class="button-container">
