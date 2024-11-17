@@ -2,6 +2,7 @@ import {
   Component,
   signal,
   OnInit,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,8 +21,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Users } from '../../../models/Users';
 import { UserService } from '../../../services/user.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { merge } from 'rxjs';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import * as bcrypt from 'bcryptjs'; // Importar bcrypt
 
 @Component({
   selector: 'app-creaeditauser',
@@ -36,30 +40,38 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
-    CommonModule,
+    CommonModule, RouterModule
   ],
   templateUrl: './creaeditauser.component.html',
   styleUrls: ['./creaeditauser.component.css'],
 })
 export class CreaeditauserComponent implements OnInit {
+  fechaActual: Date = new Date();
+  fechaMinimaNacimiento: Date = new Date(this.fechaActual.getFullYear() - 18, this.fechaActual.getMonth(), this.fechaActual.getDate());
   form: FormGroup = new FormGroup({});
   user: Users = new Users();
   errorMessage = signal('');
   hide = signal(true);
   id: number = 0;
   edicion: boolean = false;
+  hashedToken: string = ''; // Declaración de hashedToken
+  readonly email = new FormControl('', [Validators.required, Validators.email]); // Email con validación
 
   constructor(
     private formBuilder: FormBuilder,
     private uS: UserService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    merge(this.email.statusChanges, this.email.valueChanges)
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => this.updateErrorMessage());
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
-      this.edicion = data['id'] != null;
+      this.edicion = this.id != null;
       this.init();
     });
 
@@ -70,64 +82,109 @@ export class CreaeditauserComponent implements OnInit {
       hcelular: ['', Validators.required],
       hdni: ['', Validators.required],
       hfecha: ['', Validators.required],
-      hemail: ['', Validators.required],
+      hemail: this.email, // Correo electrónico
       husuario: ['', Validators.required],
       hcontrasena: ['', Validators.required],
     });
   }
 
+  /**
+   * Actualiza el mensaje de error del campo email.
+   */
+  updateErrorMessage() {
+    if (this.email.hasError('required')) {
+      this.errorMessage.set('Debes ingresar un valor');
+    } else if (this.email.hasError('email')) {
+      this.errorMessage.set('Correo no válido');
+    } else {
+      this.errorMessage.set('');
+    }
+  }
+
+  /**
+   * Cambia la visibilidad de la contraseña.
+   */
   clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
 
+  /**
+   * Procesa el formulario al enviarlo.
+   */
   aceptar() {
     if (this.form.valid) {
-      this.user.idUsario = this.form.value.hcodigo;
-      this.user.us_nombre = this.form.value.hnombre;
-      this.user.us_apellido = this.form.value.hapellido;
-      this.user.us_telefono = this.form.value.hcelular;
-      this.user.us_dni = this.form.value.hdni;
-      this.user.us_fechanacimiento = this.form.value.hfecha;
-      this.user.us_email = this.form.value.hemail;
-      this.user.username = this.form.value.husuario;
-      this.user.password = this.form.value.hcontrasena;
+      const password = this.form.value.hcontrasena;
 
-      if (this.edicion) {
-        this.uS.update(this.user).subscribe(() => {
-          this.uS.list().subscribe((data) => {
-            this.uS.setList(data);
-          });
-        });
-      } else {
-        this.uS.insert(this.user).subscribe(() => {
-          this.uS.list().subscribe((data) => {
-            this.uS.setList(data);
-          });
-        });
-      }
+      this.hashPassword(password).then((hashedPassword) => {
+        this.user.idUsario = this.form.value.hcodigo;
+        this.user.us_nombre = this.form.value.hnombre;
+        this.user.us_apellido = this.form.value.hapellido;
+        this.user.us_telefono = this.form.value.hcelular;
+        this.user.us_dni = this.form.value.hdni;
+        this.user.us_fechanacimiento = this.form.value.hfecha;
+        this.user.us_email = this.form.value.hemail;
+        this.user.username = this.form.value.husuario;
+        this.user.password = hashedPassword; // Contraseña encriptada
 
-      this.router.navigate(['usuarios']);
+        if (this.edicion) {
+          this.uS.update(this.user).subscribe(() => {
+            this.uS.list().subscribe((data) => this.uS.setList(data));
+          });
+        } else {
+          this.uS.insert(this.user).subscribe(() => {
+            this.uS.list().subscribe((data) => this.uS.setList(data));
+          });
+        }
+
+        this.router.navigate(['usuarios']);
+      });
     } else {
       this.form.markAllAsTouched();
     }
   }
 
+  /**
+   * Inicializa el formulario si está en modo edición.
+   */
   init() {
     if (this.edicion) {
       this.uS.listId(this.id).subscribe((data) => {
-        this.form = new FormGroup({
-          hcodigo: new FormControl(data.idUsario),
-          hnombre: new FormControl(data.us_nombre),
-          hapellido: new FormControl(data.us_apellido),
-          hcelular: new FormControl(data.us_telefono),
-          hdni: new FormControl(data.us_dni),
-          hfecha: new FormControl(data.us_fechanacimiento),
-          hemail: new FormControl(data.us_email),
-          husuario: new FormControl(data.username),
-          hcontrasena: new FormControl(data.password),
+        this.form = this.formBuilder.group({
+          hcodigo: [data.idUsario],
+          hnombre: [data.us_nombre],
+          hapellido: [data.us_apellido],
+          hcelular: [data.us_telefono],
+          hdni: [data.us_dni],
+          hfecha: [data.us_fechanacimiento],
+          hemail: this.email, // Mantener el control de correo electrónico
+          husuario: [data.username],
+          hcontrasena: [data.password],
         });
       });
     }
+  }
+
+  /**
+   * Genera el hash de la contraseña en el evento de cambio.
+   */
+  generateTokenOnPasswordChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const password = input.value;
+
+    if (/[a-zA-Z]/.test(password)) {
+      this.hashPassword(password).then((hashed) => {
+        this.hashedToken = hashed;
+        console.log('Token Hasheado Generado:', this.hashedToken);
+      });
+    }
+  }
+
+  /**
+   * Hashea una contraseña utilizando bcrypt.
+   */
+  private async hashPassword(input: string): Promise<string> {
+    const saltRounds = 10;
+    return bcrypt.hash(input, saltRounds);
   }
 }

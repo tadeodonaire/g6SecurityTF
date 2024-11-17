@@ -8,7 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { Contacto_Autoridades } from '../../../models/contactoautoridades';
 import { Contactoemergencias } from '../../../models/contactoemergencias';
 import { dispositivo } from '../../../models/dispositivo';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ContactoautoridadesService } from '../../../services/contactoautoridades.service';
 import { ContactoemergenciasService } from '../../../services/contactoemergencias.service';
 import { DispositivoService } from '../../../services/dispositivo.service';
@@ -18,7 +18,7 @@ import { UserService } from '../../../services/user.service';
 @Component({
   selector: 'app-creaeditardispositivos',
   standalone: true,
-  imports: [MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatSelectModule, MatButtonModule],
+  imports: [MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatSelectModule, MatButtonModule,RouterModule],
   providers: [provideNativeDateAdapter()],
   templateUrl: './creaeditardispositivos.component.html',
   styleUrl: './creaeditardispositivos.component.css'

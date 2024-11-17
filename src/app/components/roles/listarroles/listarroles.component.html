@@ -16,7 +16,7 @@
   
             <ng-container matColumnDef="c3">           
              <th mat-header-cell *matHeaderCellDef> Usuario </th>           
-             <td mat-cell *matCellDef="let element"> {{element.user.idUsario}} </td>           
+             <td mat-cell *matCellDef="let element"> ({{element.user.idUsario}}) {{element.user.us_nombre}} {{element.user.us_apellido}} </td>           
             </ng-container>
           
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -29,5 +29,9 @@
                    showFirstLastButtons
                    aria-label="Selecciona la página">
     </mat-paginator>
+    <br /><br />
+    <button mat-stroked-button class="menu-button" [routerLink]="['/navegacion']">
+      <span class="arrow-symbol"><mat-icon>keyboard_return</mat-icon></span> Volver al Menú
+    </button>
     </div>
   </div>

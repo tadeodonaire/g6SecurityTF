@@ -23,6 +23,7 @@ export class ListacontactoautoridadeComponent implements OnInit{
   ngOnInit(): void {
     this.cS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.cS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);

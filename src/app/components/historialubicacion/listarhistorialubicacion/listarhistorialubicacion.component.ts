@@ -3,18 +3,20 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Historialubicacion } from '../../../models/Historialubicacion';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { HistorialubicacionService } from '../../../services/historialubicacion.service';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-listarhistorialubicacion',
   standalone: true,
-  imports: [MatPaginatorModule, MatTableModule],
+  imports: [MatPaginatorModule, MatTableModule,MatIconModule,RouterModule],
   templateUrl: './listarhistorialubicacion.component.html',
   styleUrl: './listarhistorialubicacion.component.css'
 })
 export class ListarhistorialubicacionComponent implements OnInit{
 
   dataSource: MatTableDataSource<Historialubicacion> = new MatTableDataSource();
-  displayedColumns: string[] = [ 'c2', 'c3', 'c4', 'c5','c6'];
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5','c6'];
 
   constructor (private huS: HistorialubicacionService) {}
 

@@ -9,7 +9,7 @@ import { Historialclinico } from '../../../models/historialclinico';
 import { Detallemedico } from '../../../models/detallemedico';
 import { HistorialclinicoService } from '../../../services/historialclinico.service';
 import { DetallemedicoService } from '../../../services/detallemedico.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Alergias } from '../../../models/Alergias';
 import { AlergiasService } from '../../../services/alergia.service';
 import { Enfermedades } from '../../../models/Enfermedades';
@@ -23,7 +23,8 @@ import { EnfermedadesService } from '../../../services/enfermedades.service';
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './creareditardetallemedico.component.html',

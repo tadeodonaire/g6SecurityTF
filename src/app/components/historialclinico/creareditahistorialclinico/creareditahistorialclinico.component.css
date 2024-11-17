@@ -58,3 +58,14 @@ mat-form-field {
 .custom-button:hover {
     background-color: #2a2d63;
 }
+
+.menu-button {
+    margin-left: 10px; /* Espacio entre los botones */
+    background-color: #151541;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }

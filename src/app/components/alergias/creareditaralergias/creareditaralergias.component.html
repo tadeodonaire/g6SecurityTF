@@ -22,11 +22,11 @@
           <mat-form-field appearance="outline" class="Alergia-full-width">
             <mat-label>Nombre de la Alergia</mat-label>
             <input matInput placeholder="Nombre" formControlName="hnombre" />
-          </mat-form-field>
-         
+          </mat-form-field>         
+
           <mat-form-field appearance="outline" class="Alergia-full-width">
-              <mat-label>Descripcion</mat-label>
-              <input matInput placeholder="Descripcion" formControlName="hdescripcion" />
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput placeholder="Descripcion" formControlName="hdescripcion"></textarea>
           </mat-form-field>
   
           <mat-form-field appearance="outline" class="Alergia-full-width">
@@ -38,6 +38,14 @@
     
           <div>
             <button mat-flat-button class="custom-button" type="submit">Registrar</button>
+            <button
+            class="menu-button"
+            mat-stroked-button
+            type="button"
+            [routerLink]="['/navegacion']"
+          >
+            Volver al Menú
+          </button>
           </div>
         </form>
       </div>

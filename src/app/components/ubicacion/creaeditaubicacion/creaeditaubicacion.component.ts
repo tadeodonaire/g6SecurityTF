@@ -7,7 +7,7 @@ import { Distrito } from '../../../models/Distrito';
 import { Ubicacion } from '../../../models/Ubicacion';
 import { DistritoService } from '../../../services/distrito.service';
 import { UbicacionService } from '../../../services/ubicacion.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { provideNativeDateAdapter } from '@angular/material/core';
@@ -16,7 +16,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
   selector: 'app-creaeditaubicacion',
   standalone: true,
   providers: [provideNativeDateAdapter()],
-  imports: [MatFormFieldModule,MatInputModule,MatDatepickerModule,MatSelectModule,MatButtonModule,ReactiveFormsModule],
+  imports: [MatFormFieldModule,MatInputModule,MatDatepickerModule,MatSelectModule,MatButtonModule,ReactiveFormsModule,RouterModule],
   templateUrl: './creaeditaubicacion.component.html',
   styleUrl: './creaeditaubicacion.component.css'
 })

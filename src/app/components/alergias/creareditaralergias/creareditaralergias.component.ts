@@ -11,7 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Alergias } from '../../../models/Alergias';
 import { AlergiasService } from '../../../services/alergia.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-creareditaralergias',
   standalone: true,
@@ -21,7 +21,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,RouterModule
   ],
   templateUrl: './creareditaralergias.component.html',
   styleUrl: './creareditaralergias.component.css'

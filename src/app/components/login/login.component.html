@@ -1,0 +1,53 @@
+<div class="login-container">
+  <div class="container">
+    <div class="profile-icon">
+      <img src="assets/logo.png" alt="Logo de la empresa" />
+    </div>
+    <h2>Iniciar Sesión</h2>
+
+    <mat-form-field class="example-full-width form-field">
+      <mat-label>Usuario</mat-label>
+      <input matInput placeholder="Username" [(ngModel)]="username" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width form-field">
+      <mat-label>Contraseña</mat-label>
+      <input
+        matInput
+        type="password"
+        [type]="hide() ? 'password' : 'text'"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="clickEvent($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+      >
+        <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="submit-button" (click)="login()">
+      Iniciar Sesión
+    </button>
+
+    <div class="register-option">
+      <p>¿No tienes cuenta?</p>
+      <a class="register-link" [routerLink]="['/usuarios/nuevo']">
+        <button class="register-button">Crear cuenta</button>
+      </a>
+      
+    </div>
+
+    <div class="arrow-button-container">
+      <button class="arrow-button" [routerLink]="['/menu']">
+        <span class="arrow-text">Volver al menú</span>
+        <div class="arrow"></div>
+      </button>
+    </div>
+
+  </div>
+</div>
