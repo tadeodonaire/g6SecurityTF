@@ -11,6 +11,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RolesService } from '../../../services/roles.service';
 import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { Roles } from '../../../models/Roles';
+import { Users } from '../../../models/Users';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-creareditarroles',
@@ -32,6 +34,7 @@ import { Roles } from '../../../models/Roles';
 export class CreareditarrolesComponent implements OnInit{
   form: FormGroup =  new FormGroup({});
   roles: Roles = new Roles();
+  listaUsuarios: Users[] = [];
 
   id: number = 0;
   edicion: boolean = false;
@@ -40,8 +43,15 @@ export class CreareditarrolesComponent implements OnInit{
     private formBuilder: FormBuilder,
     private rS: RolesService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private uS: UserService
   ) {}
+
+  listarRoles: { value: string; viewValue: string } [] = [
+    {value: 'ADMINISTRADOR', viewValue: 'ADMINISTRADOR'},
+    {value: 'PERSONALEMERGENCIA', viewValue: 'PERSONALEMERGENCIA'},
+    {value: 'USUARIO', viewValue: 'USUARIO'},
+  ];
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
@@ -55,6 +65,10 @@ export class CreareditarrolesComponent implements OnInit{
       hid: [''],
       hrol: ['', Validators.required],
       husuario: ['', Validators.required],
+    });
+
+    this.uS.list().subscribe((data) => {
+      this.listaUsuarios = data;
     });
   }
   Registrar() {

@@ -29,7 +29,17 @@ export class CreareditarcontactoemergenciasComponent implements OnInit{
   contacto: Contactoemergencias = new Contactoemergencias();
   id: number = 0;
   edicion: boolean = false;
-  relacion: string[] = ['Madre','Padre','Hermano','Conyuge','Hijo','Otros']
+
+  listarRelacion: { value: string; viewValue: string } [] = [
+    {value: 'PADRE', viewValue: 'PADRE'},
+    {value: 'MADRE', viewValue: 'MADRE'},
+    {value: 'HERMANO', viewValue: 'HERMANO'},
+    {value: 'CONYUGE', viewValue: 'CONYUGE'},
+    {value: 'TIO', viewValue: 'TIO'},
+    {value: 'PARIENTE CERCANO', viewValue: 'PARIENTE CERCANO'},
+    {value: 'PARIENTE LEJANO', viewValue: 'PARIENTE LEJANO'},
+    {value: 'OTRO', viewValue: 'OTRO'},
+  ];
 
   constructor(
     private formBuilder: FormBuilder,

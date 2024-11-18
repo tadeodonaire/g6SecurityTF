@@ -11,21 +11,25 @@
           </mat-form-field>
           <br />
     
-          <mat-form-field class="form-field">
+          <mat-form-field class="example-full-width">
             <mat-label>Nombre del Contacto</mat-label>
             <input matInput formControlName="hnombre_contacto" />
           </mat-form-field>
           <br />
-    
-          <mat-form-field class="form-field">
-            <mat-label>Relación</mat-label>
-            <input matInput formControlName="hrelacion_contacto" />
+
+          <mat-form-field class="example-full-width">
+            <mat-label> Relación </mat-label>
+            <mat-select placeholder="Rol" formControlName="hrelacion_contacto">
+              <mat-option *ngFor="let c of listarRelacion" [value]="c.value">
+                {{ c.viewValue }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
-          <br />
+          <br>
     
-          <mat-form-field class="form-field">
+          <mat-form-field class="example-full-width">
             <mat-label>Teléfono</mat-label>
-            <input matInput type="number" placeholder="Número de Teléfono" formControlName="hnum_telefono_contacto" />
+            <input matInput placeholder="Número de Teléfono" formControlName="hnum_telefono_contacto" />
           </mat-form-field>
           <br />
     

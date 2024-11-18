@@ -13,16 +13,24 @@
                 <input matInput formControlName="hid" />
               </mat-form-field>
               <br/>
-    
+
             <mat-form-field class="example-full-width">
-              <mat-label>Rol</mat-label>
-              <input matInput placeholder="Rol" formControlName="hrol" />
+              <mat-label> Rol </mat-label>
+              <mat-select placeholder="Rol" formControlName="hrol">
+                <mat-option *ngFor="let r of listarRoles" [value]="r.value">
+                  {{ r.viewValue }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
             <br>
-  
+
             <mat-form-field class="example-full-width">
-                <mat-label>Usuario</mat-label>
-                <input matInput placeholder="Usuario" formControlName="husuario" />
+              <mat-label>Usuario</mat-label>
+              <mat-select matInput placeholder="Usuario" formControlName="husuario">
+                @for (m of listaUsuarios; track m) {
+                <mat-option [value]="m.idUsario">({{m.idUsario}}) {{m.us_nombre + ' ' + m.us_apellido}}</mat-option>
+                }
+              </mat-select>
             </mat-form-field>
             <br>
 
