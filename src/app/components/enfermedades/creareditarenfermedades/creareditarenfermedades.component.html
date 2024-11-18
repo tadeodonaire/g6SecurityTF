@@ -21,15 +21,19 @@
           <br>
 
           <mat-form-field class="example-full-width">
-              <mat-label>Descripcion</mat-label>
-              <input matInput placeholder="Descripcion" formControlName="hdescripcion" />
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput placeholder="Descripcion" formControlName="hdescripcion"></textarea>
           </mat-form-field>
           <br>
   
           <mat-form-field class="example-full-width">
-              <mat-label>Tipo</mat-label>
-              <input matInput placeholder="Tipo" formControlName="htipo" />
-          </mat-form-field>  
+            <mat-label> Tipo </mat-label>
+            <mat-select placeholder="Tipo" formControlName="htipo">
+              <mat-option *ngFor="let e of listaTipo" [value]="e.value">
+                {{ e.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
           <br>
   
          </section>
