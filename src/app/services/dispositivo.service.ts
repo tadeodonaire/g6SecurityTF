@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { dispositivo } from '../models/dispositivo';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { DispositivoContactoAutoridadDTO } from '../models/DispositivocontactoautoridadDTO';
 
 
 const base_url = environment.base;
@@ -31,6 +32,10 @@ export class DispositivoService{
   setList(listaNueva: dispositivo[]) {
     this.listaCambio.next(listaNueva);
   }
-  
+
+  getDetalleDispositivo(idDispositivo: number): Observable<DispositivoContactoAutoridadDTO[]> {
+    return this.http.get<DispositivoContactoAutoridadDTO[]>(`${this.url}/${idDispositivo}`);
+  }
 }
+
 

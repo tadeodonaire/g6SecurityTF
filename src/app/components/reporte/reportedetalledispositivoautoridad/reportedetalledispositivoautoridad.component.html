@@ -1,0 +1,21 @@
+<div *ngIf="detalles.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre Dispositivo</th>
+          <th>Nombre Autoridad</th>
+          <th>Teléfono Autoridad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of detalles">
+          <td>{{ detalle.NombreDispositivo }}</td>
+          <td>{{ detalle.NombreAutoridad }}</td>
+          <td>{{ detalle.telefonoAutoridad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="detalles.length === 0">
+    No hay datos disponibles.
+  </div>
