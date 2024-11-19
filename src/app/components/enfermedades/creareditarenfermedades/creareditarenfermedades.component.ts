@@ -38,6 +38,20 @@ export class CreareditarenfermedadesComponent implements  OnInit{
   id: number = 0;
   edicion: boolean = false;
 
+  listaTipo: { value: string; viewValue: string } [] = [
+    {value: 'Enfermedades cardiovasculares', viewValue: 'Enfermedades cardiovasculares'},
+    {value: 'Cáncer', viewValue: 'Cáncer'},
+    {value: 'Trastornos neonatales', viewValue: 'Trastornos neonatales'},
+    {value: 'Trastornos musculoesqueléticos', viewValue: 'Trastornos musculoesqueléticos'},
+    {value: ' Enfermedades mentales', viewValue: ' Enfermedades mentales'},
+    {value: 'Abuso de sustancias', viewValue: 'Abuso de sustancias'},
+    {value: 'Diabetes', viewValue: 'Diabetes'},
+    {value: 'Lesiones no intencionadas', viewValue: 'Lesiones no intencionadas'},
+    {value: ' Enfermedades respiratorias', viewValue: ' Enfermedades respiratorias'},
+    {value: 'Trastornos neurológicos', viewValue: 'Trastornos neurológicos'},
+    {value: 'Infecciones entéricas', viewValue: 'Infecciones entéricas'},
+  ];
+
   constructor(
     private formBuilder: FormBuilder,
     private eS: EnfermedadesService,

@@ -15,10 +15,6 @@
               <mat-label>Latitud</mat-label>
               <input matInput formControlName="hlatitud" />
             </mat-form-field>
-
-            <button mat-raised-button color="primary" (click)="getCurrentLocation()" [disabled]="isFetchingLocation">
-              {{ isFetchingLocation ? 'Obteniendo ubicación...' : 'Obtener ubicación actual' }}
-            </button> 
           </div>
           
 
@@ -54,6 +50,9 @@
 
         <!-- Submit Button -->
         <div class="button-container">
+          <button mat-raised-button class="menu-button1" color="primary" (click)="getCurrentLocation()" [disabled]="isFetchingLocation">
+            {{ isFetchingLocation ? 'Obteniendo ubicación...' : 'Obtener ubicación actual' }}
+          </button>
           <button mat-flat-button class="submit-button" type="submit">
             Aceptar
           </button>
@@ -64,7 +63,7 @@
             [routerLink]="['/navegacion']"
           >
             Volver al Menú
-          </button>
+          </button> 
         </div>
       </form>
     </div>
