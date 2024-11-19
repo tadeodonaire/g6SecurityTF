@@ -29,7 +29,7 @@
 /* Actual table styling */
 table {
     width: 100%; /* Table takes full width of container */
-    background-color: #222246; /* Specific background color for the table */
+    background-color: #bebecc; /* Specific background color for the table */
     border-collapse: collapse; /* Ensures no spacing between cells */
     border-radius: 8px; /* Optional: if you want rounded corners inside */
     overflow: hidden; /* Clips any overflow if using rounded corners */
@@ -37,7 +37,7 @@ table {
 th {
     font-weight: bold;  /* Los títulos de las columnas son más gruesos */
     background-color: #21262d;  /* Fondo oscuro para los encabezados de las columnas */
-    color: #ffffff;  /* Texto blanco para los títulos de las columnas */
+    color: #19548b;  /* Texto blanco para los títulos de las columnas */
     padding: 15px;  /* Espacio alrededor del texto en los encabezados */
     text-transform: uppercase;  /* Convierte el texto a mayúsculas */
 }
@@ -45,11 +45,11 @@ th {
 td {
     padding: 15px;  /* Espacio interno (padding) dentro de las celdas */
     border-bottom: 1px solid #30363d;  /* Una línea divisoria entre las filas de la tabla */
-    color: #e6e6e6;  /* Color gris claro para el texto de las celdas */
+    color: #1a2b76;  /* Color gris claro para el texto de las celdas */
 }
 
 tr:hover {
-    background-color: #2a2a4a; /* Background color on row hover */
+    background-color: #ffffff; /* Background color on row hover */
 }
 
 .paginator {
