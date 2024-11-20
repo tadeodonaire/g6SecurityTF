@@ -13,7 +13,7 @@ import { RolesService } from '../../services/roles.service';
 @Component({
   selector: 'app-navegacion',
   standalone: true,
-  imports: [RouterOutlet,MatIcon,MatMenuModule,MatToolbarModule,RouterModule,MatSidenavModule, CommonModule],
+  imports: [MatIcon,MatMenuModule,MatToolbarModule,RouterModule,MatSidenavModule, CommonModule],
   templateUrl: './navegacion.component.html',
   styleUrl: './navegacion.component.css'
 })
