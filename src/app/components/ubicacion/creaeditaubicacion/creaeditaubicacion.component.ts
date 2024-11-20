@@ -1,3 +1,4 @@
+declare var google: any;
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -20,11 +21,15 @@ import { provideNativeDateAdapter } from '@angular/material/core';
   templateUrl: './creaeditaubicacion.component.html',
   styleUrl: './creaeditaubicacion.component.css'
 })
+
 export class CreaeditaubicacionComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   listaDistrito: Distrito[] = [];
   ubi: Ubicacion = new Ubicacion();
   isFetchingLocation: boolean = false;
+
+  map: any; // Referencia al mapa
+  marker: any; // Referencia al marcador
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,6 +47,45 @@ export class CreaeditaubicacionComponent implements OnInit {
     });
     this.diS.list().subscribe((data) => {
       this.listaDistrito = data;
+    });
+    this.initMap();
+  }
+
+  initMap(): void {
+    const initialCoords = { lat: -12.0464, lng: -77.0428 }; // Coordenadas iniciales (Lima, Perú como ejemplo)
+
+    // Configuración del mapa
+    this.map = new google.maps.Map(document.getElementById('map'), {
+      center: initialCoords,
+      zoom: 12,
+    });
+
+    // Configuración del marcador
+    this.marker = new google.maps.Marker({
+      position: initialCoords,
+      map: this.map,
+      draggable: true, // Permitir que el marcador sea arrastrable
+    });
+
+    // Sincronizar el formulario al mover el marcador
+    this.marker.addListener('dragend', (event: any) => {
+      const lat = event.latLng.lat();
+      const lng = event.latLng.lng();
+      this.form.patchValue({
+        hlatitud: lat,
+        hlongitud: lng,
+      });
+    });
+
+    // Sincronizar el mapa al cambiar los valores del formulario
+    this.form.valueChanges.subscribe((formValue) => {
+      const lat = parseFloat(formValue.hlatitud);
+      const lng = parseFloat(formValue.hlongitud);
+      if (!isNaN(lat) && !isNaN(lng)) {
+        const newCoords = { lat, lng };
+        this.map.setCenter(newCoords);
+        this.marker.setPosition(newCoords);
+      }
     });
   }
 
