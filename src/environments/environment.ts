@@ -1,6 +1,6 @@
 
 export const environment ={
     production:false,
-    base:"http://localhost:8082"
+    base:"http://security-db.postgres.database.azure.com/Grupo6_app?useSSL=true&requireSSL=true&verifyServerCertificate=true"
 
 }
