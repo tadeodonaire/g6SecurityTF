@@ -25,7 +25,10 @@ export const appConfig: ApplicationConfig = {
       JwtModule.forRoot({
         config: {
           tokenGetter: tokenGetter,
-          allowedDomains: ['https://arquitecturaweb.azurewebsites.net'],
+
+          //allowedDomains: ['localhost:8082'],
+          //disallowedRoutes: ['http://localhost:8082/login/forget'],
+          allowedDomains: ['arquitecturaweb.azurewebsites.net'],
           disallowedRoutes: ['https://arquitecturaweb.azurewebsites.net/login/forget'],
         },
       })
