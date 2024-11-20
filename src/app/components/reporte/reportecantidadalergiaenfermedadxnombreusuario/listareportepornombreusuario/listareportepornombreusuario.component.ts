@@ -4,11 +4,12 @@ import { UserService } from '../../../../services/user.service';
 import { UsuarioConteoAlerEnferDTO } from '../../../../models/UsuarioConteoAlerEnferDTO';
 import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-listareportepornombreusuario',
   standalone: true,
-  imports: [MatTableModule, MatCardModule ],
+  imports: [ MatFormFieldModule, MatTableModule ],
   templateUrl: './listareportepornombreusuario.component.html',
   styleUrl: './listareportepornombreusuario.component.css'
 })

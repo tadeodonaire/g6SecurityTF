@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Contactoemergencias } from '../models/contactoemergencias';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { CantidadrelacioncontactosDTO } from '../models/CantidadrelacioncontactosDTO';
 const base_url = environment.base;
 
 @Injectable({
@@ -41,5 +42,12 @@ export class ContactoemergenciasService {
   update(c: Contactoemergencias) {
     return this.http.put(this.url, c);
   }
+
+  getCantidadRelacionContacto(relacion_contacto: string): Observable<CantidadrelacioncontactosDTO[]> {
+    return this.http.get<CantidadrelacioncontactosDTO[]>(`${this.url}/buscarpornombresdereferencia`, {
+    params: { relacion_contacto },
+    });
+  }
+
 
 }
