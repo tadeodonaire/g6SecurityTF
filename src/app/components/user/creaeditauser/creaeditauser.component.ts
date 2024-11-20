@@ -56,6 +56,7 @@ export class CreaeditauserComponent implements OnInit {
   edicion: boolean = false;
   hashedToken: string = ''; // Declaración de hashedToken
   readonly email = new FormControl('', [Validators.required, Validators.email]); // Email con validación
+  
 
   constructor(
     private formBuilder: FormBuilder,
@@ -77,15 +78,15 @@ export class CreaeditauserComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       hcodigo: [''],
-      hnombre: ['', Validators.required],
-      hapellido: ['', Validators.required],
-      hcelular: ['', Validators.required],
-      hdni: ['', Validators.required],
-      hfecha: ['', Validators.required],
-      hemail: this.email, // Correo electrónico
-      husuario: ['', Validators.required],
-      hcontrasena: ['', Validators.required],
-    });
+      hnombre: ['', [Validators.required]],
+      hapellido: ['', [Validators.required]],
+      hcelular: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern(/^\d+$/)]],
+      hdni: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern(/^\d+$/)]],
+      hfecha: ['', [Validators.required]],
+      hemail: this.email, // Email control already configured
+      husuario: ['', [Validators.required]],
+      hcontrasena: ['', [Validators.required]],
+    });    
   }
 
   /**
@@ -93,7 +94,7 @@ export class CreaeditauserComponent implements OnInit {
    */
   updateErrorMessage() {
     if (this.email.hasError('required')) {
-      this.errorMessage.set('Debes ingresar un valor');
+      this.errorMessage.set('Ingresar un correo');
     } else if (this.email.hasError('email')) {
       this.errorMessage.set('Correo no válido');
     } else {
@@ -115,7 +116,7 @@ export class CreaeditauserComponent implements OnInit {
   aceptar() {
     if (this.form.valid) {
       const password = this.form.value.hcontrasena;
-
+  
       this.hashPassword(password).then((hashedPassword) => {
         this.user.idUsario = this.form.value.hcodigo;
         this.user.us_nombre = this.form.value.hnombre;
@@ -126,7 +127,7 @@ export class CreaeditauserComponent implements OnInit {
         this.user.us_email = this.form.value.hemail;
         this.user.username = this.form.value.husuario;
         this.user.password = hashedPassword; // Contraseña encriptada
-
+  
         if (this.edicion) {
           this.uS.update(this.user).subscribe(() => {
             this.uS.list().subscribe((data) => this.uS.setList(data));
@@ -136,13 +137,15 @@ export class CreaeditauserComponent implements OnInit {
             this.uS.list().subscribe((data) => this.uS.setList(data));
           });
         }
-
+  
         this.router.navigate(['usuarios']);
       });
     } else {
       this.form.markAllAsTouched();
+      alert('Complete los campos faltantes');
     }
   }
+  
 
   /**
    * Inicializa el formulario si está en modo edición.
