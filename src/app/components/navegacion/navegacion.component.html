@@ -121,15 +121,15 @@
         <!-- Alergias-->
         <button mat-button [matMenuTriggerFor]="menuSV66" style="color: rgb(0, 0, 0)" *ngIf="isPersonal() || isAdministrador()"><mat-icon>local_florist</mat-icon>Alergias</button>
         <!-- Contacto Autoridad-->
-        <button mat-button [matMenuTriggerFor]="menuSV67" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() || isAdministrador()"><mat-icon>contact_phone</mat-icon>Contacto Autoridad</button>
+        <button mat-button [matMenuTriggerFor]="menuSV67" style="color: rgb(0, 0, 0)" *ngIf="isPersonal() || isAdministrador()"><mat-icon>contact_phone</mat-icon>Contacto Autoridad</button>
         <!-- Contacto Emergencia-->
-        <button mat-button [matMenuTriggerFor]="menuSV68" style="color: rgb(0, 0, 0)" *ngIf="isPersonal() || isAdministrador() || isPersonal()"><mat-icon>contacts</mat-icon>Contacto Emergencia</button>
+        <button mat-button [matMenuTriggerFor]="menuSV68" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() || isAdministrador()"><mat-icon>contacts</mat-icon>Contacto Emergencia</button>
         <!-- Enfermedades Menu -->
         <button mat-button [matMenuTriggerFor]="menuSV69" style="color: rgb(0, 0, 0)" *ngIf="isPersonal() || isAdministrador()"><mat-icon>report_problem</mat-icon>Enfermedades</button>
         <!-- Ubicaciones-->
         <button mat-button [matMenuTriggerFor]="menuSV51" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() || isAdministrador()"><mat-icon>edit_location</mat-icon>Ubicaciones</button>
         <!-- Historial Clinico-->
-        <button mat-button [matMenuTriggerFor]="menuSV52" style="color: rgb(0, 0, 0)" *ngIf="isPersonal() || isAdministrador() || isPersonal()"><mat-icon>description</mat-icon>Historial Clinico</button>
+        <button mat-button [matMenuTriggerFor]="menuSV52" style="color: rgb(0, 0, 0)" *ngIf="isPersonal() || isAdministrador() || isUsuario()"><mat-icon>description</mat-icon>Historial Clinico</button>
         <!--Detalle Medico-->
         <button mat-button [matMenuTriggerFor]="menuSV80" style="color: rgb(0, 0, 0)" *ngIf="isPersonal() || isAdministrador()"><mat-icon>book</mat-icon>Detalle Medico</button>
         <!-- Dispositivos-->
@@ -137,9 +137,9 @@
         <!-- Historial Ubicacion-->
         <button mat-button [matMenuTriggerFor]="menuSV55" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() || isAdministrador()"><mat-icon>person_pin</mat-icon>Historial Ubicacion</button>
         <!-- Roles -->
-        <button mat-button [matMenuTriggerFor]="menuSV56" style="color: rgb(0, 0, 0)"><mat-icon>how_to_reg</mat-icon>Roles</button>
+        <button mat-button [matMenuTriggerFor]="menuSV56" style="color: rgb(0, 0, 0)" *ngIf="isAdministrador()"><mat-icon>how_to_reg</mat-icon>Roles</button>
         <!-- Reportes -->
-        <button mat-button [matMenuTriggerFor]="menuSV71" style="color: rgb(0, 0, 0)" *ngIf="isAdministrador() || isPersonal()"><mat-icon> insert_chart_outlined</mat-icon>Reportes</button>
+        <button mat-button [matMenuTriggerFor]="menuSV71" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() ||isAdministrador() || isPersonal()"><mat-icon> insert_chart_outlined</mat-icon>Reportes</button>
         <!-- Logout -->
         <button mat-button [matMenuTriggerFor]="menuSalir" style="color: rgb(0, 0, 0)"><mat-icon>verified_user</mat-icon>Rol:</button>
       </div>
