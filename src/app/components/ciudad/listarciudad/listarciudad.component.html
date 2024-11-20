@@ -19,11 +19,7 @@
       <!-- Eliminar Column -->
       <ng-container matColumnDef="accion01">
         <th mat-header-cell *matHeaderCellDef>Eliminar</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          (click)="eliminar(element.idCiudad)"
-        >
+        <td mat-cell *matCellDef="let element" (click)="eliminar(element.idCiudad)">
           <mat-icon style="color: brown">delete_forever</mat-icon>
         </td>
       </ng-container>
@@ -31,11 +27,7 @@
       <!-- Actualizar Column -->
       <ng-container matColumnDef="accion02">
         <th mat-header-cell *matHeaderCellDef>Actualizar</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          [routerLink]="['ediciones', element.idCiudad]"
-        >
+        <td mat-cell *matCellDef="let element" [routerLink]="['ediciones', element.idCiudad]">
           <mat-icon style="color: rgb(14, 147, 25)">edit</mat-icon>
         </td>
       </ng-container>
