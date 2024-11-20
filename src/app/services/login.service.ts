@@ -25,4 +25,19 @@ export class LoginService {
     const decodedToken = helper.decodeToken(token);
     return decodedToken?.role;
   }
+
+  getCurrentUser() {
+    const user = sessionStorage.getItem('currentUser'); // Ajusta según cómo guardes el usuario
+    return user ? JSON.parse(user) : null;
+  }
+
+  getNombre(): string {
+    let user = this.getCurrentUser();
+    return user ? user.nombre : 'Nombre';
+  }
+
+  getApellido(): string {
+    let user = this.getCurrentUser();
+    return user ? user.apellido : 'Apellido';
+  }
 }
