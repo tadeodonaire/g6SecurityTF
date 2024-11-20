@@ -8,6 +8,11 @@
         (ngSubmit)="aceptar()"
       >
         <div class="form-row">
+          <mat-form-field appearance="outline" class="Alergia-full-width" *ngIf="edicion" >
+            <mat-label>Codigo</mat-label>
+             <input matInput placeholder="Codigo" formControlName="hcodigo" />
+          </mat-form-field>
+          
           <div class="form-column">
             <mat-form-field class="example-full-width form-field">
               <mat-label>Nombre</mat-label>
