@@ -9,7 +9,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class LoginService {
   constructor(private http: HttpClient) {}
   login(request: JwtRequest) {
-
     return this.http.post('https://arquitecturaweb.azurewebsites.net/login', request);
     //return this.http.post('http://localhost:8082/login', request);
   }
