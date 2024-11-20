@@ -11,7 +11,6 @@ export class LoginService {
   login(request: JwtRequest) {
     return this.http.post('https://arquitecturaweb.azurewebsites.net/login', request);
     //return this.http.post('http://localhost:8082/login', request);
-
   }
   verificar() {
     let token = sessionStorage.getItem('token');
