@@ -9,7 +9,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class LoginService {
   constructor(private http: HttpClient) {}
   login(request: JwtRequest) {
-    return this.http.post('http://localhost:9/login', request);
+    return this.http.post('https://arquitecturaweb.azurewebsites.net/login', request);
+    //return this.http.post('http://localhost:8082/login', request);
   }
   verificar() {
     let token = sessionStorage.getItem('token');
@@ -24,5 +25,20 @@ export class LoginService {
     const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken(token);
     return decodedToken?.role;
+  }
+
+  getCurrentUser() {
+    const user = sessionStorage.getItem('currentUser'); // Ajusta según cómo guardes el usuario
+    return user ? JSON.parse(user) : null;
+  }
+
+  getNombre(): string {
+    let user = this.getCurrentUser();
+    return user ? user.nombre : 'Nombre';
+  }
+
+  getApellido(): string {
+    let user = this.getCurrentUser();
+    return user ? user.apellido : 'Apellido';
   }
 }

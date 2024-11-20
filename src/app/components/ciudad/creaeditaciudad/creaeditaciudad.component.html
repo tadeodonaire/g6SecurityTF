@@ -5,33 +5,43 @@
     </div>
     
     <div class="form-container">
-      <form class="example-form" [formGroup]="form" (ngSubmit)="aceptar()">
+      <form class="example-form" [formGroup]="form" (submit)="aceptar()">
         <!-- Form fields here -->
+        
         <mat-form-field class="full-width">
+          
           <mat-label>Ciudad</mat-label>
+          
+          <mat-form-field *ngIf="edicion" >
+            <mat-label>Codigo</mat-label>
+             <input matInput placeholder="Codigo" formControlName="hcodigo" />
+          </mat-form-field>
+
           <mat-select formControlName="hciudad">
             <mat-option *ngFor="let m of listarCiudades" [value]="m.value">
               {{ m.viewValue }}
             </mat-option>
           </mat-select>
+          
           <mat-error *ngIf="form.get('hciudad')?.hasError('required') && form.get('hciudad')?.touched">
             Completar el espacio en blanco para poder registrar
           </mat-error>
         </mat-form-field>
     
         <div class="button-container">
-          <button mat-flat-button color="primary" type="button" (click)="aceptar()">
-            Aceptar
+          <button class="submit-button" mat-flat-button type="submit">
+            Registrar
           </button>
-          <button class="menu-button" mat-stroked-button type="button" [routerLink]="['/navegacion']">
+          <button
+            class="menu-button"
+            mat-stroked-button
+            type="button"
+            [routerLink]="['/navegacion']"
+          >
             Volver al Menú
           </button>
         </div>
       </form>
-    </div>   
-    
-    <div class="error-container" *ngIf="errorMessage">
-      <p class="error-text">{{ errorMessage }}</p>
     </div>
   </div>
 </body>

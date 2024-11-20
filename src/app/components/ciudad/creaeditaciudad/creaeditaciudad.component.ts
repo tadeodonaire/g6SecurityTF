@@ -80,7 +80,7 @@ export class CreaeditaciudadComponent implements OnInit {
     });
 
     this.form = this.formBuilder.group({
-      hcodigo1: [''],
+      hcodigo: [''],
       hciudad: ['', Validators.required],
     });
   }
@@ -119,7 +119,7 @@ export class CreaeditaciudadComponent implements OnInit {
     if (this.edicion) {
       this.cS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          hcodigo1: new FormControl(data.idCiudad),
+          hcodigo: new FormControl(data.idCiudad),
           hciudad: new FormControl(data.nombre_ciudad),
         });
       });
