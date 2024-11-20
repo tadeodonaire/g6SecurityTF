@@ -25,8 +25,8 @@ export const appConfig: ApplicationConfig = {
       JwtModule.forRoot({
         config: {
           tokenGetter: tokenGetter,
-          allowedDomains: ['security-db.postgres.database.azure.com/Grupo6_app?useSSL=true&requireSSL=true&verifyServerCertificate=true'],
-          disallowedRoutes: ['http://security-db.postgres.database.azure.com/Grupo6_app?useSSL=true&requireSSL=true&verifyServerCertificate=true/login/forget'],
+          allowedDomains: ['https://arquitecturaweb.azurewebsites.net'],
+          disallowedRoutes: ['https://arquitecturaweb.azurewebsites.net/login/forget'],
         },
       })
     )
