@@ -1,67 +1,106 @@
 /* General Page Styles */
 body {
-    background-color: #13132b;
-    color: white;
-    font-family: 'Catamaran', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  /* Container for the Register Form */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Title */
-  .title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Catamaran', sans-serif;
-    color: white;
-  }
-  
-  /* Form Container */
-  .form-container {
-    background-color: #b0b0bb;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  
-  /* Button Styles */
-  .button-container {
-    text-align: center;
-  }
-  
-  button[mat-flat-button] {
-    background-color: #151541;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-  
-  button[mat-flat-button]:hover {
-    background-color: #1d1d55;
-  }
+  background-color: #13132b;
+  color: white;
+  font-family: 'Catamaran', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  .menu-button {
-    margin-left: 10px; /* Espacio entre los botones */
-    background-color: #151541;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  
+/* Container for the Register Form */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Catamaran', sans-serif;
+  color: white;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #b0b0bb;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form fields */
+}
+
+/* Full Width Fields */
+.full-width {
+  width: 100%;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+/* Button Styles */
+button[mat-flat-button] {
+  background-color: #151541;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+button[mat-flat-button]:hover {
+  background-color: #1d1d55;
+}
+
+.menu-button {
+  background-color: #151541;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background-color: #1d1d55;
+}
+
+
+/* Error Messages */
+mat-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Error Message */
+.error-container {
+  background-color: #ffcccc;
+  border: 1px solid red;
+  padding: 10px;
+  margin-top: 20px; /* Add more margin to create space between form and error */
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+}
+

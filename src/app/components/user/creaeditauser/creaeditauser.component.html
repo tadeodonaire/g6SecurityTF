@@ -12,47 +12,73 @@
             <mat-form-field class="example-full-width form-field">
               <mat-label>Nombre</mat-label>
               <input matInput placeholder="Nombre" formControlName="hnombre" />
-            </mat-form-field>
+              <mat-error *ngIf="form.get('hnombre')?.hasError('required')">
+                Debes ingresar el nombre.
+              </mat-error>
+            </mat-form-field>            
+
             <mat-form-field class="example-full-width form-field">
               <mat-label>Apellido</mat-label>
-              <input
-                matInput
-                placeholder="Apellido"
-                formControlName="hapellido"
-              />
+              <input matInput placeholder="Apellido" formControlName="hapellido" />
+              <mat-error *ngIf="form.get('hapellido')?.hasError('required')">
+                Debes ingresar el apellido.
+              </mat-error>
             </mat-form-field>
+            
+            
             <mat-form-field class="example-full-width form-field">
               <mat-label>DNI</mat-label>
-              <input
-                matInput
-                placeholder="Doc.Identidad"
-                formControlName="hdni"
-              />
+              <input matInput placeholder="Doc. Identidad" formControlName="hdni" />
+              <mat-error *ngIf="form.get('hdni')?.hasError('required')">
+                Debes ingresar el DNI.
+              </mat-error>
+              <mat-error *ngIf="form.get('hdni')?.hasError('minlength') || form.get('hdni')?.hasError('maxlength')">
+                El DNI debe tener 8 dígitos.
+              </mat-error>
+              <mat-error *ngIf="form.get('hdni')?.hasError('pattern')">
+                El DNI debe contener solo números.
+              </mat-error>
             </mat-form-field>
+            
             <mat-form-field class="example-full-width form-field">
               <mat-label>Celular</mat-label>
-              <input
-                matInput
-                placeholder="Celular"
-                formControlName="hcelular"
-              />
+              <input matInput placeholder="Celular" formControlName="hcelular" />
+              <mat-error *ngIf="form.get('hcelular')?.hasError('required')">
+                Debes ingresar el número de celular.
+              </mat-error>
+              <mat-error *ngIf="form.get('hcelular')?.hasError('minlength') || form.get('hcelular')?.hasError('maxlength')">
+                El celular debe tener 9 dígitos.
+              </mat-error>
+              <mat-error *ngIf="form.get('hcelular')?.hasError('pattern')">
+                El celular debe contener solo números.
+              </mat-error>
             </mat-form-field>
+            
           </div>
           <div class="form-column">
             <mat-form-field class="form-field">
               <mat-label>Fecha de Nacimiento</mat-label>
-              <input matInput [matDatepicker]="picker" [max]="fechaMinimaNacimiento" formControlName="hfecha"/>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                [max]="fechaMinimaNacimiento"
+                formControlName="hfecha"
+              />
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
+              
+              <!-- Validation Messages -->
+              <mat-error *ngIf="form.get('hfecha')?.hasError('required')">
+                Debes ingresar la fecha de nacimiento.
+              </mat-error>
+              <mat-error *ngIf="form.get('hfecha')?.hasError('fechaInvalida')">
+                La fecha debe ser anterior a la fecha actual.
+              </mat-error>
+              <mat-error *ngIf="form.get('hfecha')?.hasError('menorDeEdad')">
+                Debes tener al menos 18 años.
+              </mat-error>
             </mat-form-field>
-                         <!-- Mensajes de error para fecha -->
-             <div *ngIf="form.get('hfecha')?.hasError('fechaInvalida')">
-              La fecha debe ser anterior a la fecha actual.
-            </div>
-            <div *ngIf="form.get('hfecha')?.hasError('menorDeEdad')">
-              Debes tener al menos 18 años.
-            </div>
             
             <mat-form-field class="example-full-width form-field">
               <mat-label>Correo Electronico</mat-label>
@@ -69,12 +95,12 @@
 
             <mat-form-field class="example-full-width form-field">
               <mat-label>Usuario</mat-label>
-              <input
-                matInput
-                placeholder="Usuario"
-                formControlName="husuario"
-              />
+              <input matInput placeholder="Usuario" formControlName="husuario" />
+              <mat-error *ngIf="form.get('husuario')?.hasError('required')">
+                Debes ingresar el usuario.
+              </mat-error>
             </mat-form-field>
+            
             <mat-form-field class="form-field">
               <mat-label>Contraseña</mat-label>
               <input
@@ -93,7 +119,11 @@
               >
                 <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
               </button>
+              <mat-error *ngIf="form.get('hcontrasena')?.hasError('required')">
+                Debes ingresar la contraseña.
+              </mat-error>
             </mat-form-field>
+            
             
             
             

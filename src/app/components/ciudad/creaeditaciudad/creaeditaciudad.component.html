@@ -1,21 +1,12 @@
 <body>
   <div class="container">
-    <div><h1 class="title">Registrar Ciudad</h1></div>
+    <div>
+      <h1 class="title">Registrar Ciudad</h1>
+    </div>
+    
     <div class="form-container">
       <form class="example-form" [formGroup]="form" (ngSubmit)="aceptar()">
-        <mat-form-field class="full-width" *ngIf="edicion">
-          <mat-label>Código</mat-label>
-          <input matInput placeholder="Código" formControlName="hcodigo1" />
-          <mat-error
-            *ngIf="
-              form.get('hcodigo1')?.hasError('required') &&
-              form.get('hcodigo1')?.touched
-            "
-          >
-            Completar el espacio en blanco para poder registrar
-          </mat-error>
-        </mat-form-field>
-
+        <!-- Form fields here -->
         <mat-form-field class="full-width">
           <mat-label>Ciudad</mat-label>
           <mat-select formControlName="hciudad">
@@ -23,35 +14,24 @@
               {{ m.viewValue }}
             </mat-option>
           </mat-select>
-          <mat-error
-            *ngIf="
-              form.get('hciudad')?.hasError('required') &&
-              form.get('hciudad')?.touched
-            "
-          >
+          <mat-error *ngIf="form.get('hciudad')?.hasError('required') && form.get('hciudad')?.touched">
             Completar el espacio en blanco para poder registrar
           </mat-error>
         </mat-form-field>
-
+    
         <div class="button-container">
-          <button
-            mat-flat-button
-            color="primary"
-            type="submit"
-            [disabled]="form.invalid"
-          >
+          <button mat-flat-button color="primary" type="button" (click)="aceptar()">
             Aceptar
           </button>
-          <button
-            class="menu-button"
-            mat-stroked-button
-            type="button"
-            [routerLink]="['/navegacion']"
-          >
+          <button class="menu-button" mat-stroked-button type="button" [routerLink]="['/navegacion']">
             Volver al Menú
           </button>
         </div>
       </form>
+    </div>   
+    
+    <div class="error-container" *ngIf="errorMessage">
+      <p class="error-text">{{ errorMessage }}</p>
     </div>
   </div>
 </body>
