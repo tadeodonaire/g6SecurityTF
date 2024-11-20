@@ -38,6 +38,7 @@ import { ReporteHistorialClinicoComponent } from './components/reporte/reportehi
 import { ReporteusuariodispositivoxrolesComponent } from './components/reporte/reporteusuariodispositivoxroles/reporteusuariodispositivoxroles.component';
 import { ReportecantidadalergiaenfermedadxnombreusuarioComponent } from './components/reporte/reportecantidadalergiaenfermedadxnombreusuario/reportecantidadalergiaenfermedadxnombreusuario.component';
 import { ListareportepornombreusuarioComponent } from './components/reporte/reportecantidadalergiaenfermedadxnombreusuario/listareportepornombreusuario/listareportepornombreusuario.component';
+import { ListarreportecantidadrelacioncontactosComponent } from './components/reporte/reportecantidadrelacioncontactos/listarreportecantidadrelacioncontactos/listarreportecantidadrelacioncontactos.component';
 
 export const routes: Routes = [
   {
@@ -68,7 +69,6 @@ export const routes: Routes = [
       {
         path: 'ediciones/:id',
         component: CreaeditauserComponent,
-        canActivate: [seguridadGuard],
       },
     ],
   },
@@ -226,7 +226,6 @@ export const routes: Routes = [
         component: CreareditarrolesComponent,
       },
     ],
-    canActivate: [seguridadGuard],
   },
   {
     path: 'reportes',
@@ -259,6 +258,10 @@ export const routes: Routes = [
       {
         path: 'CantidadAlerEnferXuser',
         component: ListareportepornombreusuarioComponent,
+      },
+      {
+        path: 'cantidadRelacionContacto',
+        component: ListarreportecantidadrelacioncontactosComponent,
       },
     ],
   },
