@@ -36,6 +36,7 @@ export class CreaeditaciudadComponent implements OnInit {
   ciudad: Ciudad = new Ciudad();
   id: number = 0;
   edicion: boolean = false;
+  errorMessage: string | null = null; // Property to store error messages
 
   listarCiudades: { value: string; viewValue: string }[] = [
     { value: 'Arequipa', viewValue: 'Arequipa' },
@@ -85,30 +86,34 @@ export class CreaeditaciudadComponent implements OnInit {
   }
 
   aceptar() {
-    if (this.form.valid) {
-      this.ciudad.idCiudad = this.form.value.hcodigo;
-      this.ciudad.nombre_ciudad = this.form.value.hciudad;
+  if (this.form.valid) {
+    this.errorMessage = null; // Clear error message if the form is valid
 
-      if (this.edicion) {
-        //update
-        this.cS.update(this.ciudad).subscribe((data) => {
-          this.cS.list().subscribe((data) => {
-            this.cS.setList(data);
-          });
-        });
-      } else {
-        this.cS.insert(this.ciudad).subscribe((data) => {
-          this.cS.list().subscribe((data) => {
-            this.cS.setList(data);
-          });
-        });
-      }
+    this.ciudad.idCiudad = this.form.value.hcodigo;
+    this.ciudad.nombre_ciudad = this.form.value.hciudad;
 
+    if (this.edicion) {
+      // Update logic
+      this.cS.update(this.ciudad).subscribe(() => {
+        this.cS.list().subscribe((data) => {
+          this.cS.setList(data);
+        });
+      });
     } else {
-      this.form.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar mensajes de error
+      // Insert logic
+      this.cS.insert(this.ciudad).subscribe(() => {
+        this.cS.list().subscribe((data) => {
+          this.cS.setList(data);
+        });
+      });
     }
-    this.router.navigate(['Ciudad']);
+
+    this.router.navigate(['Ciudad']); // Navigate after successful action
+  } else {
+    this.form.markAllAsTouched(); // Mark all fields as touched to show validation errors
+    this.errorMessage = 'Por favor, complete todos los campos obligatorios antes de continuar.';
   }
+}
 
   init() {
     if (this.edicion) {
