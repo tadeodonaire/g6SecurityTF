@@ -68,9 +68,9 @@ export const routes: Routes = [
       {
         path: 'ediciones/:id',
         component: CreaeditauserComponent,
+        canActivate: [seguridadGuard],
       },
     ],
-    canActivate: [seguridadGuard],
   },
   {
     path: 'alergias',

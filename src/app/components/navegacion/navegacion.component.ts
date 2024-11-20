@@ -21,10 +21,14 @@ export class NavegacionComponent {
 
   roles: any[] = [];
   rol: string = '';
+  nombre: string = ''; // Nuevo: Para almacenar el nombre
+  apellido: string = ''; // Nuevo: Para almacenar el apellido
   constructor(private loginService: LoginService, private rS:RolesService) {}
 
   ngOnInit() {
     this.rol = this.loginService.showRole();
+    this.nombre = this.loginService.getNombre(); // Obtener el nombre
+    this.apellido = this.loginService.getApellido(); // Obtener el apellido
     this.rS.getList().subscribe((data) => {
       this.roles = data;
     });

@@ -13,7 +13,11 @@
       <ul #navLinks class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a [routerLink]="['/navegacion']">Mi Cuenta</a></li>
-        <li *ngIf="rol"><a>Rol: {{ rol }}</a></li>
+        <li *ngIf="rol">
+          <a>Rol: {{ rol }}</a>
+          <br />
+          <a>{{ nombre }} {{ apellido }}</a>
+        </li>
       </ul>
     </nav>
 
