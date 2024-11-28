@@ -17,18 +17,11 @@ import { RolesComponent } from "./components/roles/roles.component";
   standalone: true,
   imports: [
     RouterOutlet,
-    UserComponent,
-    AlergiasComponent,
-    ContactoautoridadesComponent,
-    ContactoemergenciasComponent,
-    DispositivoComponent,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
     RouterModule,
-    EnfermedadesComponent,
-    RolesComponent
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",

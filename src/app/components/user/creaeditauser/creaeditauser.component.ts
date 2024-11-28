@@ -138,7 +138,7 @@ export class CreaeditauserComponent implements OnInit {
           });
         }
   
-        this.router.navigate(['roles/registrar']);
+        this.router.navigate(['usuarios']);
       });
     } else {
       this.form.markAllAsTouched();
