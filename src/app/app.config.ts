@@ -26,10 +26,10 @@ export const appConfig: ApplicationConfig = {
         config: {
           tokenGetter: tokenGetter,
 
-          //allowedDomains: ['localhost:8082'],
-          //disallowedRoutes: ['http://localhost:8082/login/forget'],
-          allowedDomains: ['arquitecturaweb.azurewebsites.net'],
-          disallowedRoutes: ['https://arquitecturaweb.azurewebsites.net/login/forget'],
+          allowedDomains: ['localhost:8082'],
+          disallowedRoutes: ['http://localhost:8082/login/forget'],
+          //allowedDomains: ['arquitecturaweb.azurewebsites.net'],
+          //disallowedRoutes: ['https://arquitecturaweb.azurewebsites.net/login/forget'],
         },
       })
     )

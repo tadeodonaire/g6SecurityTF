@@ -1,6 +1,6 @@
 declare var google: any;
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -27,7 +27,7 @@ export class CreaeditaubicacionComponent implements OnInit {
   listaDistrito: Distrito[] = [];
   ubi: Ubicacion = new Ubicacion();
   isFetchingLocation: boolean = false;
-
+  fechaActual: Date = new Date();
   map: any; // Referencia al mapa
   marker: any; // Referencia al marcador
 
@@ -124,5 +124,16 @@ export class CreaeditaubicacionComponent implements OnInit {
       });
       this.router.navigate(['ubicaciones']);
     }
+  }
+
+  fechaPasadaValidator(control: FormControl) {
+    const fechaSeleccionada = new Date(control.value);
+    const hoy = new Date();
+
+    // Si la fecha seleccionada es posterior a hoy, marca como error
+    if (fechaSeleccionada > hoy) {
+      return { fechaInvalida: true };
+    }
+    return null;
   }
 }

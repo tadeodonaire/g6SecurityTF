@@ -129,12 +129,16 @@ export class CreaeditauserComponent implements OnInit {
         this.user.password = hashedPassword; // Contraseña encriptada
   
         if (this.edicion) {
-          this.uS.update(this.user).subscribe(() => {
-            this.uS.list().subscribe((data) => this.uS.setList(data));
+          this.uS.update(this.user).subscribe((data) => {
+            this.uS.list().subscribe((data) => {
+              this.uS.setList(data);
+            });
           });
         } else {
-          this.uS.insert(this.user).subscribe(() => {
-            this.uS.list().subscribe((data) => this.uS.setList(data));
+          this.uS.insert(this.user).subscribe((data) => {
+            this.uS.list().subscribe((data) => {
+              this.uS.setList(data);
+            });
           });
         }
   
@@ -160,7 +164,7 @@ export class CreaeditauserComponent implements OnInit {
           hcelular: [data.us_telefono],
           hdni: [data.us_dni],
           hfecha: [data.us_fechanacimiento],
-          hemail: this.email, // Mantener el control de correo electrónico
+          hemail: [data.us_email], // Mantener el control de correo electrónico
           husuario: [data.username],
           hcontrasena: [data.password],
         });
