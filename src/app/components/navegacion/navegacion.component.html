@@ -16,7 +16,12 @@
         <li *ngIf="rol">
           <a>Rol: {{ rol }}</a>
           <br />
-          <a>{{ nombre }} {{ apellido }}</a>
+         
+        </li>
+        <li *ngIf="username">
+          <a>User: {{ username }}</a>
+          <br />
+         
         </li>
       </ul>
     </nav>
@@ -33,27 +38,27 @@
 
   <!-- Usuarios -->
   <mat-menu #menuSV64="matMenu">
-    <button mat-menu-item routerLink="/usuarios" ><mat-icon>list</mat-icon>Listar</button>
+    <button mat-menu-item routerLink="/usuarios"><mat-icon>list</mat-icon>Listar</button>
     <button mat-menu-item routerLink="/usuarios/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
 
   <!-- Ciudad -->
   <mat-menu #menuSV65="matMenu"><button mat-menu-item routerLink="/Ciudad"><mat-icon>list</mat-icon>Listar</button>
-    <button mat-menu-item routerLink="/Ciudad/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
+    <button mat-menu-item routerLink="/Ciudad/registrar" *ngIf="isAdministrador()"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
   <!-- Distrito -->
   <mat-menu #menuSV70="matMenu">
     <button mat-menu-item routerLink="/Distritos"><mat-icon>list</mat-icon>Listar</button>
-    <button mat-menu-item routerLink="/Distritos/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
+    <button mat-menu-item routerLink="/Distritos/registrar" *ngIf="isAdministrador()"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
   <!-- Alergias-->
   <mat-menu #menuSV66="matMenu">
     <button mat-menu-item routerLink="/alergias"><mat-icon>list</mat-icon>Listar</button>
-    <button mat-menu-item routerLink="/alergias/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
+    <button mat-menu-item routerLink="/alergias/nuevo" *ngIf="isPersonal() || isAdministrador()"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
   <!-- Contacto Autoridad-->
-  <mat-menu #menuSV67="matMenu"><button mat-menu-item routerLink="/contactosautoridades"><mat-icon>list</mat-icon>Listar</button>
-    <button mat-menu-item routerLink="/contactosautoridades/nuevo"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
+  <mat-menu #menuSV67="matMenu"><button mat-menu-item routerLink="/ronal"><mat-icon>list</mat-icon>Listar</button>
+    <button mat-menu-item routerLink="/contactosautoridades/nuevo" *ngIf="isPersonal() || isAdministrador()"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
   <!-- Contacto Emergencia-->
   <mat-menu #menuSV68="matMenu">
@@ -63,7 +68,7 @@
   <!-- Enfermedades Menu -->
   <mat-menu #menuSV69="matMenu">
     <button mat-menu-item routerLink="/enfermedad"><mat-icon>list</mat-icon>Listar</button>
-    <button mat-menu-item routerLink="/enfermedad/registrar"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
+    <button mat-menu-item routerLink="/enfermedad/registrar" *ngIf="isPersonal() || isAdministrador()"><mat-icon>add_circle_outline</mat-icon>Registrar</button>
   </mat-menu>
   <!-- Ubicaciones-->
   <mat-menu #menuSV51="matMenu">
@@ -113,7 +118,7 @@
     <mat-toolbar color="primary" *ngIf="verificar()" class="custom-toolbar">
       <div class="toolbar-container">
         <!-- Usuarios -->
-        <button mat-button [matMenuTriggerFor]="menuSV64" style="color: rgb(0, 0, 0)"><mat-icon>people</mat-icon>Usuarios</button>
+        <button mat-button [matMenuTriggerFor]="menuSV64" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() || isAdministrador()"><mat-icon>people</mat-icon>Usuarios</button>
         <!-- Ciudad -->
         <button mat-button [matMenuTriggerFor]="menuSV65" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() || isAdministrador()"><mat-icon>location_city</mat-icon>Ciudad</button>
         <!-- Distrito -->
@@ -139,7 +144,7 @@
         <!-- Roles -->
         <button mat-button [matMenuTriggerFor]="menuSV56" style="color: rgb(0, 0, 0)" *ngIf="isAdministrador()"><mat-icon>how_to_reg</mat-icon>Roles</button>
         <!-- Reportes -->
-        <button mat-button [matMenuTriggerFor]="menuSV71" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() ||isAdministrador() || isPersonal()"><mat-icon> insert_chart_outlined</mat-icon>Reportes</button>
+        <button mat-button [matMenuTriggerFor]="menuSV71" style="color: rgb(0, 0, 0)" *ngIf="isUsuario() ||isAdministrador()"><mat-icon> insert_chart_outlined</mat-icon>Reportes</button>
         <!-- Logout -->
         <button mat-button [matMenuTriggerFor]="menuSalir" style="color: rgb(0, 0, 0)"><mat-icon>verified_user</mat-icon>Rol:</button>
       </div>

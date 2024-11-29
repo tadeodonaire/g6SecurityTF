@@ -106,7 +106,7 @@
               </mat-error>
             </mat-form-field>
             
-            <mat-form-field class="form-field">
+            <mat-form-field class="form-field" *ngIf="!edicion">
               <mat-label>Contraseña</mat-label>
               <input
                 matInput
