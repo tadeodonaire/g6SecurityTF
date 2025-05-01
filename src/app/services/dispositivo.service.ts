@@ -33,8 +33,8 @@ export class DispositivoService{
     this.listaCambio.next(listaNueva);
   }
 
-  getDetalleDispositivo(idDispositivo: number): Observable<DispositivoContactoAutoridadDTO[]> {
-    return this.http.get<DispositivoContactoAutoridadDTO[]>(`${this.url}/${idDispositivo}`);
+  getDetalleDispositivoContactoAutoridad(idDispositivo: number): Observable<DispositivoContactoAutoridadDTO[]> {
+    return this.http.get<DispositivoContactoAutoridadDTO[]>(`${this.url}/contacAuto/{id}`);
   }
 }
 
